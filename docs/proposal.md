@@ -75,16 +75,20 @@ Evaluation structure:
 - Baseline window: the same semester one year prior, at the same pilot schools
 - Treatment window: the pilot semester
 - Comparison group: non-pilot middle schools with similar prior checkout rates, tracked in parallel
+- Exposure design: stagger rollout across pilot schools in two waves, or randomize recommendation exposure at the homeroom level within pilot schools if district operations prefer all schools to participate
 - Minimum detectable effect: a 10 percent lift in checkout rate, sustained over at least 6 weeks
 
 Threats to validity and controls:
 
 - Seasonality: compare against the same calendar window in the prior year
-- Librarian effort confound: track AI-driven recommendation volume separately from direct librarian suggestions
+- Librarian effort confound: track AI-driven recommendation volume separately from direct librarian suggestions and log whether a recommendation was auto-published, approved, pinned, or manually replaced
 - Selection bias: choose pilot schools based on typical checkout rates, not top performers
 - Early dropout: measure recommendation-to-checkout conversion, not just recommendation generation volume
+- Uneven exposure: measure the percentage of students who were actually shown recommendations, not just the percentage for whom recommendations were generated
 
 Midpoint evaluation at week 6. If checkout lift is below 5 percent and librarian approval rate is below 50 percent, pause and re-examine recommendation quality before the semester ends.
+
+This matters because recommendation generation is not the same thing as recommendation exposure. The district needs to know whether the system changed student behavior, not just whether the nightly batch ran successfully.
 
 ## Core User Experience
 
@@ -102,6 +106,15 @@ A student opens a recommendation page and sees:
 Example:
 
 "Because you checked out The Giver and other students who liked thoughtful dystopian stories also borrowed Scythe, you may enjoy this next."
+
+### Student Access and Distribution
+
+The student experience should not rely on students discovering a new standalone application on their own. For the pilot, recommendation delivery should use one of two district-aligned entry points:
+
+- A ClassLink tile that opens the recommendation page directly
+- A Destiny-linked recommendation entry point surfaced from the existing library workflow where feasible
+
+For the pilot, the safest default is a ClassLink launch because it fits existing district access patterns and avoids creating a separate identity silo. Librarians should also be able to distribute direct links to a homeroom or reading group for targeted adoption during the first weeks of the pilot.
 
 ### 2. Librarian Review Workspace
 
@@ -164,6 +177,8 @@ Responsibilities:
 - Map books to genres, grade bands, series, and difficulty proxies
 - Produce a clean dataset for recommendation and reporting
 
+The ingestion design should assume metadata quality will be uneven across schools and titles. The pilot should define required fields, optional fields, and fallback behavior up front rather than discovering those gaps after the ranker is already designed.
+
 #### 2. Feature Preparation
 
 Responsibilities:
@@ -172,6 +187,14 @@ Responsibilities:
 - Derive popularity and co-borrow signals
 - Generate text/content vectors from catalog descriptions and metadata
 - Create rule attributes such as grade band and series continuity
+
+Fallback mode if exports are sparse:
+
+- If catalog descriptions are missing, use title, author, subject headings, and series metadata only
+- If series or grade-band fields are missing, fall back to librarian-maintained rules for pilot schools
+- If content signals are too weak for a student, blend collaborative filtering with school-level popularity priors instead of forcing low-confidence semantic matches
+
+This keeps the hybrid design resilient even if Destiny exports are thinner than the ideal schema.
 
 #### 3. Hybrid Recommendation Engine
 
@@ -218,14 +241,21 @@ Nightly Destiny Export
   LLM Explanation Generator  ──── batch, top 10 candidates per student
         │
         ▼
-  Librarian Review Queue  ──── optional hold before student visibility
+  Librarian Review Queue  ──── required for flagged items, sampled for quality review, bypassed for high-confidence low-risk items
         │
         ├── Approved    ──→ Student Display
         ├── Overridden  ──→ Replacement surfaced, original logged
-        └── Pinned      ──→ Promoted to top of student list
+        ├── Pinned      ──→ Promoted to top of student list
+        └── Auto-Published  ──→ Student Display, marked for later audit
 ```
 
-Librarian overrides are stored and surfaced in the district dashboard as a signal of recommendation quality over time.
+Policy for the pilot:
+
+- High-confidence recommendations that pass grade-band and district guardrails auto-publish nightly
+- Low-confidence recommendations, first-time recommendations for a student, and any policy-edge cases enter the librarian review queue
+- Librarian actions, approval rate, override rate, and pin rate are all logged as quality signals in the district dashboard
+
+This avoids blocking the entire student experience on daily manual review while still keeping librarians in the loop where human judgment is most valuable.
 
 ## Why a Hybrid Approach
 
@@ -344,7 +374,14 @@ Student privacy is the highest-stakes constraint on this system. Five controls m
 
 4. **Role-scoped access.** Librarians see recommendations for students enrolled at their school only. District dashboard users see aggregate metrics with no student-level drill-down. Overrides and approvals are logged with librarian identity and timestamp for audit purposes.
 
-5. **Minimal retention.** Raw export files are processed and deleted after normalization. The recommendation store retains ranked candidates and explanations but not the source interaction events used to derive them.
+5. **Minimal but auditable retention.** Raw export files are processed and deleted after normalization. The system retains a de-identified normalized interaction table, ranked candidates, explanations, and librarian actions for a bounded retention window so recommendation quality can be audited, reproduced, and improved without exposing student identity in the modeling pipeline.
+
+Recommended pilot retention policy:
+
+- Raw source exports deleted after successful normalization and validation
+- De-identified interaction events retained for the pilot semester plus one comparison semester
+- Recommendation decisions and librarian actions retained through pilot evaluation and closeout reporting
+- Student identity resolution kept outside the modeling tables and only available in the display layer under role-based access
 
 ## Operating Model
 
@@ -365,6 +402,8 @@ Recommended ownership model:
 - Confirm privacy constraints and approved identifiers
 - Choose 3 to 5 middle schools for the pilot
 - Define the baseline for books checked out per student
+- Validate the real student access path, ClassLink launch, Destiny link, or both, before UI work begins
+- Confirm which metadata fields are consistently populated enough to support content similarity without manual cleanup
 
 ### Phase 1: Pilot Build, 4 to 6 weeks
 
@@ -372,6 +411,7 @@ Recommended ownership model:
 - Implement hybrid recommendation engine
 - Stand up student, librarian, and district-facing demo surfaces
 - Validate recommendation quality with librarians
+- Instrument exposure logging, recommendation state changes, and checkout attribution from the start
 
 ### Phase 2: Pilot Operation, 8 to 12 weeks
 
@@ -396,6 +436,33 @@ Recommended ownership model:
 - Diagramming, narrative, and polish: 2 to 3 hours
 
 Total: roughly 12 to 15 hours
+
+## Proof of Concept Deliverable Definition
+
+The interview brief asks for runnable code, not just a plausible architecture. The proof of concept should therefore be framed as a concrete local demo with clear acceptance criteria.
+
+Local deliverables:
+
+- Synthetic catalog and checkout dataset representing multiple middle schools, multiple grades, and both dense-history and sparse-history students
+- A batch recommendation pipeline that produces top recommendations per student with collaborative, content, and guardrail signals visible in the output
+- A student-facing page showing top recommendations and plain-English explanations
+- A librarian page showing approve, replace, and pin actions for a selected student or homeroom
+- A district dashboard showing recommendation volume, exposure rate, librarian action rates, and mock checkout lift metrics
+
+Acceptance criteria:
+
+- A single local setup path loads synthetic data, runs the batch job, and starts the demo application
+- At least one student demonstrates a collaborative-filtering-driven recommendation
+- At least one student demonstrates a cold-start fallback recommendation path
+- At least one recommendation is blocked by a policy guardrail and surfaced as such in logs or debug output
+- Librarian override and pin actions change what the student page displays
+- Dashboard metrics reflect recommendation exposure and librarian actions, not just recommendation generation
+
+Suggested verification tests:
+
+- Unit tests for ingestion normalization, hybrid ranker scoring, cold-start fallback, and guardrail filtering
+- A lightweight integration test that runs the nightly batch on synthetic data and verifies recommendations are produced for at least one dense-history and one sparse-history student
+- A UI smoke test that verifies student, librarian, and dashboard views render from the generated dataset
 
 ### Real pilot delivery estimate
 
