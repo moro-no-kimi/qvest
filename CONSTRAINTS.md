@@ -37,3 +37,15 @@ He describes himself as a leader, keynote speaker, board member, creator of PLAN
 - Reduced application sprawl from roughly 7,850 systems to fewer than 500 and introduced stronger vetting for compliance and strategic fit.
 - Improved support operations by replacing the ticketing system and reducing average ticket close time from 46 days to under 48 hours.
 - Conducted a districtwide technology review that eliminated more than $600,000 per year in unnecessary or duplicate spending.
+
+## Identity and Productivity Platform
+
+Fulton County Schools operates a district-wide Microsoft 365 enterprise agreement. All students K-12 have access to Microsoft 365 applications including Outlook, Teams, Word, Excel, PowerPoint, and OneDrive.
+
+- Student email addresses follow the format `ID#@fcstu.org` where the student ID is the Fulton lunch number
+- Students access district applications via ClassLink SSO at `launchpad.classlink.com/fcs`
+- Microsoft SharePoint is used for internal employee resources (Employee Hub at `fultonk12.sharepoint.com/sites/employeehub`)
+- The district's agreement with Microsoft for Microsoft 365 is FERPA compliant
+- Source: https://www.fultonschools.org/all-departments/academics/learning-teaching/instructional-technology/microsoft-365
+
+Any new application built for the district must integrate with Microsoft Entra ID (formerly Azure AD) as the identity provider and surface via ClassLink SSO where feasible. Introducing a separate identity silo is not acceptable given Dr. Phillips' documented focus on reducing application sprawl.
