@@ -442,7 +442,7 @@
     <div class="meta">
       <span>Recommendation Engine + LLM Explanations</span>
       <span>Destiny Library Manager Integration</span>
-      <span>14 – 20 Week Pilot</span>
+      <span>17 Week Build to Fall Pilot</span>
     </div>
     <div style="position:absolute;bottom:28px;right:40px;font-family:var(--font-ui);font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;">Fulton County School System</div>
   </section>
@@ -497,39 +497,68 @@
     <div class="stripe"></div>
     <div class="slide-header">
       <div class="eyebrow">Proposed Solution</div>
-      <h2>A hybrid recommendation platform in four layers</h2>
+      <h2>We evaluated three approaches. One is clearly right.</h2>
     </div>
     <div class="slide-body">
-      <div class="col col-2">
+      <!-- Left: rejected options -->
+      <div class="col">
+        <h3>Options considered</h3>
         <table>
           <thead>
-            <tr><th>Layer</th><th>What it does</th><th>Why it's needed</th></tr>
+            <tr><th>Option</th><th>Status</th><th>Why</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>LLM or RAG</strong></td>
+              <td><span class="pill pill-amber">Context Limitations</span></td>
+              <td>LLMs will struggle to fit district-wide borrowing patterns into its context window; RAG is overkill for cold-start</td>
+            </tr>
+            <tr>
+              <td><strong>Collaborative Filtering</strong></td>
+              <td><span class="pill pill-amber">Cold Start Problem</span></td>
+              <td>Fails for new students (&lt;5 checkouts) and new acquisitions — a structural gap</td>
+            </tr>
+            <tr>
+              <td><strong>Librarian Rule Engine</strong></td>
+              <td><span class="pill pill-amber">Guardrails only</span></td>
+              <td>Doesn't scale to 19 schools; recreates the anecdotal problem</td>
+            </tr>
+            <tr>
+              <td><strong>Hybrid + LLM Explanations</strong></td>
+              <td><span class="pill pill-green">Selected</span></td>
+              <td>Covers all cases — behavioral signal, cold start, policy, and trust</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Right: chosen approach layers -->
+      <div class="col">
+        <h3>The chosen approach — four layers</h3>
+        <table>
+          <thead>
+            <tr><th>Layer</th><th>What it does</th></tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>1 · Collaborative Filtering</strong></td>
-              <td>Finds books borrowed by students with similar reading histories</td>
-              <td>Primary behavioral signal — proven at scale</td>
+              <td>Books borrowed by students with similar reading histories</td>
             </tr>
             <tr>
               <td><strong>2 · Content Similarity</strong></td>
-              <td>Matches on genre, themes, series, and difficulty</td>
-              <td>Covers new titles and students with sparse history</td>
+              <td>Genre, themes, series, difficulty — covers cold start</td>
             </tr>
             <tr>
               <td><strong>3 · Policy Guardrails</strong></td>
-              <td>Enforces grade-band and district suitability rules</td>
-              <td>Non-negotiable for district approval</td>
+              <td>Grade-band and district suitability enforcement</td>
             </tr>
             <tr>
               <td><strong>4 · LLM Explanations</strong></td>
-              <td>Generates plain-English rationale per recommendation</td>
-              <td>Builds trust with students and librarians</td>
+              <td>Plain-English rationale that builds trust with students and librarians</td>
             </tr>
           </tbody>
         </table>
         <div class="callout" style="margin-top:8px;">
-          This is an <strong>augmentation to Destiny, not a replacement.</strong> Destiny remains the system of record for catalog and checkout. This system adds a recommendation layer on top of existing exports.
+          <strong>Augments Destiny, doesn't replace it.</strong> Destiny remains the system of record. This adds a recommendation layer on top of existing exports.
         </div>
       </div>
     </div>
@@ -588,52 +617,8 @@
     </div>
   </section>
 
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 05 WHY NOT ALTERNATIVES -->
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 05 LLM ROLE -->
   <section class="slide body-slide" data-n="5">
-    <div class="stripe"></div>
-    <div class="slide-header">
-      <div class="eyebrow">Alternatives Considered</div>
-      <h2>Three paths evaluated — hybrid wins on every axis</h2>
-    </div>
-    <div class="slide-body">
-      <div class="col col-2">
-        <table>
-          <thead>
-            <tr><th>Status</th><th>Option</th><th>What it is</th><th>Why rejected</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="pill pill-red">Rejected</span></td>
-              <td><strong>Pure LLM</strong></td>
-              <td>Ask the LLM to rank books from a student's history</td>
-              <td>Context window can't hold the district catalog. LLM recommends titles Destiny doesn't hold. No knowledge of local inventory.</td>
-            </tr>
-            <tr>
-              <td><span class="pill pill-amber">Rejected</span></td>
-              <td><strong>Pure Collab Filtering</strong></td>
-              <td>Rank by co-borrow patterns only</td>
-              <td>Fails for new students (&lt;5 checkouts) and new acquisitions with no history. A structural gap, not a tail case.</td>
-            </tr>
-            <tr>
-              <td><span class="pill pill-amber">Rejected as primary</span></td>
-              <td><strong>Librarian Rule Engine</strong></td>
-              <td>Staff configure genre → series rules</td>
-              <td>Doesn't scale to 19 schools. Recreates the anecdotal problem we're solving. Rules still used as guardrails on top of ranked results.</td>
-            </tr>
-            <tr>
-              <td><span class="pill pill-green">Selected</span></td>
-              <td><strong>Hybrid + LLM Explanations</strong></td>
-              <td>CF + content sim + guardrails + LLM rationale</td>
-              <td>Behavioral relevance, cold-start coverage, policy compliance, and human-readable explanations in one design.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 06 LLM ROLE -->
-  <section class="slide body-slide" data-n="6">
     <div class="stripe"></div>
     <div class="slide-header">
       <div class="eyebrow">LLM Design Decision</div>
@@ -661,54 +646,242 @@
           <li>Explanation quality can be verified and audited independently of ranking</li>
           <li>LLM cost is bounded: batch over top-10 candidates per student nightly</li>
         </ul>
-        <hr class="rule" />
-        <h3>Privacy boundary</h3>
-        <ul class="bullets">
-          <li>LLM prompt contains zero student identifiers</li>
-          <li>All student data stays within district-controlled infrastructure</li>
-          <li>API calls contain only catalog metadata</li>
-        </ul>
       </div>
     </div>
   </section>
 
   <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 07 USER EXPERIENCES -->
-  <section class="slide body-slide" data-n="7">
+  <section class="slide body-slide" data-n="6">
     <div class="stripe"></div>
     <div class="slide-header">
-      <div class="eyebrow">Three Role-Scoped Surfaces</div>
-      <h2>Each user sees only what is relevant to their job</h2>
+      <div class="eyebrow">Role-Scoped Surfaces · 1 of 2</div>
+      <h2>Student &amp; Librarian surfaces</h2>
     </div>
-    <div class="slide-body">
+    <div class="slide-body" style="padding-bottom:60px;">
       <div class="col">
         <h3>Student</h3>
         <ul class="bullets">
           <li>ClassLink tile → recommendation page</li>
-          <li>Top recommended book with cover art and one-sentence reason</li>
+          <li>Top pick with cover art and one-sentence reason</li>
           <li>Secondary list of 4 more titles beneath</li>
           <li>Save / interested action + availability badge</li>
-          <li>Copy sounds like a trusted librarian, not a product</li>
         </ul>
+        <!-- Student UI preview -->
+        <div style="margin-top:auto; border:1px solid var(--rule); border-radius:4px; overflow:hidden; font-family:var(--font-ui); font-size:11px; background:#fff;">
+          <div style="padding:8px 10px; border-bottom:1px solid var(--rule); color:var(--ink-dim);">
+            Good morning, <strong style="color:var(--ink)">David Okonkwo</strong>
+          </div>
+          <div style="display:flex; gap:8px; padding:8px 10px; border-bottom:1px solid var(--rule); align-items:flex-start;">
+            <img src="qvest-960431f1/src/assets/covers/scythe.jpg" alt="Scythe" style="width:36px; height:54px; object-fit:cover; border-radius:2px; flex-shrink:0;" />
+            <div>
+              <div style="font-size:9px; text-transform:uppercase; letter-spacing:.07em; color:#c07a00; font-weight:700;">Top Pick</div>
+              <div style="font-weight:700; font-size:12px; color:var(--ink); margin-top:1px;">Scythe</div>
+              <div style="color:var(--ink-dim); font-size:10px;">Neal Shusterman</div>
+              <div style="color:var(--ink-dim); font-size:10px; margin-top:3px; font-style:italic;">"Your borrowing history shows a strong pattern of dystopian fiction. Scythe is the top match."</div>
+              <div style="display:flex; justify-content:space-between; margin-top:5px; align-items:center;">
+                <span style="color:var(--green); font-size:10px;">📍 3 available in library</span>
+                <span style="color:var(--ink-dim); font-size:10px;">♡ Interested</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:6px 10px; display:flex; gap:8px; align-items:center;">
+            <img src="qvest-960431f1/src/assets/covers/amal-unbound.jpg" alt="Amal Unbound" style="width:20px; height:30px; object-fit:cover; border-radius:1px;" />
+            <img src="qvest-960431f1/src/assets/covers/children-blood-bone.jpg" alt="Children of Blood and Bone" style="width:20px; height:30px; object-fit:cover; border-radius:1px;" />
+            <img src="qvest-960431f1/src/assets/covers/wrinkle-in-time.jpg" alt="A Wrinkle in Time" style="width:20px; height:30px; object-fit:cover; border-radius:1px;" />
+            <span style="color:var(--ink-dim); font-size:10px; margin-left:4px;">+ 2 more picks for you</span>
+          </div>
+        </div>
       </div>
       <div class="col">
         <h3>Librarian</h3>
         <ul class="bullets">
           <li>Review workspace: student selector, queue, detail panel</li>
           <li>See why each title was suggested (provenance + confidence)</li>
-          <li>Approve · Replace · Pin · Suppress actions</li>
+          <li>Approve · Pin · Suppress actions</li>
           <li>Audit trail of all changes with timestamp</li>
-          <li>Status labels: <em>Needs review, Pinned, Auto-published</em></li>
         </ul>
+        <!-- Librarian UI preview -->
+        <div style="margin-top:auto; border:1px solid var(--rule); border-radius:4px; overflow:hidden; font-family:var(--font-ui); font-size:11px; background:#fff; display:flex;">
+          <!-- Student list -->
+          <div style="width:110px; flex-shrink:0; border-right:1px solid var(--rule); background:#f8faf9;">
+            <div style="padding:6px 8px; border-bottom:1px solid var(--rule); font-weight:700; font-size:10px; color:var(--ink);">Students</div>
+            <div style="padding:5px 8px; border-bottom:1px solid var(--rule); background:var(--accent-l);">
+              <div style="font-weight:600; color:var(--ink); font-size:10px;">David Okonkwo</div>
+              <div style="color:var(--ink-dim); font-size:9px;">Gr 8 · Haynes Bridge</div>
+            </div>
+            <div style="padding:5px 8px; border-bottom:1px solid var(--rule);">
+              <div style="color:var(--ink); font-size:10px;">Amara Diallo</div>
+              <div style="color:var(--ink-dim); font-size:9px;">Gr 7 · River Trail</div>
+            </div>
+            <div style="padding:5px 8px;">
+              <div style="color:var(--ink); font-size:10px;">Lila Park</div>
+              <div style="color:var(--ink-dim); font-size:9px;">Gr 6 · Haynes Bridge</div>
+            </div>
+          </div>
+          <!-- Rec card -->
+          <div style="flex:1; min-width:0; padding:7px 8px; display:flex; flex-direction:column; gap:6px;">
+            <div style="display:flex; gap:7px; align-items:flex-start;">
+              <img src="qvest-960431f1/src/assets/covers/scythe.jpg" alt="Scythe" style="width:24px; height:36px; object-fit:cover; border-radius:2px; flex-shrink:0;" />
+              <div style="flex:1; min-width:0;">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                  <div>
+                    <div style="font-weight:700; font-size:11px; color:var(--ink);">Scythe</div>
+                    <div style="color:var(--ink-dim); font-size:9px;">Neal Shusterman · Sci-Fi</div>
+                  </div>
+                  <span style="background:#fdecd4; color:#7a4a0a; font-size:9px; font-weight:700; padding:2px 5px; border-radius:2px; white-space:nowrap;">Needs review</span>
+                </div>
+                <div style="color:var(--ink-dim); font-size:9px; margin-top:3px; font-style:italic;">"Strong dystopian pattern. Top collaborative match."</div>
+                <div style="font-size:9px; color:var(--ink-dim); margin-top:2px;">Confidence: 92% · collab, content</div>
+                <div style="display:flex; gap:4px; margin-top:4px;">
+                  <button style="font-size:9px; background:var(--accent-l); color:var(--accent); border:none; padding:2px 6px; border-radius:2px; cursor:pointer; font-weight:600;">✓ Approve</button>
+                  <button style="font-size:9px; background:#f3f4f6; color:#374151; border:none; padding:2px 6px; border-radius:2px; cursor:pointer;">📌 Pin</button>
+                  <button style="font-size:9px; background:#f3f4f6; color:#374151; border:none; padding:2px 6px; border-radius:2px; cursor:pointer;">✕ Suppress</button>
+                </div>
+              </div>
+            </div>
+            <!-- Audit row -->
+            <div style="border-top:1px solid var(--rule); padding-top:5px; color:var(--ink-dim); font-size:9px;">
+              <div style="font-weight:700; color:var(--ink); font-size:9px; margin-bottom:2px;">Recent actions</div>
+              <div>Ms. Patterson <span style="color:var(--green); font-weight:600;">approved</span> rec for Amara D. · 11:42 PM</div>
+              <div>Ms. Patterson <span style="color:var(--crimson); font-weight:600;">suppressed</span> rec for Lila P. · 10:15 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ PRINCIPAL + DISTRICT -->
+  <section class="slide body-slide" data-n="7">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">Role-Scoped Surfaces · 2 of 2</div>
+      <h2>Principal &amp; District Leader surfaces</h2>
+    </div>
+    <div class="slide-body" style="padding-bottom:60px;">
+      <div class="col">
+        <h3>Principal</h3>
+        <ul class="bullets">
+          <li>Read-only view scoped to their school</li>
+          <li>Librarian activity summary: approve / suppress / pin rates</li>
+          <li>Student exposure and checkout lift for their building</li>
+          <li>No recommendation override capability — observational only</li>
+        </ul>
+        <!-- Principal UI preview -->
+        <div style="margin-top:auto; border:1px solid var(--rule); border-radius:4px; overflow:hidden; font-family:var(--font-ui); font-size:11px; background:#fff;">
+          <div style="padding:6px 10px; border-bottom:1px solid var(--rule); font-weight:700; font-size:10px; color:var(--ink); background:#f8faf9;">Haynes Bridge MS — Pilot Overview</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; border-bottom:1px solid var(--rule);">
+            <div style="padding:6px 8px; border-right:1px solid var(--rule);">
+              <div style="font-size:9px; text-transform:uppercase; color:var(--ink-dim); letter-spacing:.05em;">Checkout lift</div>
+              <div style="font-size:16px; font-weight:700; color:var(--green); line-height:1.2;">+23.8%</div>
+              <div style="font-size:9px; color:var(--ink-dim);">vs prior year</div>
+            </div>
+            <div style="padding:6px 8px; border-right:1px solid var(--rule);">
+              <div style="font-size:9px; text-transform:uppercase; color:var(--ink-dim); letter-spacing:.05em;">Students reached</div>
+              <div style="font-size:16px; font-weight:700; color:var(--ink); line-height:1.2;">312</div>
+              <div style="font-size:9px; color:var(--ink-dim);">of 420 · 74%</div>
+            </div>
+            <div style="padding:6px 8px;">
+              <div style="font-size:9px; text-transform:uppercase; color:var(--ink-dim); letter-spacing:.05em;">Lib. approval</div>
+              <div style="font-size:16px; font-weight:700; color:var(--ink); line-height:1.2;">78%</div>
+              <div style="font-size:9px; color:var(--ink-dim);">of recs reviewed</div>
+            </div>
+          </div>
+          <table style="width:100%; border-collapse:collapse; font-size:9px;">
+            <thead>
+              <tr style="background:#f8faf9;">
+                <th style="text-align:left; padding:4px 8px; color:var(--ink-dim); font-weight:600; border-bottom:1px solid var(--rule);">Librarian</th>
+                <th style="text-align:right; padding:4px 8px; color:var(--ink-dim); font-weight:600; border-bottom:1px solid var(--rule);">Reviewed</th>
+                <th style="text-align:right; padding:4px 8px; color:var(--ink-dim); font-weight:600; border-bottom:1px solid var(--rule);">Approved</th>
+                <th style="text-align:right; padding:4px 8px; color:var(--ink-dim); font-weight:600; border-bottom:1px solid var(--rule);">Suppressed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--rule);">
+                <td style="padding:4px 8px; color:var(--ink);">Ms. Patterson</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--ink-dim);">142</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--green); font-weight:600;">81%</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--crimson);">12%</td>
+              </tr>
+              <tr>
+                <td style="padding:4px 8px; color:var(--ink);">Mr. Chen</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--ink-dim);">98</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--green); font-weight:600;">74%</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--crimson);">18%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="col">
         <h3>District Leader</h3>
         <ul class="bullets">
-          <li>Pilot adoption summary</li>
-          <li>Exposure and approval metrics</li>
-          <li>Checkout lift trends by school and grade</li>
-          <li>Data freshness timestamps on every metric</li>
-          <li>Separates directional signals from decision-grade findings</li>
+          <li>Pilot adoption summary across all 5 schools</li>
+          <li>Checkout lift trends by school and week</li>
+          <li>Approval and override rates</li>
+          <li>Data freshness timestamp on every metric</li>
         </ul>
+        <!-- District UI preview -->
+        <div style="margin-top:auto; border:1px solid var(--rule); border-radius:4px; overflow:hidden; font-family:var(--font-ui); font-size:11px; background:#fff;">
+          <!-- Metric strip -->
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:0; border-bottom:1px solid var(--rule);">
+            <div style="padding:6px 8px; border-right:1px solid var(--rule);">
+              <div style="font-size:9px; text-transform:uppercase; color:var(--ink-dim); letter-spacing:.05em;">Avg lift</div>
+              <div style="font-size:16px; font-weight:700; color:var(--green); line-height:1.2;">+20.2%</div>
+              <div style="font-size:9px; color:var(--ink-dim);">vs prior year</div>
+            </div>
+            <div style="padding:6px 8px; border-right:1px solid var(--rule);">
+              <div style="font-size:9px; text-transform:uppercase; color:var(--ink-dim); letter-spacing:.05em;">Reached</div>
+              <div style="font-size:16px; font-weight:700; color:var(--ink); line-height:1.2;">1,200</div>
+              <div style="font-size:9px; color:var(--ink-dim);">of 1,970 · 61%</div>
+            </div>
+            <div style="padding:6px 8px; border-right:1px solid var(--rule);">
+              <div style="font-size:9px; text-transform:uppercase; color:var(--ink-dim); letter-spacing:.05em;">Approval</div>
+              <div style="font-size:16px; font-weight:700; color:var(--ink); line-height:1.2;">77%</div>
+              <div style="font-size:9px; color:var(--ink-dim);">librarian rate</div>
+            </div>
+            <div style="padding:6px 8px;">
+              <div style="font-size:9px; text-transform:uppercase; color:var(--ink-dim); letter-spacing:.05em;">Schools</div>
+              <div style="font-size:16px; font-weight:700; color:var(--ink); line-height:1.2;">5</div>
+              <div style="font-size:9px; color:var(--ink-dim);">active in pilot</div>
+            </div>
+          </div>
+          <!-- Mini school table -->
+          <table style="width:100%; border-collapse:collapse; font-size:9px;">
+            <thead>
+              <tr style="background:#f8faf9;">
+                <th style="text-align:left; padding:4px 8px; color:var(--ink-dim); font-weight:600; border-bottom:1px solid var(--rule);">School</th>
+                <th style="text-align:right; padding:4px 8px; color:var(--ink-dim); font-weight:600; border-bottom:1px solid var(--rule);">Lift</th>
+                <th style="text-align:right; padding:4px 8px; color:var(--ink-dim); font-weight:600; border-bottom:1px solid var(--rule);">Exposure</th>
+                <th style="text-align:right; padding:4px 8px; color:var(--ink-dim); font-weight:600; border-bottom:1px solid var(--rule);">Approval</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--rule);">
+                <td style="padding:4px 8px; color:var(--ink); font-weight:600;">Haynes Bridge MS</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--green); font-weight:700;">+23.8%</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--ink-dim);">74%</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--ink-dim);">78%</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--rule);">
+                <td style="padding:4px 8px; color:var(--ink); font-weight:600;">River Trail MS</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--green); font-weight:700;">+27.8%</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--ink-dim);">73%</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--ink-dim);">82%</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--rule);">
+                <td style="padding:4px 8px; color:var(--ink); font-weight:600;">Hopewell MS</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--green); font-weight:700;">+26.7%</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--ink-dim);">60%</td>
+                <td style="text-align:right; padding:4px 8px; color:var(--ink-dim);">85%</td>
+              </tr>
+              <tr>
+                <td style="padding:4px 8px; color:var(--ink-dim);" colspan="4">↓ Elkins Pointe MS · Northwestern MS</td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="padding:4px 8px; font-size:9px; color:var(--ink-dim); border-top:1px solid var(--rule);">🕐 Last batch: Apr 2, 2026 · 11:42 PM — data current</div>
+        </div>
       </div>
     </div>
   </section>
@@ -746,6 +919,16 @@
               <td><strong>Librarian</strong></td>
               <td>Trusted as the human authority</td>
               <td>Librarian overrides are visible to students and logged prominently in the audit trail</td>
+            </tr>
+            <tr>
+              <td><strong>Principal</strong></td>
+              <td>Informed without being in the weeds</td>
+              <td>School-scoped read-only dashboard: checkout lift, student exposure, and per-librarian activity at a glance</td>
+            </tr>
+            <tr>
+              <td><strong>Principal</strong></td>
+              <td>Confident staff are handling it appropriately</td>
+              <td>Librarian approve/suppress rates visible; no intervention required unless rates fall outside norms</td>
             </tr>
             <tr>
               <td><strong>District</strong></td>
@@ -863,80 +1046,43 @@
     </div>
   </section>
 
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11 TECH STACK -->
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11 ROLLOUT -->
   <section class="slide body-slide" data-n="11">
     <div class="stripe"></div>
     <div class="slide-header">
-      <div class="eyebrow">Tech Stack</div>
-      <h2>POC is running today. Production path is clear.</h2>
-    </div>
-    <div class="slide-body">
-      <div class="col">
-        <h3>Proof of concept (running)</h3>
-        <div class="stack-grid">
-          <div class="stack-item"><div class="layer">API</div><div class="tech">FastAPI</div></div>
-          <div class="stack-item"><div class="layer">Data processing</div><div class="tech">pandas</div></div>
-          <div class="stack-item"><div class="layer">Recommender</div><div class="tech">scikit-learn + custom ranker</div></div>
-          <div class="stack-item"><div class="layer">Embeddings</div><div class="tech">sentence-transformers</div></div>
-          <div class="stack-item"><div class="layer">Vector index</div><div class="tech">FAISS / Chroma</div></div>
-          <div class="stack-item"><div class="layer">Persistence</div><div class="tech">SQLite / DuckDB</div></div>
-          <div class="stack-item"><div class="layer">UI</div><div class="tech">Streamlit</div></div>
-          <div class="stack-item"><div class="layer">LLM SDK</div><div class="tech">OpenAI (optional)</div></div>
-        </div>
-      </div>
-      <div class="col">
-        <h3>Production path</h3>
-        <ul class="bullets">
-          <li>SQLite → <strong>managed PostgreSQL + pgvector</strong></li>
-          <li>Streamlit → <strong>React application with district design tokens</strong></li>
-          <li>Cron job → <strong>scheduled ingestion pipeline from district exports or approved APIs</strong></li>
-          <li>Local dev auth → <strong>Entra ID OAuth 2.0 / OIDC + ClassLink SSO</strong></li>
-          <li>Print statements → <strong>structured observability, audit logging, approval workflows</strong></li>
-        </ul>
-        <hr class="rule" />
-        <div class="callout">
-          Core design is identical at pilot and enterprise scale. No architectural rewrite needed to productionize.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12 ROLLOUT -->
-  <section class="slide body-slide" data-n="12">
-    <div class="stripe"></div>
-    <div class="slide-header">
-      <div class="eyebrow">Rollout Plan</div>
-      <h2>14 – 20 weeks from kickoff to expansion decision</h2>
+      <div class="eyebrow">Rollout Plan - Start Now</div>
+      <h2>17 weeks to Fall Pilot</h2>
     </div>
     <div class="slide-body">
       <div class="col col-2">
         <div class="phases">
           <div class="phase-row">
-            <div class="phase-label">Phase 0 — Discovery<span>2 weeks</span></div>
+            <div class="phase-label">Phase 0 — Discovery<span>2 weeks (April 6-17)</span></div>
             <div class="phase-content">Confirm Destiny export fields and privacy constraints. Choose 3–5 pilot middle schools. Define checkout-rate baseline. Validate ClassLink launch flow and Destiny deep-link behavior.</div>
           </div>
           <div class="phase-row">
-            <div class="phase-label">Phase 1 — Pilot Build<span>4 – 6 weeks</span></div>
-            <div class="phase-content">Build ingestion pipeline. Implement hybrid engine. Stand up student, librarian, and district surfaces. Validate recommendation quality with librarians. Instrument exposure logging and checkout attribution from day one.</div>
+            <div class="phase-label">Phase 1 — Rapid Prototype<span>5 weeks (April 20 - May 22)</span></div>
+            <div class="phase-content">Build ingestion pipeline. Implement mock hybrid engine. Stand up student, librarian, and district surfaces. Validate UI/UX with all roles, write acceptance tests. Instrument Auth and API integration and engagement telemetry from day one.</div>
           </div>
           <div class="phase-row">
-            <div class="phase-label">Phase 2 — Pilot Operation<span>8 – 12 weeks</span></div>
-            <div class="phase-content">Run recommendations during the semester. Monitor checkout lift weekly. Tune thresholds and explanations. Midpoint evaluation at week 6 — pause if approval rate &lt; 50% or lift &lt; 5%. Collect qualitative feedback.</div>
+            <div class="phase-label">Phase 2 — Hybrid Engine Build<span>10 weeks (May 25 - July 31)</span></div>
+            <div class="phase-content">Develop and refine hybrid recommendation engine. Integrate with student, librarian, and district surfaces. Conduct extensive testing and validation of recommendation quality on district-wide historical data.</div>
           </div>
           <div class="phase-row">
-            <div class="phase-label">Phase 3 — Expansion Decision<span>2 weeks</span></div>
+            <div class="phase-label">Phase 3 — Pilot Operation<span>Fall Semester</span></div>
+            <div class="phase-content">Run recommendations during the semester. Monitor checkout lift weekly. Tune thresholds and explanations. Regular evaluation at FCS Board Meetings — pause if approval rate &lt; 50% or lift &lt; 5%. Collect and review qualitative feedback.</div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-label">Phase 4 — Expansion Decision<span>2 weeks (Dec. 7 - Dec. 18)</span></div>
             <div class="phase-content">Review pilot performance against primary and secondary metrics. Decide whether to expand to all 19 middle schools. Confirm production hardening priorities.</div>
           </div>
-        </div>
-        <div class="callout" style="margin-top:12px;">
-          Rollout is staggered deliberately: two waves within pilot schools to create a natural comparison group and catch quality issues before full exposure.
         </div>
       </div>
     </div>
   </section>
 
   <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13 RISKS -->
-  <section class="slide body-slide" data-n="13">
+  <section class="slide body-slide" data-n="12">
     <div class="stripe"></div>
     <div class="slide-header">
       <div class="eyebrow">Risks &amp; Mitigations</div>
@@ -962,7 +1108,7 @@
             <tr>
               <td><strong>Privacy and governance concerns</strong></td>
               <td><span class="risk-hi">High</span></td>
-              <td>Five-control privacy design (slide 10). LLM sees zero student data. Role-scoped access. No local passwords or identity silo.</td>
+              <td>Five-control privacy design (slide 10). LLM sees zero student data. Role-scoped access.</td>
             </tr>
             <tr>
               <td><strong>District concern about application sprawl</strong></td>
@@ -975,42 +1121,8 @@
     </div>
   </section>
 
-  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14 STRATEGIC FIT -->
-  <section class="slide body-slide" data-n="14">
-    <div class="stripe"></div>
-    <div class="slide-header">
-      <div class="eyebrow">Strategic Fit</div>
-      <h2>Built for how Fulton actually operates</h2>
-    </div>
-    <div class="slide-body">
-      <div class="col">
-        <h3>Dr. Joe Phillips — Chief Strategy &amp; Technology Officer</h3>
-        <ul class="bullets">
-          <li>Leads districtwide strategy execution, technology governance, digital transformation, and innovation scaling</li>
-          <li>Reduced application sprawl from <strong>~7,850 systems to under 500</strong> at a prior district — vets every new tool for compliance and strategic fit</li>
-          <li>Creator of PLANT-AI, BOLT, and the Technology Adoption Framework — values structured, evidence-based technology adoption</li>
-          <li>Prior CIO experience: Broward County, Volusia County, Kansas City Public Schools</li>
-          <li>Retired Army officer — appreciates operational rigor and clear accountability</li>
-        </ul>
-      </div>
-      <div class="col">
-        <h3>Why this proposal passes his bar</h3>
-        <ul class="bullets">
-          <li><strong>No new identity silo</strong> — authenticates via Entra ID + ClassLink SSO (<code>launchpad.classlink.com/fcs</code>), exactly the stack FCS already operates</li>
-          <li><strong>No new productivity platform</strong> — augments Destiny, uses existing M365 FERPA-compliant infrastructure</li>
-          <li><strong>Measurable before it scales</strong> — pilot with 3–5 schools, expansion decision gated on checkout lift data</li>
-          <li><strong>Fits the Technology Adoption Framework</strong> — phased rollout, midpoint evaluation gate, explicit success criteria</li>
-          <li><strong>District owns the data and the code</strong> — no vendor lock-in, no external student data exposure</li>
-        </ul>
-        <div class="callout" style="margin-top:8px;">
-          The pitch in one line: this is the kind of targeted, governable, measurable AI intervention Dr. Phillips' TAF was designed to approve.
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15 SUMMARY -->
-  <section class="slide body-slide" data-n="15">
+  <section class="slide body-slide" data-n="13">
     <div class="stripe"></div>
     <div class="slide-header">
       <div class="eyebrow">Summary</div>
@@ -1046,7 +1158,7 @@
         <h3>The ask</h3>
         <ul class="bullets">
           <li>Approve a 3–5 school middle-school pilot (out of <strong>19 middle schools</strong> district-wide)</li>
-          <li>14–20 weeks from kickoff to expansion decision</li>
+          <li>17 weeks from kickoff to Fall Pilot</li>
           <li>Primary success metric: <strong>+10% checkout lift</strong> sustained over ≥ 6 weeks</li>
         </ul>
       </div>
@@ -1054,7 +1166,7 @@
   </section>
 
   <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16 Q&A -->
-  <section class="slide title-slide" data-n="16" style="background:var(--crimson); justify-content:center; align-items:flex-start;">
+  <section class="slide title-slide" data-n="14" style="background:var(--crimson); justify-content:center; align-items:flex-start;">
     <img class="fcs-logo-title" src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1707770123/fultonschoolsorg/d5mkr7fkdyxp24nfaht4/FCSLogo-01.png" alt="Fulton County School System" />
     <div class="eyebrow" style="color:rgba(255,255,255,.55);">Fulton County Schools · Reading Lift Pilot</div>
     <h1 style="font-size:72px; margin-top:16px; color:#fff;">Q&amp;A</h1>
@@ -1066,7 +1178,7 @@
 <!-- ── Navigation controls ──────────────────────────────────────── -->
 <div id="nav">
   <button id="prev">← Prev</button>
-  <span id="slide-counter">1 / 15</span>
+  <span id="slide-counter">1 / 14</span>
   <button id="next">Next →</button>
 </div>
 
