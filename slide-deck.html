@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fulton County Reading Lift — Proposal</title>
+<style>
+  /* ── Reset & Base ──────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream:    #f8faf9;        /* very light green-tinted white */
+    --paper:    #eef4f1;        /* light FCS green tint */
+    --ink:      #0d1f18;        /* near-black with green cast */
+    --ink-dim:  #3d5249;
+    --rule:     #c5d8ce;
+    --accent:   #00593C;        /* FCS primary green */
+    --accent-l: #d4ede3;
+    --crimson:  #6B1F33;        /* FCS secondary crimson */
+    --crimson-l:#f0dde3;
+    --green:    #00593C;        /* FCS primary */
+    --blue:     #6B1F33;        /* FCS secondary used as second accent */
+    --slide-w: 1100px;
+    --slide-h: 618px;
+    --font-body: 'Georgia', 'Times New Roman', serif;
+    --font-ui:   'Helvetica Neue', Arial, sans-serif;
+  }
+
+  html, body {
+    background: #021a0f;   /* deep FCS green shell */
+    font-family: var(--font-body);
+    height: 100%;
+  }
+
+  /* ── Layout shell ───────────────────────────────────────────── */
+  .deck {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px 80px;
+    gap: 32px;
+  }
+
+  /* ── Navigation ─────────────────────────────────────────────── */
+  #nav {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0,89,60,.92);
+    backdrop-filter: blur(6px);
+    border-radius: 40px;
+    padding: 10px 20px;
+    z-index: 100;
+    color: #e8f5f0;
+    font-family: var(--font-ui);
+    font-size: 13px;
+  }
+  #nav button {
+    background: none;
+    border: 1px solid rgba(255,255,255,.3);
+    color: #e8f5f0;
+    border-radius: 20px;
+    padding: 5px 16px;
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    transition: background .15s;
+  }
+  #nav button:hover { background: rgba(255,255,255,.15); }
+  #slide-counter { min-width: 64px; text-align: center; opacity: .7; }
+
+  /* ── Slide base ─────────────────────────────────────────────── */
+  .slide {
+    width: var(--slide-w);
+    height: var(--slide-h);
+    background: var(--cream);
+    border-radius: 6px;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 8px 40px rgba(0,0,0,.45);
+  }
+  .slide.active { display: flex; }
+
+  /* slide-number badge */
+  .slide::after {
+    content: attr(data-n);
+    position: absolute;
+    bottom: 20px;
+    right: 28px;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: var(--rule);
+  }
+
+  /* ── Shared type helpers ────────────────────────────────────── */
+  h1 { font-size: 44px; font-weight: 400; line-height: 1.1; color: var(--ink); }
+  h2 { font-size: 26px; font-weight: 400; color: var(--ink); }
+  h3 { font-size: 11px; font-weight: 700; font-family: var(--font-ui); text-transform: uppercase;
+       letter-spacing: .06em; color: var(--accent); }
+  p, li { font-size: 13.5px; line-height: 1.5; color: var(--ink-dim); }
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* ── Accent stripe ──────────────────────────────────────────── */
+  .stripe {
+    height: 5px;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* ── Title slide (slide 1) ──────────────────────────────────── */
+  .title-slide {
+    background: var(--accent);  /* FCS primary green */
+    justify-content: center;
+    padding: 64px 80px;
+  }
+  .title-slide .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    color: rgba(255,255,255,.65);
+    margin-bottom: 24px;
+  }
+  .title-slide h1 { color: #ffffff; font-size: 52px; max-width: 640px; }
+  .title-slide .subtitle {
+    margin-top: 16px;
+    font-size: 18px;
+    color: rgba(255,255,255,.82);
+    max-width: 560px;
+    line-height: 1.5;
+  }
+  .title-slide .meta {
+    margin-top: 48px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    color: rgba(255,255,255,.45);
+    display: flex;
+    gap: 32px;
+  }
+
+  /* ── Standard two-region layout ────────────────────────────── */
+  .body-slide {
+    padding: 0;
+  }
+  .slide-header {
+    padding: 22px 56px 18px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .slide-header .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .slide-body {
+    flex: 1;
+    padding: 20px 56px 24px;
+    display: flex;
+    gap: 40px;
+    overflow: hidden;
+  }
+
+  /* ── Column helpers ─────────────────────────────────────────── */
+  .col { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+  .col-2 { flex: 2; }
+
+  /* ── Bullet list ────────────────────────────────────────────── */
+  .bullets { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .bullets li {
+    padding-left: 18px;
+    position: relative;
+  }
+  .bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* ── Callout box ────────────────────────────────────────────── */
+  .callout {
+    background: var(--accent-l);
+    border-left: 3px solid var(--accent);
+    border-radius: 3px;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  /* ── Pill / badge ───────────────────────────────────────────── */
+  .pill {
+    display: inline-block;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+  .pill-green { background: #c8e6d8; color: var(--green); }
+  .pill-blue  { background: var(--crimson-l); color: var(--crimson); }
+  .pill-amber { background: #fdecd4; color: #7a4a0a; }
+  .pill-red   { background: var(--crimson-l); color: var(--crimson); }
+
+  /* ── Divider rule ───────────────────────────────────────────── */
+  hr.rule { border: none; border-top: 1px solid var(--rule); margin: 4px 0; }
+
+  /* ── Arch diagram (mermaid-free SVG replacement) ────────────── */
+  .arch-flow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .arch-box {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    text-align: center;
+    color: var(--ink);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .arch-box.highlight {
+    background: var(--accent-l);
+    border-color: var(--accent);
+  }
+  .arch-arrow {
+    font-size: 18px;
+    color: var(--rule);
+    padding: 0 4px;
+    flex-shrink: 0;
+  }
+
+  /* ── Table ──────────────────────────────────────────────────── */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--ink-dim);
+    border-bottom: 2px solid var(--rule);
+    padding: 8px 12px;
+    text-align: left;
+  }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--rule); color: var(--ink-dim); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td strong { color: var(--ink); }
+
+  /* ── Phase timeline ─────────────────────────────────────────── */
+  .phases { display: flex; flex-direction: column; gap: 0; }
+  .phase-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    border-bottom: 1px solid var(--rule);
+    padding: 10px 0;
+  }
+  .phase-row:last-child { border-bottom: none; }
+  .phase-label {
+    width: 160px;
+    flex-shrink: 0;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .phase-label span { font-weight: 400; color: var(--ink-dim); font-size: 11px; }
+  .phase-content { font-size: 13px; color: var(--ink-dim); line-height: 1.55; flex: 1; }
+
+  /* ── Risk table colors ──────────────────────────────────────── */
+  .risk-hi { color: var(--crimson); font-weight: 700; }
+  .risk-md { color: #7a4a0a; font-weight: 700; }
+
+  /* ── Quote slide ────────────────────────────────────────────── */
+  .quote-slide {
+    background: var(--ink);
+    justify-content: center;
+    align-items: flex-start;
+    padding: 72px 96px;
+  }
+  .quote-slide blockquote {
+    font-size: 26px;
+    line-height: 1.5;
+    color: var(--cream);
+    max-width: 780px;
+    font-style: italic;
+  }
+  .quote-slide .attribution {
+    margin-top: 32px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: #7a7269;
+  }
+
+  /* ── Stack diagram ──────────────────────────────────────────── */
+  .stack-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .stack-item {
+    background: var(--paper);
+    border-radius: 4px;
+    padding: 12px 16px;
+    border: 1px solid var(--rule);
+  }
+  .stack-item .layer {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--ink-dim);
+    margin-bottom: 4px;
+  }
+  .stack-item .tech {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── Metric strip ───────────────────────────────────────────── */
+  .metric-strip {
+    display: flex;
+    gap: 16px;
+  }
+  .metric-card {
+    flex: 1;
+    background: var(--paper);
+    border-radius: 4px;
+    padding: 14px 18px;
+    border: 1px solid var(--rule);
+  }
+  .metric-card .m-label {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--ink-dim);
+    margin-bottom: 6px;
+  }
+  .metric-card .m-value {
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .metric-card .m-note {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: var(--ink-dim);
+    margin-top: 6px;
+  }
+
+  /* ── Lifecycle flow ─────────────────────────────────────────── */
+  .lifecycle {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .lc-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--rule);
+    gap: 12px;
+    font-size: 13px;
+    color: var(--ink-dim);
+  }
+  .lc-row:last-child { border-bottom: none; }
+  .lc-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .lc-row.auto .lc-dot   { background: var(--green); }
+  .lc-row.review .lc-dot { background: #c07a00; }
+  .lc-row.pinned .lc-dot { background: var(--crimson); }
+  .lc-row.suppressed .lc-dot { background: #9ca3af; }
+
+</style>
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 01 TITLE -->
+  <section class="slide title-slide active" data-n="1">
+    <div class="eyebrow">Pro-Bono Proposal · Fulton County Schools</div>
+    <h1>Reading Lift</h1>
+    <p class="subtitle">A personalized book-recommendation pilot for middle school librarians, students, and district leaders — built on data Fulton already has.</p>
+    <div class="meta">
+      <span>Recommendation Engine + LLM Explanations</span>
+      <span>Destiny Library Manager Integration</span>
+      <span>14 – 20 Week Pilot</span>
+    </div>
+    <div style="position:absolute;bottom:28px;right:40px;font-family:var(--font-ui);font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;">Fulton County School System</div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 02 THE GAP -->
+  <section class="slide body-slide" data-n="2">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">Problem Statement</div>
+      <h2>Students read books when librarians recommend them.<br>Today that knowledge doesn't scale.</h2>
+    </div>
+    <div class="slide-body">
+      <div class="col">
+        <h3>What librarians told us</h3>
+        <ul class="bullets">
+          <li>Recommendations rely on personal memory and anecdote</li>
+          <li>District-wide borrowing patterns are invisible to individual librarians</li>
+          <li>Highly effective one-on-one advice doesn't reach the full student body</li>
+        </ul>
+        <hr class="rule" />
+        <h3>What the district can provide</h3>
+        <ul class="bullets">
+          <li>Checkout history from Destiny Library Manager</li>
+          <li>Full electronic catalog data</li>
+        </ul>
+        <hr class="rule" />
+        <h3>Why middle school?</h3>
+        <ul class="bullets">
+          <li>Enough borrowing history to support personalization</li>
+          <li>Librarians still strongly influence reading choices</li>
+          <li>Reading identity is still forming — recommendations change behavior</li>
+          <li>Pilot is narrow enough to measure within one semester</li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="callout">
+          <strong>The gap is not data.</strong> Fulton already captures every checkout event. The gap is a system that turns that borrowing history into personalized, librarian-approved recommendations at scale.
+        </div>
+        <hr class="rule" />
+        <h3>District scale</h3>
+        <ul class="bullets">
+          <li><strong>86,031 students</strong> across 102 schools and administrative buildings</li>
+          <li><strong>19 middle schools</strong> — the entire pilot target population in one district</li>
+          <li>4th largest school system in Georgia; 10,900+ employees</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 03 SOLUTION -->
+  <section class="slide body-slide" data-n="3">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">Proposed Solution</div>
+      <h2>A hybrid recommendation platform in four layers</h2>
+    </div>
+    <div class="slide-body">
+      <div class="col col-2">
+        <table>
+          <thead>
+            <tr><th>Layer</th><th>What it does</th><th>Why it's needed</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1 · Collaborative Filtering</strong></td>
+              <td>Finds books borrowed by students with similar reading histories</td>
+              <td>Primary behavioral signal — proven at scale</td>
+            </tr>
+            <tr>
+              <td><strong>2 · Content Similarity</strong></td>
+              <td>Matches on genre, themes, series, and difficulty</td>
+              <td>Covers new titles and students with sparse history</td>
+            </tr>
+            <tr>
+              <td><strong>3 · Policy Guardrails</strong></td>
+              <td>Enforces grade-band and district suitability rules</td>
+              <td>Non-negotiable for district approval</td>
+            </tr>
+            <tr>
+              <td><strong>4 · LLM Explanations</strong></td>
+              <td>Generates plain-English rationale per recommendation</td>
+              <td>Builds trust with students and librarians</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout" style="margin-top:8px;">
+          This is an <strong>augmentation to Destiny, not a replacement.</strong> Destiny remains the system of record for catalog and checkout. This system adds a recommendation layer on top of existing exports.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 04 ARCHITECTURE -->
+  <section class="slide body-slide" data-n="4">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">System Architecture</div>
+      <h2>Nightly batch — no real-time inference required</h2>
+    </div>
+    <div class="slide-body" style="flex-direction:column; gap:20px;">
+      <div class="arch-flow">
+        <div class="arch-box">Destiny<br>Catalog Export</div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-box highlight">Ingestion &amp;<br>Normalization</div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-box">Feature<br>Preparation</div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-box highlight">Hybrid<br>Ranker</div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-box">LLM<br>Explanation</div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-box highlight">Librarian<br>Review Queue</div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-box">Student<br>Display</div>
+      </div>
+      <div class="arch-flow" style="margin-left:220px;">
+        <div class="arch-box">Destiny<br>Checkout History</div>
+        <div class="arch-arrow" style="transform:rotate(-45deg) translateY(-14px);">↗</div>
+      </div>
+      <div style="display:flex; gap:16px; margin-top:4px;">
+        <div class="lifecycle" style="flex:1;">
+          <div class="lc-row auto"><div class="lc-dot"></div><strong style="color:var(--green)">Auto-published</strong> — high-confidence, policy-clear items reach students nightly</div>
+          <div class="lc-row review"><div class="lc-dot"></div><strong style="color:#c07a00">Librarian review</strong> — low-confidence or first-time recommendations held for human check</div>
+          <div class="lc-row pinned"><div class="lc-dot"></div><strong style="color:var(--crimson)">Pinned</strong> — librarian promotes a title to top of student list</div>
+          <div class="lc-row suppressed"><div class="lc-dot"></div><strong style="color:#6b7280">Suppressed</strong> — librarian removes; original recommendation logged for audit</div>
+        </div>
+        <div class="col" style="flex:0.8;">
+          <h3>Why nightly batch?</h3>
+          <ul class="bullets">
+            <li>Inference costs stay predictable</li>
+            <li>No real-time latency requirements</li>
+            <li>Librarians can review before students see anything</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 05 WHY NOT ALTERNATIVES -->
+  <section class="slide body-slide" data-n="5">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">Alternatives Considered</div>
+      <h2>Three paths evaluated — hybrid wins on every axis</h2>
+    </div>
+    <div class="slide-body">
+      <div class="col col-2">
+        <table>
+          <thead>
+            <tr><th>Option</th><th>What it is</th><th>Why rejected</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="pill pill-red">Rejected</span><br><strong>Pure LLM</strong></td>
+              <td>Ask the LLM to rank books from a student's history</td>
+              <td>Context window can't hold the district catalog. LLM recommends titles Destiny doesn't hold. No knowledge of local inventory.</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-amber">Rejected</span><br><strong>Pure Collab Filtering</strong></td>
+              <td>Rank by co-borrow patterns only</td>
+              <td>Fails for new students (&lt;5 checkouts) and new acquisitions with no history. A structural gap, not a tail case.</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-amber">Rejected as primary</span><br><strong>Librarian Rule Engine</strong></td>
+              <td>Staff configure genre → series rules</td>
+              <td>Doesn't scale to 19 schools. Recreates the anecdotal problem we're solving. Rules are still used as guardrails on top of ranked results.</td>
+            </tr>
+            <tr>
+              <td><span class="pill pill-green">Selected</span><br><strong>Hybrid + LLM Explanations</strong></td>
+              <td>CF + content sim + guardrails + LLM rationale</td>
+              <td>Behavioral relevance, cold-start coverage, policy compliance, and human-readable explanations in one design.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 06 LLM ROLE -->
+  <section class="slide body-slide" data-n="6">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">LLM Design Decision</div>
+      <h2>The LLM explains. It does not rank.</h2>
+    </div>
+    <div class="slide-body">
+      <div class="col">
+        <h3>LLM scope</h3>
+        <ul class="bullets">
+          <li>Receives only book metadata — title, author, genre, catalog description</li>
+          <li>No student identifiers, no borrowing history in the prompt</li>
+          <li>Produces a one-sentence plain-English recommendation reason</li>
+          <li>Fully local fallback when no API key is set</li>
+        </ul>
+        <hr class="rule" />
+        <div class="callout">
+          <strong>Example output:</strong><br>
+          <em>"Because you checked out The Giver and other students who liked thoughtful dystopian stories also borrowed Scythe, you may enjoy this next."</em>
+        </div>
+      </div>
+      <div class="col">
+        <h3>Why this boundary matters</h3>
+        <ul class="bullets">
+          <li>Ranking over large bounded inventories is a solved problem — collaborative filtering, not LLMs</li>
+          <li>Student data never leaves district infrastructure</li>
+          <li>Explanation quality can be verified and audited independently of ranking</li>
+          <li>LLM cost is bounded: batch over top-10 candidates per student nightly</li>
+        </ul>
+        <hr class="rule" />
+        <h3>Privacy boundary</h3>
+        <ul class="bullets">
+          <li>LLM prompt contains zero student identifiers</li>
+          <li>All student data stays within district-controlled infrastructure</li>
+          <li>API calls contain only catalog metadata</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 07 USER EXPERIENCES -->
+  <section class="slide body-slide" data-n="7">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">Three Role-Scoped Surfaces</div>
+      <h2>Each user sees only what is relevant to their job</h2>
+    </div>
+    <div class="slide-body">
+      <div class="col">
+        <h3>Student</h3>
+        <ul class="bullets">
+          <li>ClassLink tile → recommendation page</li>
+          <li>Top recommended book with cover art and one-sentence reason</li>
+          <li>Secondary list of 4 more titles beneath</li>
+          <li>Save / interested action + availability badge</li>
+          <li>Copy sounds like a trusted librarian, not a product</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Librarian</h3>
+        <ul class="bullets">
+          <li>Review workspace: student selector, queue, detail panel</li>
+          <li>See why each title was suggested (provenance + confidence)</li>
+          <li>Approve · Replace · Pin · Suppress actions</li>
+          <li>Audit trail of all changes with timestamp</li>
+          <li>Status labels: <em>Needs review, Pinned, Auto-published</em></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>District Leader</h3>
+        <ul class="bullets">
+          <li>Pilot adoption summary</li>
+          <li>Exposure and approval metrics</li>
+          <li>Checkout lift trends by school and grade</li>
+          <li>Data freshness timestamps on every metric</li>
+          <li>Separates directional signals from decision-grade findings</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 08 TRUST + EMOTIONAL ARC -->
+  <section class="slide body-slide" data-n="8">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">Adoption Design</div>
+      <h2>Trust is the product. Checkout lift is the proof.</h2>
+    </div>
+    <div class="slide-body">
+      <div class="col col-2">
+        <table>
+          <thead>
+            <tr><th>Who</th><th>Needs to feel</th><th>How the system delivers it</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Student</strong></td>
+              <td>Seen and understood, not profiled</td>
+              <td>Explanations describe reading-pattern fit in plain language without implying surveillance</td>
+            </tr>
+            <tr>
+              <td><strong>Student</strong></td>
+              <td>Action is easy in a busy school day</td>
+              <td>Single page, cover art anchor, one visible action, availability shown inline</td>
+            </tr>
+            <tr>
+              <td><strong>Librarian</strong></td>
+              <td>In control, not replaced</td>
+              <td>Every recommendation shows its provenance; approve/replace/pin/suppress are one click</td>
+            </tr>
+            <tr>
+              <td><strong>Librarian</strong></td>
+              <td>Trusted as the human authority</td>
+              <td>Librarian overrides are visible to students and logged prominently in the audit trail</td>
+            </tr>
+            <tr>
+              <td><strong>District</strong></td>
+              <td>Cautiously optimistic, evidence-seeking</td>
+              <td>Dashboard separates recommendation generation from exposure from checkout behavior</td>
+            </tr>
+            <tr>
+              <td><strong>District</strong></td>
+              <td>Confident the data is credible</td>
+              <td>Freshness timestamps on every metric; incomplete schools flagged explicitly</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 09 PILOT METRICS -->
+  <section class="slide body-slide" data-n="9">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">Measuring Success</div>
+      <h2>One primary metric. Four supporting signals.</h2>
+    </div>
+    <div class="slide-body" style="flex-direction:column; gap:20px;">
+      <div class="metric-strip">
+        <div class="metric-card">
+          <div class="m-label">Primary metric</div>
+          <div class="m-value">+10%</div>
+          <div class="m-note">Target checkout lift, sustained ≥ 6 weeks<br>vs same calendar window prior year</div>
+        </div>
+        <div class="metric-card">
+          <div class="m-label">Librarian trust</div>
+          <div class="m-value">≥ 50%</div>
+          <div class="m-note">Approval rate at week 6 midpoint. Below this: pause and re-examine quality.</div>
+        </div>
+        <div class="metric-card">
+          <div class="m-label">Coverage</div>
+          <div class="m-value">Exposure %</div>
+          <div class="m-note">% of students shown ≥1 recommendation. Generation ≠ exposure.</div>
+        </div>
+        <div class="metric-card">
+          <div class="m-label">Engagement</div>
+          <div class="m-value">Save / click</div>
+          <div class="m-note">Student save or click rate in the recommendation UI</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:32px;">
+        <div class="col">
+          <h3>Evaluation structure</h3>
+          <ul class="bullets">
+            <li>Baseline: same semester, prior year, same schools</li>
+            <li>Comparison group: non-pilot middle schools with similar checkout rates</li>
+            <li>Staggered rollout in two waves within pilot schools</li>
+            <li>Midpoint evaluation at week 6</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Threats to validity — controlled</h3>
+          <ul class="bullets">
+            <li>Seasonality → same calendar window prior year</li>
+            <li>Librarian effort confound → log AI-driven vs direct suggestions separately</li>
+            <li>Selection bias → choose typical checkout-rate schools, not top performers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10 DATA GOVERNANCE -->
+  <section class="slide body-slide" data-n="10">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">Privacy &amp; Data Governance</div>
+      <h2>Five controls. Student data never leaves district infrastructure.</h2>
+    </div>
+    <div class="slide-body">
+      <div class="col col-2">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Control</th><th>What it means in practice</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1</strong></td>
+              <td><strong>De-identified student IDs</strong></td>
+              <td>Recommendation pipeline uses randomized surrogate keys. Names resolved only at render time, scoped to librarian's school.</td>
+            </tr>
+            <tr>
+              <td><strong>2</strong></td>
+              <td><strong>LLM prompt boundary</strong></td>
+              <td>Prompts contain only book metadata — title, author, genre, description. No student identifiers or borrowing history.</td>
+            </tr>
+            <tr>
+              <td><strong>3</strong></td>
+              <td><strong>Data locality</strong></td>
+              <td>All computation within district-controlled infrastructure. External LLM API calls contain zero student data.</td>
+            </tr>
+            <tr>
+              <td><strong>4</strong></td>
+              <td><strong>Role-scoped access</strong></td>
+              <td>Librarians see only their school. District dashboard shows aggregate metrics — no student-level drill-down.</td>
+            </tr>
+            <tr>
+              <td><strong>5</strong></td>
+              <td><strong>Minimal auditable retention</strong></td>
+              <td>Raw exports deleted after normalization. Interaction table retained for pilot semester + one comparison period.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout" style="margin-top:10px;">
+          <strong>Authentication specifics:</strong> Students authenticate via ClassLink SSO at <code>launchpad.classlink.com/fcs</code> using <code>ID#@fcstu.org</code> addresses. Microsoft Entra ID is the required identity provider — the district's M365 enterprise agreement is FERPA compliant. No local passwords. No new identity silo.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11 TECH STACK -->
+  <section class="slide body-slide" data-n="11">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">Tech Stack</div>
+      <h2>POC is running today. Production path is clear.</h2>
+    </div>
+    <div class="slide-body">
+      <div class="col">
+        <h3>Proof of concept (running)</h3>
+        <div class="stack-grid">
+          <div class="stack-item"><div class="layer">API</div><div class="tech">FastAPI</div></div>
+          <div class="stack-item"><div class="layer">Data processing</div><div class="tech">pandas</div></div>
+          <div class="stack-item"><div class="layer">Recommender</div><div class="tech">scikit-learn + custom ranker</div></div>
+          <div class="stack-item"><div class="layer">Embeddings</div><div class="tech">sentence-transformers</div></div>
+          <div class="stack-item"><div class="layer">Vector index</div><div class="tech">FAISS / Chroma</div></div>
+          <div class="stack-item"><div class="layer">Persistence</div><div class="tech">SQLite / DuckDB</div></div>
+          <div class="stack-item"><div class="layer">UI</div><div class="tech">Streamlit</div></div>
+          <div class="stack-item"><div class="layer">LLM SDK</div><div class="tech">OpenAI (optional)</div></div>
+        </div>
+      </div>
+      <div class="col">
+        <h3>Production path</h3>
+        <ul class="bullets">
+          <li>SQLite → <strong>managed PostgreSQL + pgvector</strong></li>
+          <li>Streamlit → <strong>React application with district design tokens</strong></li>
+          <li>Cron job → <strong>scheduled ingestion pipeline from district exports or approved APIs</strong></li>
+          <li>Local dev auth → <strong>Entra ID OAuth 2.0 / OIDC + ClassLink SSO</strong></li>
+          <li>Print statements → <strong>structured observability, audit logging, approval workflows</strong></li>
+        </ul>
+        <hr class="rule" />
+        <div class="callout">
+          Core design is identical at pilot and enterprise scale. No architectural rewrite needed to productionize.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12 ROLLOUT -->
+  <section class="slide body-slide" data-n="12">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">Rollout Plan</div>
+      <h2>14 – 20 weeks from kickoff to expansion decision</h2>
+    </div>
+    <div class="slide-body">
+      <div class="col col-2">
+        <div class="phases">
+          <div class="phase-row">
+            <div class="phase-label">Phase 0 — Discovery<span>2 weeks</span></div>
+            <div class="phase-content">Confirm Destiny export fields and privacy constraints. Choose 3–5 pilot middle schools. Define checkout-rate baseline. Validate ClassLink launch flow and Destiny deep-link behavior.</div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-label">Phase 1 — Pilot Build<span>4 – 6 weeks</span></div>
+            <div class="phase-content">Build ingestion pipeline. Implement hybrid engine. Stand up student, librarian, and district surfaces. Validate recommendation quality with librarians. Instrument exposure logging and checkout attribution from day one.</div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-label">Phase 2 — Pilot Operation<span>8 – 12 weeks</span></div>
+            <div class="phase-content">Run recommendations during the semester. Monitor checkout lift weekly. Tune thresholds and explanations. Midpoint evaluation at week 6 — pause if approval rate &lt; 50% or lift &lt; 5%. Collect qualitative feedback.</div>
+          </div>
+          <div class="phase-row">
+            <div class="phase-label">Phase 3 — Expansion Decision<span>2 weeks</span></div>
+            <div class="phase-content">Review pilot performance against primary and secondary metrics. Decide whether to expand to all 19 middle schools. Confirm production hardening priorities.</div>
+          </div>
+        </div>
+        <div class="callout" style="margin-top:12px;">
+          Rollout is staggered deliberately: two waves within pilot schools to create a natural comparison group and catch quality issues before full exposure.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13 RISKS -->
+  <section class="slide body-slide" data-n="13">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">Risks &amp; Mitigations</div>
+      <h2>Four identified risks. Each has a concrete mitigation in the design.</h2>
+    </div>
+    <div class="slide-body">
+      <div class="col col-2">
+        <table>
+          <thead>
+            <tr><th>Risk</th><th>Severity</th><th>Mitigation built into the design</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Poor recommendation quality with sparse data</strong></td>
+              <td><span class="risk-md">Medium</span></td>
+              <td>Content similarity + popularity priors fill cold-start gaps. Middle school chosen specifically for better interaction density than elementary.</td>
+            </tr>
+            <tr>
+              <td><strong>Low staff trust in AI recommendations</strong></td>
+              <td><span class="risk-hi">High</span></td>
+              <td>Librarians stay in the review loop. Provenance and explanation visible for every title. System positioned as assistive — human override always wins and is logged.</td>
+            </tr>
+            <tr>
+              <td><strong>Privacy and governance concerns</strong></td>
+              <td><span class="risk-hi">High</span></td>
+              <td>Five-control privacy design (slide 10). LLM sees zero student data. Role-scoped access. No local passwords or identity silo.</td>
+            </tr>
+            <tr>
+              <td><strong>District concern about application sprawl</strong></td>
+              <td><span class="risk-md">Medium</span></td>
+              <td>Dr. Phillips reduced application inventory from ~7,850 systems to under 500 at a prior district. This system augments Destiny — it doesn't replace it. Fits ClassLink + Entra ID. Zero new identity surface.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14 STRATEGIC FIT -->
+  <section class="slide body-slide" data-n="14">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">Strategic Fit</div>
+      <h2>Built for how Fulton actually operates</h2>
+    </div>
+    <div class="slide-body">
+      <div class="col">
+        <h3>Dr. Joe Phillips — Chief Strategy &amp; Technology Officer</h3>
+        <ul class="bullets">
+          <li>Leads districtwide strategy execution, technology governance, digital transformation, and innovation scaling</li>
+          <li>Reduced application sprawl from <strong>~7,850 systems to under 500</strong> at a prior district — vets every new tool for compliance and strategic fit</li>
+          <li>Creator of PLANT-AI, BOLT, and the Technology Adoption Framework — values structured, evidence-based technology adoption</li>
+          <li>Prior CIO experience: Broward County, Volusia County, Kansas City Public Schools</li>
+          <li>Retired Army officer — appreciates operational rigor and clear accountability</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Why this proposal passes his bar</h3>
+        <ul class="bullets">
+          <li><strong>No new identity silo</strong> — authenticates via Entra ID + ClassLink SSO (<code>launchpad.classlink.com/fcs</code>), exactly the stack FCS already operates</li>
+          <li><strong>No new productivity platform</strong> — augments Destiny, uses existing M365 FERPA-compliant infrastructure</li>
+          <li><strong>Measurable before it scales</strong> — pilot with 3–5 schools, expansion decision gated on checkout lift data</li>
+          <li><strong>Fits the Technology Adoption Framework</strong> — phased rollout, midpoint evaluation gate, explicit success criteria</li>
+          <li><strong>District owns the data and the code</strong> — no vendor lock-in, no external student data exposure</li>
+        </ul>
+        <div class="callout" style="margin-top:8px;">
+          The pitch in one line: this is the kind of targeted, governable, measurable AI intervention Dr. Phillips' TAF was designed to approve.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15 SUMMARY -->
+  <section class="slide body-slide" data-n="15">
+    <div class="stripe"></div>
+    <div class="slide-header">
+      <div class="eyebrow">Summary</div>
+      <h2>Reading Lift — what we're proposing</h2>
+    </div>
+    <div class="slide-body">
+      <div class="col">
+        <h3>The opportunity</h3>
+        <ul class="bullets">
+          <li>Students respond to librarian recommendations — but that expertise doesn't scale across 19 middle schools</li>
+          <li>Destiny already captures every checkout event; the data asset exists today</li>
+          <li>A targeted AI layer closes the gap without replacing Destiny or the librarian</li>
+        </ul>
+        <hr class="rule" />
+        <h3>The system</h3>
+        <ul class="bullets">
+          <li>Hybrid engine: collaborative filtering + content similarity + policy guardrails + LLM explanations</li>
+          <li>Nightly batch — no real-time infrastructure, predictable cost</li>
+          <li>Three role-scoped surfaces: student recommendations, librarian review workspace, district dashboard</li>
+          <li>Proof of concept is running locally against synthetic data today</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Why it will land</h3>
+        <ul class="bullets">
+          <li>Uses data Fulton already has — no new data collection</li>
+          <li>Augments Destiny; does not replace it</li>
+          <li>Librarians stay in control — every recommendation is reviewable, overridable, auditable</li>
+          <li>Fits existing SSO: ClassLink launch, Entra ID identity, no new passwords</li>
+          <li>Avoids application sprawl by design</li>
+        </ul>
+        <hr class="rule" />
+        <h3>The ask</h3>
+        <ul class="bullets">
+          <li>Approve a 3–5 school middle-school pilot (out of <strong>19 middle schools</strong> district-wide)</li>
+          <li>14–20 weeks from kickoff to expansion decision</li>
+          <li>Primary success metric: <strong>+10% checkout lift</strong> sustained over ≥ 6 weeks</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16 Q&A -->
+  <section class="slide title-slide" data-n="16" style="background:var(--crimson); justify-content:center; align-items:flex-start;">
+    <div class="eyebrow" style="color:rgba(255,255,255,.55);">Fulton County Schools · Reading Lift Pilot</div>
+    <h1 style="font-size:72px; margin-top:16px; color:#fff;">Q&amp;A</h1>
+    <p class="subtitle" style="margin-top:20px; font-size:20px; color:rgba(255,255,255,.75);">Questions, challenges, and discussion welcome.</p>
+  </section>
+
+</div><!-- /deck -->
+
+<!-- ── Navigation controls ──────────────────────────────────────── -->
+<div id="nav">
+  <button id="prev">← Prev</button>
+  <span id="slide-counter">1 / 15</span>
+  <button id="next">Next →</button>
+</div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const counter = document.getElementById('slide-counter');
+  let current = 0;
+
+  function show(n) {
+    slides[current].classList.remove('active');
+    current = Math.max(0, Math.min(slides.length - 1, n));
+    slides[current].classList.add('active');
+    slides[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    counter.textContent = `${current + 1} / ${slides.length}`;
+  }
+
+  document.getElementById('prev').addEventListener('click', () => show(current - 1));
+  document.getElementById('next').addEventListener('click', () => show(current + 1));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') show(current + 1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   show(current - 1);
+  });
+</script>
+</body>
+</html>
