@@ -94,6 +94,69 @@ This matters because recommendation generation is not the same thing as recommen
 
 The demo should start with the student experience because that is the emotional hook. It should then move into librarian oversight and district measurement because that is what makes the system approvable.
 
+### Information Architecture and Navigation
+
+The proposal should define the top-level information hierarchy explicitly so the proof of concept and pilot do not collapse into three disconnected screens.
+
+Primary surface order:
+
+1. Student recommendation page, because the system only matters if students discover and act on recommendations
+2. Librarian review workspace, because staff trust and local judgment determine whether the recommendations remain credible
+3. District leadership dashboard, because the district needs evidence that the intervention changes behavior at school and grade level
+
+Top-level navigation model:
+
+- Students land directly on a single recommendation page, not a multi-tab application
+- Librarians land on a review workspace with student lookup, queue management, and recommendation detail
+- District leaders land on a metrics dashboard with pilot status, exposure, approval, and checkout lift views
+- Navigation should be role-scoped so each user sees only the surface relevant to their job
+
+Screen hierarchy by role:
+
+```text
+STUDENT
+ClassLink entry
+      -> Recommendation page
+                  -> Top recommendation hero
+                  -> Remaining recommendation list
+                  -> Why this was recommended
+                  -> Save / interested action
+                  -> Availability / where to get it
+
+LIBRARIAN
+District SSO entry
+      -> Review workspace home
+                  -> Search by student / homeroom
+                  -> Review queue
+                  -> Recommendation detail panel
+                  -> Approve / replace / pin / suppress actions
+                  -> Audit trail of changes
+
+DISTRICT LEADER
+District SSO entry
+      -> Pilot dashboard home
+                  -> Pilot adoption summary
+                  -> Exposure and approval metrics
+                  -> Checkout lift trends
+                  -> School / grade filters
+                  -> Intervention quality signals
+```
+
+Constraint worship, if each surface can only show three things above the fold:
+
+- Student page: next best book, concise explanation, immediate action
+- Librarian workspace: who needs review, why this title was suggested, what action to take
+- District dashboard: is the pilot being used, is it trusted, is checkout lift moving
+
+Navigation flow across the full system:
+
+```text
+Nightly batch generates recommendations
+      -> Students see approved or auto-published titles
+      -> Librarians review flagged or low-confidence titles
+      -> District leaders monitor exposure, approvals, overrides, and checkout lift
+```
+
 ### 1. Student Recommendation Experience
 
 A student opens a recommendation page and sees:
@@ -109,12 +172,12 @@ Example:
 
 ### Student Access and Distribution
 
-The student experience should not rely on students discovering a new standalone application on their own. For the pilot, recommendation delivery should use one of two district-aligned entry points:
+The student experience should not rely on students discovering a new standalone application on their own. For the pilot, recommendation delivery should use ClassLink as the primary entry point.
 
-- A ClassLink tile that opens the recommendation page directly
-- A Destiny-linked recommendation entry point surfaced from the existing library workflow where feasible
+- A ClassLink tile opens the recommendation page directly for students
+- Where feasible, recommendation cards deep-link back to Destiny for title availability, hold, or library workflow context
 
-For the pilot, the safest default is a ClassLink launch because it fits existing district access patterns and avoids creating a separate identity silo. Librarians should also be able to distribute direct links to a homeroom or reading group for targeted adoption during the first weeks of the pilot.
+For the pilot, ClassLink is the explicit launch surface because it fits existing district access patterns, reduces adoption friction, and avoids creating a separate identity silo. Destiny remains the system of record for catalog and checkout context, not the primary student front door. Librarians should also be able to distribute direct links to a homeroom or reading group for targeted adoption during the first weeks of the pilot.
 
 ### 2. Librarian Review Workspace
 
@@ -135,6 +198,142 @@ District leaders can see:
 - Librarian approval rates
 - Checkout lift by school, grade, and time period
 - Early signals of which recommendation strategies are working
+
+### Visual Direction and Anti-Generic UI Guidance
+
+The plan should be specific enough that the proof of concept does not default to a generic AI-generated SaaS layout.
+
+Design classifier:
+
+- Student page: lightweight app surface with editorial warmth, not a marketing page and not a data dashboard
+- Librarian workspace: functional app UI with dense but readable review controls
+- District dashboard: operational analytics UI with restrained emphasis, not a tile wall
+
+Specific design direction by surface:
+
+- Student page should feel like a school library recommendation shelf translated into digital form: one primary recommended title at the top, cover art as the visual anchor, one-sentence explanation, and a short secondary list beneath it
+- Librarian workspace should prioritize review efficiency over decoration: left-side student or homeroom selection, central recommendation queue, right-side explanation and action panel
+- District dashboard should prioritize trend interpretation over card count: one summary strip for the key metrics, one main trend chart, one school comparison table, and one section for recommendation quality signals
+
+Patterns to avoid:
+
+- Do not open with a three-column feature grid or a uniform card mosaic
+- Do not center all text and controls on the student page; the reading task should feel grounded, not promotional
+- Do not rely on decorative gradients, floating blobs, or generic AI-style purple accents
+- Do not make the district dashboard a wall of equally weighted KPI cards; one or two metrics should dominate based on decision value
+
+Specific interaction and copy guidance:
+
+- Student copy should sound like a trusted library recommendation, for example "Because you liked thoughtful dystopian stories..." rather than product-marketing copy
+- Librarian copy should use utility language such as "Needs review," "Pinned," and "Auto-published" instead of vague status terms
+- District copy should state what leaders can decide from the metric, not just the metric label
+
+Visual anchor per surface:
+
+- Student page: book cover plus one primary explanation
+- Librarian workspace: recommendation provenance and action state
+- District dashboard: checkout lift trend with approval and exposure context
+
+### Pilot UI Design Language
+
+No project-specific design system exists yet for this proposal, so the plan should establish a lightweight UI vocabulary for the proof of concept and pilot.
+
+Design tokens and system rules:
+
+- Typography should use one readable sans-serif for interface copy and one serif or bookish accent face sparingly for recommendation headers so the student page feels connected to reading rather than generic enterprise software
+- Color should stay restrained: warm neutrals for student surfaces, neutral utility tones for librarian tools, and one accent color reserved for actions and highlights
+- Status colors should be semantic and consistent across surfaces: approved, pinned, suppressed, warning, and error should not be reinterpreted screen by screen
+- Spacing should use a simple 8px scale so cards, tables, lists, and action groups feel related
+- Touch targets should meet 44px minimum size on student and librarian actions
+
+Component vocabulary:
+
+- Student page: recommendation hero, secondary recommendation list items, explanation chips, save or interested action, availability badge
+- Librarian workspace: student selector, review queue row, recommendation detail panel, action bar, audit entry
+- District dashboard: metric strip, trend chart, school comparison table, filter bar, freshness badge
+
+Cross-surface consistency rules:
+
+- Recommendation reasons should use the same explanation structure on student and librarian surfaces so staff can verify exactly what students saw
+- Recommendation status labels should mean the same thing on every screen and in every log export
+- Data freshness indicators should appear on both librarian and district surfaces whenever batch data is involved
+
+### Responsive and Accessibility Requirements
+
+The pilot should assume mixed device quality, mixed screen sizes, and users who rely on keyboard navigation, assistive technology, or simplified layouts.
+
+Responsive behavior by surface:
+
+- Student page on desktop: one primary recommendation block above a short vertical list of secondary titles
+- Student page on tablet or mobile: cover art scales down, explanation remains directly under the title, and save or interested plus availability actions remain visible without horizontal scrolling
+- Librarian workspace on desktop: three-region layout with selector, queue, and detail panel
+- Librarian workspace on tablet: queue remains primary, detail panel opens inline or as a slide-over panel to preserve action clarity
+- District dashboard on desktop: summary strip, one dominant chart, then school comparison table
+- District dashboard on tablet: summary strip wraps, chart remains primary, table becomes horizontally scrollable only if columns cannot be collapsed without losing meaning
+
+Accessibility requirements:
+
+- All primary actions must be keyboard reachable in logical order
+- Recommendation cards, queue rows, filters, and dialogs must have visible focus states
+- Color cannot be the only way recommendation status is conveyed; labels and icons must reinforce status meaning
+- Charts in the district dashboard must provide text summaries or accessible tables for screen-reader access
+- Cover images on the student page must include meaningful alt text based on book title and author, not file names
+- Error and empty states must be announced clearly to screen readers
+- Text contrast should meet WCAG AA at minimum across all surfaces
+
+Accessibility matters directly to trust here:
+
+- Students should be able to act on recommendations quickly even on constrained devices
+- Librarians should be able to process review queues efficiently without mouse-only interactions
+- District leaders should be able to interpret pilot results without relying on color-heavy charts alone
+
+### Interaction State Coverage
+
+The pilot should specify the user-visible states up front so the proof of concept demonstrates operational realism rather than only the happy path.
+
+| Feature | Loading | Empty | Error | Success | Partial |
+|---------|---------|-------|-------|---------|---------|
+| Student recommendation page | Student sees a short loading message such as "Finding your next books..." with skeleton rows for the top 5 list | Student sees a warm empty state such as "We do not have personalized picks for you yet" with a prompt to browse popular books for their grade and try again after the next nightly refresh | Student sees "We could not load your recommendations right now" with a retry action and librarian contact path | Student sees top recommendations with explanations, availability, and save or interested actions | Student sees 1 to 2 recommendations if confidence is low, clearly labeled as an early set rather than a full list |
+| Librarian review workspace | Librarian sees queue counts and skeleton rows while student records and recommendation details load | Librarian sees "Nothing needs review right now" with filters and a quick path to search for a student or homeroom | Librarian sees which queue or student lookup failed, not a generic failure banner, with retry and timestamp of the last successful sync | Librarian can approve, replace, pin, or suppress recommendations and sees those actions reflected immediately in the student preview | Librarian sees recommendations even if one explanation or metadata field is missing, with the missing field labeled instead of blocking the whole record |
+| District dashboard | Leader sees summary metric placeholders with a clear "updating from nightly batch" indicator | Leader sees "No pilot metrics available yet" with the reason, for example pilot not started or exposure below threshold | Leader sees which metric feed failed, for example checkout lift unavailable but approval rate current, with data freshness timestamps | Leader sees pilot adoption, exposure, approval, override, and checkout lift trends by school and grade | Leader sees partial metric availability when some schools have synced and others have not, with incomplete schools flagged explicitly |
+
+Empty states are features, not blanks:
+
+- Student empty state should still help the student find a next action, for example browse popular books for the grade band, ask a librarian, or return after tomorrow's refresh
+- Librarian empty state should feel like good operational news, not a dead end
+- District dashboard empty state should explain whether the pilot has not started yet, whether exposure is too low for interpretation, or whether a data feed is delayed
+
+State-specific design constraints:
+
+- The student surface should never expose raw model confidence scores or internal ranking jargon
+- The librarian surface should always show recommendation provenance, confidence band, and the last action taken
+- The district dashboard should always show data freshness timestamps and whether a metric is directional or evaluation-grade
+
+### User Journey and Emotional Arc
+
+The pilot should describe not just what each screen does, but what each user needs to feel at each step if adoption is going to stick.
+
+| Step | User does | User feels | Plan support |
+|------|-----------|------------|--------------|
+| 1 | Student opens the recommendation page from ClassLink or a direct librarian link | Curious, slightly skeptical | The first screen should feel lightweight and immediately useful, with one clear top recommendation and one-sentence reasoning |
+| 2 | Student scans the top recommendations | Seen and understood, not profiled | Explanations should describe reading pattern fit in plain language without implying surveillance or overclaiming certainty |
+| 3 | Student saves, clicks, or checks out a book | Motivated because the recommendation feels actionable | The page should show where the book is available and keep actions simple enough for a quick school-day decision |
+| 4 | Librarian reviews flagged recommendations or checks a student profile | In control, not replaced | The workspace should foreground why the system suggested a title and make approve, replace, pin, or suppress actions fast |
+| 5 | Librarian notices overrides and pinned titles reflected in the student view | Trusted as the human authority | The system should visibly preserve librarian judgment instead of hiding it behind automation |
+| 6 | District leader reviews pilot metrics over time | Cautiously optimistic, evidence-seeking | The dashboard should emphasize adoption, trust, and checkout lift together so the district can judge whether the intervention is real |
+| 7 | District leader decides whether to continue or expand | Confident if evidence is coherent, skeptical if signals conflict | The dashboard should separate directional signals from decision-grade findings and show data freshness clearly |
+
+Time-horizon design requirements:
+
+- First 5 seconds: the student immediately understands "these are books picked for me"
+- First 5 minutes: the librarian understands what changed, why it was suggested, and what action to take
+- Over the semester: district leaders see whether trust and usage are translating into measurable checkout lift
+
+Trust design requirements:
+
+- Student explanations should sound helpful, not algorithmic or invasive
+- Librarian controls should be visible enough that staff never feel bypassed
+- District reporting should distinguish recommendation generation, recommendation exposure, and downstream checkout behavior so the system does not overstate its own value
 
 ## Proposed Architecture
 
@@ -344,6 +543,16 @@ This system is not a third-party application. It is internal IP delivered inside
 
 The proof of concept is intentionally unauthenticated. It runs locally against synthetic data and does not expose a network-accessible service. Auth is out of scope for the POC.
 
+For the pilot, the authentication and launch pattern should be explicit:
+
+1. Student opens the application from a ClassLink tile.
+2. ClassLink launches the application into the district-authenticated environment.
+3. The application relies on Microsoft Entra ID for identity and role claims.
+4. The application renders the student, librarian, or district view based on district-managed role assignment.
+5. When a user needs library-specific context such as title availability, the experience links back to Destiny rather than attempting to replace Destiny's role in the workflow.
+
+This keeps the front door simple: ClassLink is the launch surface, Entra ID is the identity provider, and Destiny remains the library system of record.
+
 For the pilot and beyond, authentication must integrate with what the district already operates:
 
 - Fulton County Schools runs Microsoft 365 district-wide under an enterprise agreement. The pilot application should use OAuth 2.0 / OIDC with Microsoft Entra ID (formerly Azure AD) as the identity provider, restricting login to `@fcstu.org` accounts.
@@ -361,6 +570,16 @@ For production hardening, the specific integration points are:
 - ClassLink SSO integration so the application surfaces natively in the student and staff launchpad
 - No local password storage; all credential management stays with the identity provider
 - API endpoints protected by JWT with district-issued claims
+
+Practical integration boundary for the pilot:
+
+- ClassLink handles discovery and launch, which reduces student adoption friction
+- Entra ID handles authentication and role-bearing identity claims
+- The pilot application handles authorization at the route and data-scope level
+- Destiny supplies catalog and checkout context and remains the destination for library-specific follow-on actions where needed
+- The pilot should not introduce local accounts, local passwords, or a separate profile store for district users
+
+This division of responsibility matters because it makes the proposal easier to approve. It respects the district's existing access model, minimizes new operational surface area, and avoids presenting the system as a stealth replacement for Destiny.
 
 ## Data Governance and Privacy Posture
 
@@ -402,7 +621,7 @@ Recommended ownership model:
 - Confirm privacy constraints and approved identifiers
 - Choose 3 to 5 middle schools for the pilot
 - Define the baseline for books checked out per student
-- Validate the real student access path, ClassLink launch, Destiny link, or both, before UI work begins
+- Validate the ClassLink launch flow and the Destiny deep-link behavior before UI work begins
 - Confirm which metadata fields are consistently populated enough to support content similarity without manual cleanup
 
 ### Phase 1: Pilot Build, 4 to 6 weeks
