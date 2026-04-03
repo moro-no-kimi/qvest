@@ -1,0 +1,201 @@
+student_id,grade,school,reading_level_preference,prefers_series,prefers_fantasy,advanced_reader,reluctant_reader,genre_explorer
+student_0001,6,Pine Valley School,at_grade,True,False,False,False,True
+student_0002,8,Oak Grove Academy,at_grade,True,False,False,False,False
+student_0003,8,Sunset Ridge Middle,below_grade,True,False,False,True,True
+student_0004,7,Sunset Ridge Middle,above_grade,False,False,True,False,True
+student_0005,8,Oak Grove Academy,above_grade,False,False,True,False,False
+student_0006,8,Sunset Ridge Middle,above_grade,False,False,True,False,True
+student_0007,8,Sunset Ridge Middle,at_grade,True,False,False,False,True
+student_0008,8,Riverside Middle School,at_grade,False,True,False,False,False
+student_0009,8,Oak Grove Academy,above_grade,True,False,True,False,True
+student_0010,8,Riverside Middle School,at_grade,True,True,False,False,False
+student_0011,7,Riverside Middle School,at_grade,True,False,False,False,True
+student_0012,8,Sunset Ridge Middle,at_grade,True,False,False,False,False
+student_0013,6,Riverside Middle School,at_grade,True,False,False,False,True
+student_0014,6,Sunset Ridge Middle,below_grade,True,False,False,True,False
+student_0015,8,Brookfield Middle,at_grade,False,True,False,False,True
+student_0016,7,Sunset Ridge Middle,at_grade,False,True,False,False,False
+student_0017,6,Oak Grove Academy,below_grade,True,False,False,True,True
+student_0018,8,Brookfield Middle,above_grade,True,True,True,False,True
+student_0019,8,Brookfield Middle,at_grade,True,False,False,False,False
+student_0020,7,Riverside Middle School,above_grade,False,False,True,False,True
+student_0021,6,Riverside Middle School,at_grade,False,False,False,False,False
+student_0022,7,Oak Grove Academy,at_grade,True,False,False,False,True
+student_0023,6,Oak Grove Academy,at_grade,False,False,False,False,True
+student_0024,8,Sunset Ridge Middle,at_grade,False,False,False,False,False
+student_0025,8,Oak Grove Academy,below_grade,True,False,False,True,True
+student_0026,6,Riverside Middle School,at_grade,False,False,False,False,True
+student_0027,8,Brookfield Middle,above_grade,True,True,True,True,False
+student_0028,8,Brookfield Middle,at_grade,False,False,False,False,True
+student_0029,6,Pine Valley School,at_grade,True,False,False,False,True
+student_0030,7,Pine Valley School,above_grade,True,True,True,False,False
+student_0031,7,Pine Valley School,above_grade,True,False,True,False,True
+student_0032,7,Sunset Ridge Middle,at_grade,True,True,False,False,True
+student_0033,6,Sunset Ridge Middle,at_grade,False,True,False,False,False
+student_0034,8,Sunset Ridge Middle,at_grade,True,False,False,False,True
+student_0035,6,Oak Grove Academy,at_grade,True,True,False,False,False
+student_0036,8,Riverside Middle School,at_grade,True,False,False,False,True
+student_0037,6,Pine Valley School,at_grade,True,False,False,False,True
+student_0038,8,Pine Valley School,above_grade,True,False,True,False,False
+student_0039,8,Oak Grove Academy,above_grade,True,True,True,False,False
+student_0040,6,Pine Valley School,at_grade,True,True,False,False,True
+student_0041,8,Riverside Middle School,below_grade,True,False,False,True,False
+student_0042,8,Sunset Ridge Middle,below_grade,False,True,False,True,True
+student_0043,7,Sunset Ridge Middle,above_grade,False,False,True,True,False
+student_0044,6,Pine Valley School,at_grade,True,False,False,False,True
+student_0045,6,Oak Grove Academy,above_grade,True,False,True,False,True
+student_0046,6,Sunset Ridge Middle,at_grade,False,True,False,False,True
+student_0047,6,Sunset Ridge Middle,at_grade,False,True,False,False,False
+student_0048,6,Riverside Middle School,below_grade,True,True,False,True,True
+student_0049,8,Sunset Ridge Middle,above_grade,True,False,True,False,True
+student_0050,8,Brookfield Middle,at_grade,False,False,False,False,True
+student_0051,7,Sunset Ridge Middle,at_grade,True,True,False,False,False
+student_0052,6,Pine Valley School,below_grade,False,True,False,True,False
+student_0053,7,Sunset Ridge Middle,above_grade,True,True,True,True,False
+student_0054,8,Sunset Ridge Middle,at_grade,False,False,False,False,False
+student_0055,7,Pine Valley School,at_grade,False,True,False,False,True
+student_0056,6,Sunset Ridge Middle,at_grade,True,False,False,False,True
+student_0057,8,Oak Grove Academy,above_grade,False,False,True,True,False
+student_0058,6,Oak Grove Academy,at_grade,False,False,False,False,False
+student_0059,8,Oak Grove Academy,above_grade,True,True,True,False,True
+student_0060,8,Sunset Ridge Middle,at_grade,True,True,False,False,False
+student_0061,8,Riverside Middle School,at_grade,False,True,False,False,True
+student_0062,7,Riverside Middle School,at_grade,False,False,False,False,False
+student_0063,7,Pine Valley School,at_grade,False,False,False,False,True
+student_0064,8,Brookfield Middle,at_grade,True,True,False,False,False
+student_0065,7,Riverside Middle School,above_grade,False,True,True,False,False
+student_0066,6,Sunset Ridge Middle,above_grade,False,True,True,False,True
+student_0067,7,Riverside Middle School,at_grade,True,True,False,False,False
+student_0068,7,Oak Grove Academy,below_grade,True,True,False,True,True
+student_0069,6,Pine Valley School,below_grade,True,False,False,True,True
+student_0070,7,Sunset Ridge Middle,below_grade,True,True,False,True,False
+student_0071,8,Oak Grove Academy,at_grade,True,True,False,False,True
+student_0072,7,Riverside Middle School,above_grade,False,False,True,False,True
+student_0073,8,Brookfield Middle,at_grade,True,False,False,False,True
+student_0074,7,Brookfield Middle,at_grade,True,False,False,False,True
+student_0075,6,Riverside Middle School,above_grade,False,False,True,False,False
+student_0076,7,Oak Grove Academy,below_grade,False,False,False,True,True
+student_0077,7,Sunset Ridge Middle,at_grade,True,True,False,False,True
+student_0078,6,Riverside Middle School,at_grade,True,True,False,False,False
+student_0079,8,Pine Valley School,at_grade,False,True,False,False,False
+student_0080,8,Riverside Middle School,below_grade,False,False,False,True,False
+student_0081,8,Pine Valley School,at_grade,True,True,False,False,True
+student_0082,6,Oak Grove Academy,at_grade,False,False,False,False,False
+student_0083,8,Brookfield Middle,below_grade,False,False,False,True,True
+student_0084,7,Pine Valley School,at_grade,True,True,False,False,True
+student_0085,6,Pine Valley School,at_grade,False,False,False,False,False
+student_0086,8,Pine Valley School,at_grade,True,False,False,False,False
+student_0087,7,Riverside Middle School,at_grade,True,False,False,False,True
+student_0088,7,Sunset Ridge Middle,at_grade,False,True,False,False,False
+student_0089,7,Riverside Middle School,at_grade,True,False,False,False,True
+student_0090,7,Riverside Middle School,at_grade,True,False,False,False,True
+student_0091,8,Riverside Middle School,at_grade,True,False,False,False,False
+student_0092,6,Oak Grove Academy,above_grade,False,False,True,False,True
+student_0093,6,Brookfield Middle,at_grade,True,False,False,False,False
+student_0094,8,Brookfield Middle,at_grade,False,False,False,False,False
+student_0095,7,Riverside Middle School,above_grade,True,False,True,False,False
+student_0096,7,Riverside Middle School,above_grade,False,False,True,False,True
+student_0097,7,Pine Valley School,above_grade,True,False,True,True,True
+student_0098,8,Pine Valley School,at_grade,False,True,False,False,False
+student_0099,6,Oak Grove Academy,above_grade,True,False,True,False,False
+student_0100,6,Riverside Middle School,at_grade,True,False,False,False,False
+student_0101,7,Sunset Ridge Middle,at_grade,True,False,False,False,True
+student_0102,6,Pine Valley School,at_grade,False,False,False,False,False
+student_0103,7,Sunset Ridge Middle,above_grade,True,True,True,False,True
+student_0104,8,Pine Valley School,at_grade,False,True,False,False,False
+student_0105,7,Pine Valley School,at_grade,True,False,False,False,False
+student_0106,8,Riverside Middle School,at_grade,False,False,False,False,False
+student_0107,8,Riverside Middle School,at_grade,True,False,False,False,True
+student_0108,7,Brookfield Middle,at_grade,True,False,False,False,False
+student_0109,7,Riverside Middle School,at_grade,False,False,False,False,True
+student_0110,8,Sunset Ridge Middle,above_grade,True,False,True,True,False
+student_0111,7,Oak Grove Academy,above_grade,False,True,True,False,False
+student_0112,8,Oak Grove Academy,above_grade,False,True,True,False,True
+student_0113,6,Sunset Ridge Middle,above_grade,False,True,True,True,False
+student_0114,6,Pine Valley School,at_grade,False,False,False,False,False
+student_0115,6,Oak Grove Academy,above_grade,True,False,True,False,False
+student_0116,6,Oak Grove Academy,at_grade,True,False,False,False,False
+student_0117,6,Pine Valley School,above_grade,False,True,True,False,True
+student_0118,7,Pine Valley School,at_grade,True,True,False,False,True
+student_0119,8,Brookfield Middle,at_grade,False,False,False,False,True
+student_0120,7,Riverside Middle School,at_grade,True,False,False,False,True
+student_0121,8,Sunset Ridge Middle,at_grade,False,False,False,False,True
+student_0122,6,Riverside Middle School,above_grade,False,True,True,True,True
+student_0123,6,Brookfield Middle,below_grade,True,True,False,True,False
+student_0124,6,Sunset Ridge Middle,above_grade,False,False,True,False,True
+student_0125,8,Sunset Ridge Middle,above_grade,False,True,True,True,True
+student_0126,8,Riverside Middle School,above_grade,False,False,True,False,False
+student_0127,7,Brookfield Middle,at_grade,True,True,False,False,True
+student_0128,6,Brookfield Middle,at_grade,False,True,False,False,False
+student_0129,8,Pine Valley School,above_grade,True,False,True,False,True
+student_0130,8,Riverside Middle School,above_grade,False,False,True,True,False
+student_0131,7,Pine Valley School,below_grade,True,False,False,True,True
+student_0132,7,Brookfield Middle,below_grade,True,True,False,True,False
+student_0133,7,Pine Valley School,at_grade,True,False,False,False,False
+student_0134,6,Pine Valley School,at_grade,False,False,False,False,False
+student_0135,7,Brookfield Middle,at_grade,False,False,False,False,True
+student_0136,8,Brookfield Middle,at_grade,True,False,False,False,True
+student_0137,6,Pine Valley School,below_grade,False,True,False,True,False
+student_0138,7,Riverside Middle School,above_grade,False,False,True,True,True
+student_0139,8,Oak Grove Academy,at_grade,True,True,False,False,False
+student_0140,7,Riverside Middle School,below_grade,True,True,False,True,True
+student_0141,8,Sunset Ridge Middle,below_grade,True,False,False,True,False
+student_0142,6,Riverside Middle School,above_grade,False,False,True,False,False
+student_0143,6,Oak Grove Academy,at_grade,True,False,False,False,True
+student_0144,8,Oak Grove Academy,below_grade,False,True,False,True,False
+student_0145,8,Oak Grove Academy,at_grade,True,True,False,False,False
+student_0146,7,Brookfield Middle,at_grade,True,False,False,False,False
+student_0147,6,Riverside Middle School,above_grade,True,True,True,True,True
+student_0148,8,Brookfield Middle,below_grade,True,False,False,True,True
+student_0149,8,Sunset Ridge Middle,below_grade,True,True,False,True,True
+student_0150,6,Sunset Ridge Middle,at_grade,False,False,False,False,False
+student_0151,6,Oak Grove Academy,at_grade,False,False,False,False,False
+student_0152,6,Sunset Ridge Middle,at_grade,True,False,False,False,False
+student_0153,7,Pine Valley School,above_grade,True,True,True,False,True
+student_0154,7,Sunset Ridge Middle,at_grade,True,False,False,False,True
+student_0155,6,Oak Grove Academy,below_grade,False,False,False,True,False
+student_0156,6,Riverside Middle School,at_grade,False,True,False,False,False
+student_0157,7,Riverside Middle School,below_grade,True,True,False,True,True
+student_0158,8,Riverside Middle School,at_grade,True,True,False,False,True
+student_0159,8,Brookfield Middle,above_grade,True,True,True,False,True
+student_0160,6,Pine Valley School,below_grade,False,True,False,True,True
+student_0161,6,Sunset Ridge Middle,above_grade,True,True,True,False,False
+student_0162,7,Oak Grove Academy,at_grade,True,True,False,False,True
+student_0163,7,Pine Valley School,above_grade,True,False,True,False,True
+student_0164,8,Sunset Ridge Middle,at_grade,False,False,False,False,True
+student_0165,8,Pine Valley School,at_grade,False,True,False,False,True
+student_0166,7,Oak Grove Academy,above_grade,True,False,True,False,False
+student_0167,8,Riverside Middle School,at_grade,True,True,False,False,False
+student_0168,7,Sunset Ridge Middle,below_grade,True,False,False,True,True
+student_0169,6,Sunset Ridge Middle,at_grade,False,False,False,False,True
+student_0170,6,Riverside Middle School,above_grade,True,False,True,False,False
+student_0171,8,Riverside Middle School,above_grade,False,False,True,False,True
+student_0172,7,Pine Valley School,at_grade,False,True,False,False,False
+student_0173,8,Riverside Middle School,at_grade,True,False,False,False,False
+student_0174,6,Riverside Middle School,at_grade,False,True,False,False,False
+student_0175,7,Riverside Middle School,at_grade,True,True,False,False,True
+student_0176,8,Riverside Middle School,above_grade,True,False,True,False,False
+student_0177,8,Pine Valley School,at_grade,False,False,False,False,False
+student_0178,6,Brookfield Middle,at_grade,True,True,False,False,True
+student_0179,7,Pine Valley School,above_grade,True,False,True,False,False
+student_0180,8,Brookfield Middle,at_grade,True,True,False,False,False
+student_0181,6,Oak Grove Academy,above_grade,False,False,True,False,True
+student_0182,6,Riverside Middle School,above_grade,True,True,True,True,True
+student_0183,8,Riverside Middle School,below_grade,True,False,False,True,True
+student_0184,7,Riverside Middle School,at_grade,True,True,False,False,False
+student_0185,8,Brookfield Middle,at_grade,True,True,False,False,False
+student_0186,8,Sunset Ridge Middle,below_grade,False,False,False,True,False
+student_0187,6,Brookfield Middle,above_grade,True,True,True,False,True
+student_0188,7,Pine Valley School,above_grade,False,False,True,False,True
+student_0189,6,Oak Grove Academy,at_grade,True,True,False,False,True
+student_0190,7,Oak Grove Academy,at_grade,True,False,False,False,True
+student_0191,7,Sunset Ridge Middle,above_grade,False,False,True,True,False
+student_0192,6,Pine Valley School,at_grade,False,True,False,False,False
+student_0193,8,Brookfield Middle,at_grade,True,True,False,False,False
+student_0194,6,Sunset Ridge Middle,below_grade,False,False,False,True,True
+student_0195,6,Oak Grove Academy,above_grade,False,True,True,False,True
+student_0196,7,Riverside Middle School,above_grade,True,False,True,False,False
+student_0197,7,Oak Grove Academy,at_grade,True,False,False,False,True
+student_0198,8,Pine Valley School,at_grade,True,True,False,False,False
+student_0199,7,Pine Valley School,at_grade,True,False,False,False,True
+student_0200,7,Brookfield Middle,above_grade,False,False,True,False,True

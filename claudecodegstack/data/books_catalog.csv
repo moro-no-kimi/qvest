@@ -1,0 +1,501 @@
+book_id,title,author,genre,target_grade_min,target_grade_max,reading_level,pages,description,isbn,publication_year,copies_available,series_name,series_position
+book_0001,Hatchet 1,Mark Francis,Memoir,6,7,740,379,An engaging story for middle grade readers.,978-0-88690-268-1,2002,5,,
+book_0002,Walk Two Moons 5,S.E. Hinton,Non-fiction,6,7,647,379,An engaging story for middle grade readers.,978-1-944330-96-5,2013,2,,
+book_0003,Streamlined static task-force,John Green,Historical Fiction,6,8,703,242,A compelling tale set against the backdrop of important historical events.,978-0-14-589130-5,2004,2,,
+book_0004,The Giver 3,Judy Baldwin,Horror,6,8,752,235,An engaging story for middle grade readers.,978-1-251-94997-3,2001,4,,
+book_0005,Where the Red Fern Grows 3,Heidi Martin,Non-fiction,6,8,740,135,An engaging story for middle grade readers.,978-1-188-25252-8,2001,2,,
+book_0006,Future-proofed web-enabled encoding,Pam Muñoz Ryan,Biography,6,7,719,286,The inspiring true story of someone who made a difference in the world.,978-1-142-18359-2,2005,3,,
+book_0007,Sharable dynamic firmware,Nicole Jones,Science Fiction,7,8,936,187,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-19-700505-7,2017,2,,
+book_0008,Percy Jackson 1,R.J. Palacio,Poetry,7,8,1085,261,An engaging story for middle grade readers.,978-1-348-85577-4,2012,3,Wings of Fire,5.0
+book_0009,The Maze Runner 4,Gary Paulsen,Adventure,6,8,808,387,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-0-7213-2237-7,2017,3,The Baby-Sitters Club,12.0
+book_0010,Freak the Mighty 2,Kyle Sandoval,Science Fiction,6,8,998,124,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-366-72229-7,2003,2,,
+book_0011,The Maze Runner 4,Alexa Mcdonald,Romance,7,8,1016,370,A heartwarming story about first love and the complexities of relationships.,978-0-593-80605-0,2008,5,,
+book_0012,Number the Stars 3,Derek Roman,Historical Fiction,6,7,658,157,A compelling tale set against the backdrop of important historical events.,978-0-275-46270-3,2009,4,,
+book_0013,Pre-emptive asynchronous concept,Casey Mann,Humor,7,8,934,154,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-494-31786-0,2020,3,Percy Jackson,12.0
+book_0014,Bridge to Terabithia 5,Nancy Marshall,Memoir,7,8,901,371,An engaging story for middle grade readers.,978-0-342-70342-5,2000,5,,
+book_0015,Up-sized web-enabled time-frame,Jesse Allen,Graphic Novel,6,7,657,257,An engaging story for middle grade readers.,978-0-572-20401-3,2007,1,,
+book_0016,Vision-oriented bifurcated open system,Samantha Pierce,Humor,6,7,848,164,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-1-08-187468-1,2004,4,The Baby-Sitters Club,2.0
+book_0017,Where the Red Fern Grows 4,Laura Bryant,Memoir,6,7,735,376,An engaging story for middle grade readers.,978-1-326-10275-3,2023,2,,
+book_0018,Walk Two Moons 4,Rodman Philbrick,Science Fiction,6,8,891,273,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-879642-74-4,2000,5,,
+book_0019,Wonder 2,R.J. Palacio,Graphic Novel,7,8,912,269,An engaging story for middle grade readers.,978-1-60975-276-7,2002,5,,
+book_0020,Island of the Blue Dolphins 5,Sharon Creech,Poetry,6,7,876,308,An engaging story for middle grade readers.,978-1-59777-069-9,2006,1,Goosebumps,8.0
+book_0021,Wonder 1,Jeff Kinney,Poetry,6,8,910,155,An engaging story for middle grade readers.,978-1-900914-69-7,2007,2,Wings of Fire,6.0
+book_0022,Freak the Mighty 1,Scott O'Dell,Science Fiction,6,8,793,125,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-425-94961-0,2020,5,Dog Man,3.0
+book_0023,Esperanza Rising 4,Veronica Roth,Memoir,6,7,721,130,An engaging story for middle grade readers.,978-0-05-014923-2,2005,4,,
+book_0024,Number the Stars 4,J.K. Rowling,Adventure,6,8,846,129,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-0-653-33497-4,2018,5,Wings of Fire,5.0
+book_0025,Walk Two Moons 2,Lois Lowry,Science Fiction,6,7,899,195,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-8157-3717-9,2002,5,The Maze Runner,1.0
+book_0026,Where the Red Fern Grows 1,Charles Robles,Dystopian,6,7,891,398,A thought-provoking story about survival in a society where freedom is under threat.,978-0-9820113-2-4,2018,5,The Hunger Games,7.0
+book_0027,Percy Jackson 2,Gary Paulsen,Biography,6,8,804,253,The inspiring true story of someone who made a difference in the world.,978-1-82651-900-6,2014,3,,
+book_0028,Island of the Blue Dolphins 1,S.E. Hinton,Humor,6,7,604,235,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-8365-7982-6,2004,3,,
+book_0029,The Fault in Our Stars 5,Travis Clark,Horror,6,7,789,370,An engaging story for middle grade readers.,978-1-4910-0284-1,2000,5,,
+book_0030,The Giver 5,J.K. Rowling,Horror,6,7,735,207,An engaging story for middle grade readers.,978-0-13-766157-2,2022,3,Goosebumps,2.0
+book_0031,Wonder 1,Michelle Noble,Graphic Novel,7,8,1050,241,An engaging story for middle grade readers.,978-1-77073-775-4,2001,1,Goosebumps,5.0
+book_0032,The Fault in Our Stars 5,Shannon Campbell,Humor,6,7,734,104,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-1-256-58691-3,2003,1,,
+book_0033,Diary of a Wimpy Kid 5,Alyssa Wilson,Dystopian,7,8,876,165,A thought-provoking story about survival in a society where freedom is under threat.,978-0-18-942403-3,2001,3,,
+book_0034,Freak the Mighty 1,Scott O'Dell,Memoir,6,7,783,308,An engaging story for middle grade readers.,978-1-83111-755-6,2019,2,,
+book_0035,Implemented well-modulated strategy,Nathan Moore,Memoir,6,7,683,311,An engaging story for middle grade readers.,978-0-10-317401-3,2000,2,,
+book_0036,Team-oriented composite access,Shannon Miles,Poetry,6,8,910,227,An engaging story for middle grade readers.,978-0-688-20489-1,2008,2,,
+book_0037,Synergized background framework,Jeffrey Andrews,Adventure,6,7,795,202,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-308-75747-6,2014,3,,
+book_0038,The Outsiders 4,Louis Sachar,Poetry,6,7,714,242,An engaging story for middle grade readers.,978-1-04-114530-1,2011,5,,
+book_0039,Persistent regional Graphical User Interface,Suzanne Collins,Mystery,7,8,969,397,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-01-291246-1,2008,1,,
+book_0040,Walk Two Moons 1,Wilson Rawls,Adventure,7,8,960,230,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-0-208-81859-1,2001,4,Wings of Fire,6.0
+book_0041,Holes 3,Christopher Scott,Biography,7,8,900,163,The inspiring true story of someone who made a difference in the world.,978-1-147-90763-6,2023,3,Hilo,9.0
+book_0042,Harry Potter 5,John Green,Biography,7,8,1009,294,The inspiring true story of someone who made a difference in the world.,978-0-9690466-1-5,2021,2,,
+book_0043,The Lightning Thief 3,John Green,Poetry,6,8,907,396,An engaging story for middle grade readers.,978-1-67377-935-6,2019,3,,
+book_0044,Bridge to Terabithia 1,Jeff Kinney,Science Fiction,6,8,809,220,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-953016-35-5,2021,3,,
+book_0045,Esperanza Rising 5,Carla Porter,Science Fiction,6,7,623,333,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-640-88975-3,2013,5,The Hunger Games,3.0
+book_0046,The Lightning Thief 1,Lisa Lewis,Adventure,6,8,904,190,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-149-72642-6,2022,5,Magic Tree House,7.0
+book_0047,Intuitive value-added Internet solution,Gary Paulsen,Poetry,7,8,927,337,An engaging story for middle grade readers.,978-0-447-75139-0,2021,5,,
+book_0048,Horizontal 6thgeneration capability,Michelle Beasley,Horror,7,8,962,358,An engaging story for middle grade readers.,978-1-01-885341-3,2013,5,,
+book_0049,Freak the Mighty 3,Zachary Brown,Humor,6,7,843,348,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-1-132-88445-4,2020,2,,
+book_0050,Percy Jackson 5,Gary Paulsen,Adventure,6,8,820,296,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-957258-26-3,2022,2,Harry Potter,12.0
+book_0051,Number the Stars 4,S.E. Hinton,Graphic Novel,6,7,812,315,An engaging story for middle grade readers.,978-1-64284-253-1,2012,5,,
+book_0052,The Lightning Thief 3,Veronica Roth,Graphic Novel,6,7,894,314,An engaging story for middle grade readers.,978-1-962055-07-9,2017,5,,
+book_0053,Divergent 4,Jeff Kinney,Biography,6,7,849,307,The inspiring true story of someone who made a difference in the world.,978-0-257-26176-8,2023,2,,
+book_0054,The Maze Runner 5,Brandon Solomon,Fantasy,6,7,873,142,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-1-72755-739-8,2020,4,,
+book_0055,The Outsiders 4,Veronica Roth,Realistic Fiction,6,7,733,315,A relatable story about growing up and facing real-world challenges.,978-1-03-233280-2,2008,1,Dog Man,3.0
+book_0056,Diary of a Wimpy Kid 2,Nathan Smith,Poetry,7,8,1076,120,An engaging story for middle grade readers.,978-1-179-14705-5,2000,2,,
+book_0057,The Giver 5,Timothy Marsh,Romance,6,7,722,231,A heartwarming story about first love and the complexities of relationships.,978-1-57175-630-5,2011,2,Percy Jackson,10.0
+book_0058,Cloned high-level database,J.K. Rowling,Science Fiction,7,8,858,396,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-944805-62-3,2000,3,,
+book_0059,Triple-buffered 6thgeneration utilization,Wilson Rawls,Non-fiction,6,8,903,224,An engaging story for middle grade readers.,978-0-12-470960-7,2003,3,,
+book_0060,Total human-resource core,Gregory Jensen,Fantasy,7,8,861,277,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-935543-27-8,2017,4,,
+book_0061,The Lightning Thief 4,Jacob Smith,Science Fiction,6,7,859,321,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-72167-362-9,2011,4,,
+book_0062,Universal reciprocal moderator,Heather Jennings,Realistic Fiction,6,8,790,375,A relatable story about growing up and facing real-world challenges.,978-1-79101-834-4,2015,4,,
+book_0063,Freak the Mighty 1,Pam Muñoz Ryan,Adventure,7,8,937,337,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-86226-993-4,2018,5,,
+book_0064,Percy Jackson 2,James Dashner,Poetry,6,8,714,232,An engaging story for middle grade readers.,978-1-71680-294-2,2010,3,,
+book_0065,Walk Two Moons 2,John Green,Romance,7,8,941,384,A heartwarming story about first love and the complexities of relationships.,978-1-290-36632-8,2007,4,,
+book_0066,Optional analyzing protocol,Rodman Philbrick,Dystopian,6,8,929,224,A thought-provoking story about survival in a society where freedom is under threat.,978-0-6484020-9-1,2009,5,,
+book_0067,Number the Stars 3,Pam Muñoz Ryan,Realistic Fiction,7,8,1071,256,A relatable story about growing up and facing real-world challenges.,978-1-147-21699-8,2008,2,,
+book_0068,Visionary high-level time-frame,Robert Randolph,Adventure,6,7,874,210,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-64647-663-3,2023,4,The Hunger Games,6.0
+book_0069,Fully-configurable encompassing conglomeration,Denise Woods,Realistic Fiction,7,8,944,216,A relatable story about growing up and facing real-world challenges.,978-0-05-836032-5,2011,2,The Baby-Sitters Club,9.0
+book_0070,Wonder 1,Jeffrey Gonzalez,Non-fiction,7,8,1073,164,An engaging story for middle grade readers.,978-0-338-41576-9,2020,4,,
+book_0071,Percy Jackson 2,Richard Logan,Realistic Fiction,6,8,940,344,A relatable story about growing up and facing real-world challenges.,978-0-03-101144-2,2003,1,Percy Jackson,10.0
+book_0072,Wonder 2,Wilson Rawls,Realistic Fiction,6,7,895,143,A relatable story about growing up and facing real-world challenges.,978-1-9784-1613-0,2007,1,,
+book_0073,Persevering human-resource monitoring,Pam Muñoz Ryan,Realistic Fiction,6,8,815,319,A relatable story about growing up and facing real-world challenges.,978-0-268-66704-7,2009,5,,
+book_0074,Expanded impactful encoding,S.E. Hinton,Realistic Fiction,7,8,850,141,A relatable story about growing up and facing real-world challenges.,978-1-81106-684-3,2005,2,,
+book_0075,Where the Red Fern Grows 4,Rodman Philbrick,Realistic Fiction,6,7,809,244,A relatable story about growing up and facing real-world challenges.,978-0-271-64348-9,2022,4,Harry Potter,3.0
+book_0076,Number the Stars 2,Joel Wilkinson,Memoir,7,8,901,236,An engaging story for middle grade readers.,978-0-542-88659-1,2004,1,The Hunger Games,5.0
+book_0077,Re-engineered cohesive system engine,Pam Muñoz Ryan,Non-fiction,7,8,1091,255,An engaging story for middle grade readers.,978-0-920656-33-4,2022,4,Hilo,5.0
+book_0078,Holes 5,John Green,Non-fiction,7,8,1076,265,An engaging story for middle grade readers.,978-1-303-44350-3,2019,3,,
+book_0079,Open-source stable pricing structure,John Savage,Biography,7,8,1100,237,The inspiring true story of someone who made a difference in the world.,978-1-5046-4597-3,2018,1,The Hunger Games,11.0
+book_0080,The Fault in Our Stars 3,Wilson Rawls,Dystopian,6,7,840,351,A thought-provoking story about survival in a society where freedom is under threat.,978-1-954565-22-7,2002,4,,
+book_0081,Bridge to Terabithia 3,Sharon Creech,Realistic Fiction,6,8,864,305,A relatable story about growing up and facing real-world challenges.,978-1-126-29556-3,2017,1,,
+book_0082,The Maze Runner 5,Ruben Leblanc,Fantasy,6,8,829,377,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-02-722373-6,2014,4,,
+book_0083,Wonder 2,Gary Paulsen,Memoir,7,8,1055,247,An engaging story for middle grade readers.,978-0-14-981747-9,2014,4,Captain Underpants,6.0
+book_0084,The Lightning Thief 5,Rodman Philbrick,Graphic Novel,6,7,681,158,An engaging story for middle grade readers.,978-0-296-64543-7,2014,1,Goosebumps,10.0
+book_0085,User-centric bi-directional challenge,Suzanne Collins,Dystopian,6,7,855,347,A thought-provoking story about survival in a society where freedom is under threat.,978-1-04-580102-9,2015,2,,
+book_0086,Where the Red Fern Grows 5,David Hill,Mystery,6,7,796,135,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-06-728685-2,2008,4,,
+book_0087,Organic systematic projection,J.K. Rowling,Graphic Novel,7,8,936,400,An engaging story for middle grade readers.,978-1-77197-429-5,2018,4,,
+book_0088,Percy Jackson 5,John Mitchell,Dystopian,6,8,975,333,A thought-provoking story about survival in a society where freedom is under threat.,978-0-624-04972-2,2010,2,,
+book_0089,Divergent 1,Sharon Creech,Non-fiction,6,7,892,295,An engaging story for middle grade readers.,978-0-495-32178-1,2012,2,,
+book_0090,Island of the Blue Dolphins 3,Daniel Turner,Graphic Novel,6,7,664,325,An engaging story for middle grade readers.,978-0-13-366834-6,2003,5,,
+book_0091,Hatchet 1,Suzanne Collins,Historical Fiction,6,7,673,303,A compelling tale set against the backdrop of important historical events.,978-0-8137-9554-6,2020,1,,
+book_0092,Percy Jackson 4,Melissa Campbell,Fantasy,7,8,1073,135,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-1-02-722156-2,2007,3,,
+book_0093,The Giver 1,J.K. Rowling,Memoir,7,8,846,114,An engaging story for middle grade readers.,978-1-293-46082-5,2001,3,,
+book_0094,Hatchet 2,Meredith Schultz,Horror,6,8,883,192,An engaging story for middle grade readers.,978-1-5470-4912-7,2005,2,,
+book_0095,Island of the Blue Dolphins 2,Suzanne Collins,Romance,7,8,923,230,A heartwarming story about first love and the complexities of relationships.,978-1-100-79113-5,2021,1,Wings of Fire,10.0
+book_0096,Bridge to Terabithia 1,James Dashner,Horror,6,8,847,253,An engaging story for middle grade readers.,978-0-301-49072-4,2020,4,,
+book_0097,The Maze Runner 4,Veronica Roth,Horror,6,8,854,283,An engaging story for middle grade readers.,978-0-07-996676-6,2018,3,,
+book_0098,Programmable dedicated knowledge user,Victoria Ellis,Realistic Fiction,6,8,711,104,A relatable story about growing up and facing real-world challenges.,978-1-339-67880-1,2018,1,,
+book_0099,Mandatory zero administration budgetary management,John Melton,Poetry,7,8,1054,217,An engaging story for middle grade readers.,978-0-88179-034-4,2019,3,,
+book_0100,Wonder 3,Jennifer Hernandez,Fantasy,6,8,770,396,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-1-300-80499-4,2011,2,The Hunger Games,10.0
+book_0101,Hatchet 5,Michelle Hunt,Historical Fiction,7,8,1012,371,A compelling tale set against the backdrop of important historical events.,978-0-521-71732-8,2016,3,Divergent,6.0
+book_0102,Versatile user-facing contingency,Jeff Kinney,Poetry,6,8,946,158,An engaging story for middle grade readers.,978-0-406-65265-2,2014,1,,
+book_0103,Enhanced responsive emulation,Jacob Watkins,Historical Fiction,7,8,1003,146,A compelling tale set against the backdrop of important historical events.,978-0-537-71053-5,2012,1,The Hunger Games,11.0
+book_0104,Diary of a Wimpy Kid 1,Matthew Jones,Romance,6,8,834,112,A heartwarming story about first love and the complexities of relationships.,978-1-56755-547-9,2019,5,Harry Potter,8.0
+book_0105,The Fault in Our Stars 3,Christopher Ortiz,Science Fiction,7,8,913,171,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-564-21864-6,2001,1,,
+book_0106,Number the Stars 2,James Dashner,Biography,6,8,759,376,The inspiring true story of someone who made a difference in the world.,978-0-85753-322-7,2013,5,,
+book_0107,Esperanza Rising 5,Suzanne Collins,Fantasy,6,7,812,289,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-547-87552-1,2006,4,,
+book_0108,Diary of a Wimpy Kid 5,Alejandro Stokes,Biography,6,7,785,283,The inspiring true story of someone who made a difference in the world.,978-1-119-98489-4,2001,4,,
+book_0109,Where the Red Fern Grows 1,Jeff Kinney,Adventure,6,7,708,164,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-59434-251-6,2018,2,Harry Potter,8.0
+book_0110,Freak the Mighty 3,Carlos Henderson,Poetry,6,7,900,101,An engaging story for middle grade readers.,978-1-151-38879-7,2008,2,Hilo,9.0
+book_0111,Stand-alone systematic product,Rick Riordan,Mystery,7,8,928,107,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-371-74079-8,2011,2,,
+book_0112,Hatchet 4,Daniel Mcdaniel,Non-fiction,6,7,689,132,An engaging story for middle grade readers.,978-1-68148-841-7,2015,4,,
+book_0113,Freak the Mighty 5,Lois Lowry,Realistic Fiction,7,8,855,334,A relatable story about growing up and facing real-world challenges.,978-1-304-17133-7,2020,1,,
+book_0114,The Fault in Our Stars 1,Shannon Mcneil,Historical Fiction,6,8,755,175,A compelling tale set against the backdrop of important historical events.,978-1-07-988565-1,2002,2,Dog Man,7.0
+book_0115,Where the Red Fern Grows 5,Lois Lowry,Horror,7,8,966,320,An engaging story for middle grade readers.,978-1-140-17382-3,2003,1,Goosebumps,10.0
+book_0116,Reduced regional core,Pam Muñoz Ryan,Memoir,7,8,1082,216,An engaging story for middle grade readers.,978-0-514-83760-6,2013,3,,
+book_0117,Sharable logistical approach,Jeff Kinney,Biography,6,8,912,230,The inspiring true story of someone who made a difference in the world.,978-1-193-27442-3,2011,2,,
+book_0118,Holes 1,James Dashner,Poetry,6,8,734,166,An engaging story for middle grade readers.,978-0-632-36860-0,2017,1,,
+book_0119,The Giver 4,John Green,Graphic Novel,7,8,1087,126,An engaging story for middle grade readers.,978-1-348-89802-3,2009,5,,
+book_0120,Hatchet 4,Lois Lowry,Historical Fiction,6,7,895,384,A compelling tale set against the backdrop of important historical events.,978-1-5249-8216-4,2011,1,,
+book_0121,Exclusive fresh-thinking success,Michael Herrera,Poetry,7,8,915,385,An engaging story for middle grade readers.,978-1-151-79801-5,2000,5,,
+book_0122,The Hunger Games 3,Chelsea Arias,Historical Fiction,7,8,936,103,A compelling tale set against the backdrop of important historical events.,978-1-58400-366-3,2005,2,,
+book_0123,The Lightning Thief 1,Hayley Fisher,Adventure,6,8,735,292,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-4485-0152-6,2013,4,,
+book_0124,Upgradable foreground synergy,Leroy Flores,Horror,6,8,859,143,An engaging story for middle grade readers.,978-0-940600-77-5,2001,2,,
+book_0125,Divergent 4,Kenneth Summers,Dystopian,7,8,841,239,A thought-provoking story about survival in a society where freedom is under threat.,978-1-4028-2539-2,2006,5,The Baby-Sitters Club,1.0
+book_0126,Harry Potter 1,R.J. Palacio,Fantasy,6,8,949,204,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-1-193-72494-2,2009,2,Wings of Fire,2.0
+book_0127,The Lightning Thief 4,Marissa Larsen,Mystery,6,8,848,166,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-11-958181-2,2012,5,,
+book_0128,Profit-focused interactive Graphical User Interface,Terry Davenport,Science Fiction,7,8,1086,303,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-08-846899-9,2023,1,,
+book_0129,Monitored system-worthy database,Cheryl Erickson,Horror,6,8,739,307,An engaging story for middle grade readers.,978-0-551-29508-7,2022,4,,
+book_0130,Optional homogeneous Local Area Network,Daniel Zimmerman,Graphic Novel,6,8,787,285,An engaging story for middle grade readers.,978-1-67721-485-3,2002,4,Wings of Fire,1.0
+book_0131,Walk Two Moons 1,J.K. Rowling,Non-fiction,6,7,823,273,An engaging story for middle grade readers.,978-1-333-57290-7,2007,3,,
+book_0132,Walk Two Moons 5,James Dashner,Historical Fiction,6,7,861,175,A compelling tale set against the backdrop of important historical events.,978-0-04-273811-6,2007,1,,
+book_0133,Optimized human-resource product,Craig Coleman Jr.,Mystery,7,8,878,352,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-1-902870-99-1,2014,5,The Hunger Games,3.0
+book_0134,Where the Red Fern Grows 3,Janet Wells,Biography,6,8,989,261,The inspiring true story of someone who made a difference in the world.,978-0-918063-45-8,2004,4,,
+book_0135,Diary of a Wimpy Kid 5,Pam Muñoz Ryan,Romance,6,8,840,119,A heartwarming story about first love and the complexities of relationships.,978-0-605-13300-6,2001,3,Dog Man,11.0
+book_0136,Walk Two Moons 4,Scott O'Dell,Poetry,6,7,646,121,An engaging story for middle grade readers.,978-0-637-42137-9,2014,5,,
+book_0137,Wonder 4,Jeff Kinney,Non-fiction,6,8,943,143,An engaging story for middle grade readers.,978-1-05-673794-2,2016,2,,
+book_0138,Bridge to Terabithia 3,J.K. Rowling,Dystopian,6,8,968,309,A thought-provoking story about survival in a society where freedom is under threat.,978-0-210-80194-9,2010,5,Magic Tree House,8.0
+book_0139,Number the Stars 4,Gary Paulsen,Historical Fiction,6,8,733,141,A compelling tale set against the backdrop of important historical events.,978-0-638-47259-2,2018,2,Goosebumps,11.0
+book_0140,Holes 3,Mitchell Greene,Biography,6,8,900,268,The inspiring true story of someone who made a difference in the world.,978-0-586-49822-4,2004,5,,
+book_0141,Harry Potter 2,Barbara Rowland,Historical Fiction,7,8,985,348,A compelling tale set against the backdrop of important historical events.,978-1-103-19944-0,2006,2,Goosebumps,7.0
+book_0142,The Giver 5,Elizabeth Nelson,Graphic Novel,6,7,639,369,An engaging story for middle grade readers.,978-1-9872-2188-6,2001,3,,
+book_0143,Hatchet 2,Katherine Paterson,Non-fiction,7,8,867,324,An engaging story for middle grade readers.,978-1-367-36269-7,2001,4,,
+book_0144,Up-sized scalable analyzer,James Vega,Poetry,7,8,921,329,An engaging story for middle grade readers.,978-1-76476-807-8,2007,5,,
+book_0145,Island of the Blue Dolphins 4,J.K. Rowling,Poetry,6,7,788,295,An engaging story for middle grade readers.,978-0-688-73652-1,2016,5,Hilo,8.0
+book_0146,Virtual high-level knowledgebase,Suzanne Collins,Fantasy,6,7,702,346,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-1-04-437730-3,2011,5,,
+book_0147,Versatile bi-directional protocol,Katherine Paterson,Realistic Fiction,7,8,1064,330,A relatable story about growing up and facing real-world challenges.,978-0-9960370-9-9,2016,2,,
+book_0148,Organized tertiary intranet,Jared Mcdonald,Memoir,6,7,713,113,An engaging story for middle grade readers.,978-1-61977-534-3,2013,1,,
+book_0149,Holes 3,Jeff Kinney,Memoir,6,8,820,150,An engaging story for middle grade readers.,978-0-202-17022-0,2022,3,,
+book_0150,Esperanza Rising 2,Mathew Smith,Romance,6,7,619,329,A heartwarming story about first love and the complexities of relationships.,978-1-883017-65-1,2019,1,,
+book_0151,Hatchet 5,Jason Henry,Horror,6,7,731,370,An engaging story for middle grade readers.,978-0-483-05240-6,2013,1,,
+book_0152,Freak the Mighty 4,Shelby Lopez,Horror,6,7,754,334,An engaging story for middle grade readers.,978-0-587-16566-8,2002,1,,
+book_0153,Walk Two Moons 5,Gary Paulsen,Realistic Fiction,6,8,974,319,A relatable story about growing up and facing real-world challenges.,978-0-405-74793-9,2000,5,,
+book_0154,Holes 5,Alexandra Garcia,Science Fiction,7,8,1013,369,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-665-87848-0,2017,5,,
+book_0155,Esperanza Rising 1,Heidi Peters,Historical Fiction,7,8,1083,229,A compelling tale set against the backdrop of important historical events.,978-1-242-64522-8,2023,1,,
+book_0156,The Giver 5,David Rogers,Historical Fiction,6,7,776,168,A compelling tale set against the backdrop of important historical events.,978-1-57469-092-7,2001,3,,
+book_0157,Robust object-oriented algorithm,James Miller,Non-fiction,7,8,889,345,An engaging story for middle grade readers.,978-1-67241-299-5,2020,2,,
+book_0158,The Outsiders 1,Michael Mendoza,Memoir,6,7,834,121,An engaging story for middle grade readers.,978-0-222-44331-1,2010,3,,
+book_0159,The Outsiders 3,R.J. Palacio,Graphic Novel,7,8,1042,269,An engaging story for middle grade readers.,978-0-905863-83-2,2008,1,,
+book_0160,Future-proofed bandwidth-monitored functionalities,Samuel Franklin,Dystopian,6,8,904,273,A thought-provoking story about survival in a society where freedom is under threat.,978-0-407-84909-9,2005,4,,
+book_0161,Holes 4,Katherine Paterson,Humor,6,8,965,250,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-426-75013-0,2010,1,,
+book_0162,Divergent 2,Karen Brown,Historical Fiction,6,8,928,328,A compelling tale set against the backdrop of important historical events.,978-1-177-36436-2,2001,3,Goosebumps,5.0
+book_0163,Wonder 1,Taylor Lopez,Dystopian,6,8,840,286,A thought-provoking story about survival in a society where freedom is under threat.,978-1-70161-370-6,2016,2,,
+book_0164,Holes 2,Andrew Long,Historical Fiction,6,7,824,285,A compelling tale set against the backdrop of important historical events.,978-0-949654-08-3,2012,5,,
+book_0165,Holes 5,James Dashner,Dystopian,6,8,889,260,A thought-provoking story about survival in a society where freedom is under threat.,978-0-233-65683-0,2020,3,Diary of a Wimpy Kid,11.0
+book_0166,The Maze Runner 5,Suzanne Collins,Non-fiction,7,8,895,328,An engaging story for middle grade readers.,978-0-210-61260-6,2006,5,Harry Potter,1.0
+book_0167,Streamlined bandwidth-monitored help-desk,Pam Muñoz Ryan,Science Fiction,6,7,669,263,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-423-49740-3,2021,3,Dog Man,4.0
+book_0168,Harry Potter 2,Cassandra Schneider,Memoir,7,8,1077,189,An engaging story for middle grade readers.,978-0-946687-15-2,2011,5,,
+book_0169,Number the Stars 5,Scott O'Dell,Mystery,6,7,852,144,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-388-18592-6,2002,3,The Hunger Games,3.0
+book_0170,Divergent 5,Jeff Kinney,Biography,7,8,1045,137,The inspiring true story of someone who made a difference in the world.,978-0-13-744191-4,2014,4,,
+book_0171,Fundamental grid-enabled support,Wendy Powell,Biography,6,8,765,400,The inspiring true story of someone who made a difference in the world.,978-0-934816-30-4,2005,2,,
+book_0172,Harry Potter 2,Rodman Philbrick,Historical Fiction,6,7,663,365,A compelling tale set against the backdrop of important historical events.,978-1-195-11005-7,2009,1,,
+book_0173,Where the Red Fern Grows 5,Katherine Paterson,Horror,6,8,764,397,An engaging story for middle grade readers.,978-1-9804-6455-6,2004,2,Goosebumps,9.0
+book_0174,Future-proofed client-server capacity,Mr. Carlos Wilson,Graphic Novel,7,8,972,114,An engaging story for middle grade readers.,978-1-232-05648-5,2002,1,,
+book_0175,Island of the Blue Dolphins 4,Robert Smith,Fantasy,7,8,935,354,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-7321-5747-0,2020,5,,
+book_0176,Holes 1,John Green,Romance,6,7,807,337,A heartwarming story about first love and the complexities of relationships.,978-1-66469-841-3,2006,3,Divergent,8.0
+book_0177,Polarized holistic neural-net,Christopher Singh DVM,Dystopian,6,8,863,166,A thought-provoking story about survival in a society where freedom is under threat.,978-0-368-92150-6,2011,5,,
+book_0178,The Hunger Games 4,Lois Lowry,Fantasy,6,8,823,248,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-1-9827-8042-5,2012,5,,
+book_0179,User-centric client-driven infrastructure,Tyler Riley,Adventure,6,7,767,181,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-289-66102-1,2015,5,,
+book_0180,The Maze Runner 5,Rodman Philbrick,Adventure,6,8,954,398,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-4102-9804-1,2011,1,,
+book_0181,The Lightning Thief 1,Suzanne Collins,Non-fiction,7,8,1040,287,An engaging story for middle grade readers.,978-0-7825-7488-3,2012,3,Dog Man,10.0
+book_0182,Harry Potter 1,Pam Muñoz Ryan,Poetry,7,8,899,381,An engaging story for middle grade readers.,978-0-490-13854-4,2008,5,Percy Jackson,10.0
+book_0183,Organic empowering hierarchy,Jeff Kinney,Humor,6,7,665,287,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-1-5072-0459-7,2004,2,,
+book_0184,Wonder 2,Curtis Brown,Poetry,6,8,956,342,An engaging story for middle grade readers.,978-0-496-96852-7,2016,4,,
+book_0185,Where the Red Fern Grows 3,Teresa Brown,Humor,6,8,863,360,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-1-5108-7407-7,2017,4,Captain Underpants,3.0
+book_0186,Multi-lateral needs-based open architecture,Lois Lowry,Dystopian,6,8,943,398,A thought-provoking story about survival in a society where freedom is under threat.,978-1-971096-24-7,2009,1,,
+book_0187,Wonder 5,Lois Lowry,Biography,6,8,996,294,The inspiring true story of someone who made a difference in the world.,978-1-00-188358-8,2004,2,,
+book_0188,Divergent 2,S.E. Hinton,Dystopian,6,7,609,356,A thought-provoking story about survival in a society where freedom is under threat.,978-1-4697-4936-5,2019,4,Magic Tree House,2.0
+book_0189,Robust 24/7 projection,Aaron Blevins,Humor,7,8,831,266,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-7485-1779-4,2021,4,,
+book_0190,Number the Stars 3,Vanessa Moore,Biography,6,8,788,235,The inspiring true story of someone who made a difference in the world.,978-0-241-38276-9,2019,4,,
+book_0191,Harry Potter 3,Samantha Davis,Non-fiction,7,8,952,350,An engaging story for middle grade readers.,978-0-7069-8638-9,2010,4,The Hunger Games,5.0
+book_0192,Island of the Blue Dolphins 5,Veronica Roth,Graphic Novel,7,8,940,276,An engaging story for middle grade readers.,978-0-379-98210-7,2004,3,,
+book_0193,Esperanza Rising 2,Scott O'Dell,Realistic Fiction,6,8,926,387,A relatable story about growing up and facing real-world challenges.,978-1-128-40292-1,2022,3,Magic Tree House,2.0
+book_0194,Walk Two Moons 2,Peter Malone,Fantasy,7,8,922,151,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-308-68303-7,2013,3,The Baby-Sitters Club,12.0
+book_0195,Number the Stars 2,Sharon Creech,Romance,6,7,670,202,A heartwarming story about first love and the complexities of relationships.,978-0-594-71480-4,2009,3,,
+book_0196,Wonder 2,Katherine Paterson,Memoir,7,8,1093,118,An engaging story for middle grade readers.,978-0-299-55009-7,2012,4,Percy Jackson,2.0
+book_0197,Where the Red Fern Grows 1,April Nelson,Historical Fiction,6,7,604,245,A compelling tale set against the backdrop of important historical events.,978-0-674-90719-5,2014,5,Magic Tree House,5.0
+book_0198,The Outsiders 1,Pam Muñoz Ryan,Biography,6,7,858,231,The inspiring true story of someone who made a difference in the world.,978-0-07-662980-0,2022,2,,
+book_0199,The Maze Runner 4,Kyle Avery,Science Fiction,7,8,898,305,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-679-22307-8,2021,1,The Maze Runner,5.0
+book_0200,The Maze Runner 2,Suzanne Collins,Historical Fiction,6,8,827,254,A compelling tale set against the backdrop of important historical events.,978-1-82758-206-1,2018,5,Diary of a Wimpy Kid,8.0
+book_0201,The Giver 4,Veronica Roth,Biography,7,8,920,357,The inspiring true story of someone who made a difference in the world.,978-1-4572-6049-0,2022,3,Goosebumps,6.0
+book_0202,Freak the Mighty 2,Christina Rodriguez,Romance,7,8,951,178,A heartwarming story about first love and the complexities of relationships.,978-1-283-15904-3,2014,5,,
+book_0203,Re-contextualized systemic portal,Joanne Carpenter,Poetry,7,8,1081,211,An engaging story for middle grade readers.,978-0-265-66754-5,2007,5,,
+book_0204,Diary of a Wimpy Kid 1,Dr. Mario Greene III,Science Fiction,6,7,869,131,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-00-986117-8,2017,5,,
+book_0205,Re-engineered exuding moderator,S.E. Hinton,Non-fiction,6,7,767,398,An engaging story for middle grade readers.,978-0-366-90184-5,2015,1,Captain Underpants,3.0
+book_0206,Walk Two Moons 4,R.J. Palacio,Humor,6,8,728,336,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-647-59001-0,2021,3,,
+book_0207,Synergized even-keeled encryption,Bryan Lee,Horror,6,8,830,137,An engaging story for middle grade readers.,978-1-4883-1952-5,2001,4,,
+book_0208,Synergistic methodical product,Philip Daniels,Science Fiction,6,7,877,341,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-350-55272-5,2001,3,,
+book_0209,The Maze Runner 4,Brandon Parks,Memoir,6,7,815,293,An engaging story for middle grade readers.,978-1-4536-3028-0,2012,1,,
+book_0210,Diary of a Wimpy Kid 1,Scott O'Dell,Dystopian,7,8,1076,370,A thought-provoking story about survival in a society where freedom is under threat.,978-1-339-94986-4,2004,2,,
+book_0211,Number the Stars 4,Lisa Martin,Graphic Novel,6,7,752,217,An engaging story for middle grade readers.,978-1-59574-538-5,2007,4,,
+book_0212,Horizontal mission-critical installation,Jeffrey Miller,Science Fiction,6,8,796,116,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-525-02947-2,2021,4,,
+book_0213,The Giver 5,R.J. Palacio,Adventure,6,7,723,122,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-200-37054-4,2012,4,,
+book_0214,Enhanced discrete concept,Wilson Rawls,Historical Fiction,6,7,857,395,A compelling tale set against the backdrop of important historical events.,978-1-60115-884-0,2019,3,The Hunger Games,1.0
+book_0215,The Hunger Games 1,James Phillips,Horror,7,8,913,189,An engaging story for middle grade readers.,978-0-9981892-0-8,2020,4,Diary of a Wimpy Kid,11.0
+book_0216,Monitored foreground groupware,Jasmine Brown,Poetry,6,7,776,368,An engaging story for middle grade readers.,978-0-7234-3146-6,2010,4,,
+book_0217,Number the Stars 4,Rodman Philbrick,Realistic Fiction,6,8,892,173,A relatable story about growing up and facing real-world challenges.,978-0-9774216-4-0,2014,1,,
+book_0218,The Maze Runner 2,Jeff Kinney,Biography,6,8,985,140,The inspiring true story of someone who made a difference in the world.,978-0-546-96398-4,2014,3,,
+book_0219,Where the Red Fern Grows 5,Louis Sachar,Adventure,6,7,737,400,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-109-61693-4,2023,5,Magic Tree House,4.0
+book_0220,The Outsiders 1,Nathaniel Barnes,Poetry,6,8,707,345,An engaging story for middle grade readers.,978-0-02-906710-9,2007,5,The Hunger Games,6.0
+book_0221,Harry Potter 4,James Dashner,Realistic Fiction,6,8,822,233,A relatable story about growing up and facing real-world challenges.,978-1-361-27202-2,2011,5,,
+book_0222,Persistent homogeneous middleware,Daniel Jacobs,Poetry,6,8,750,263,An engaging story for middle grade readers.,978-1-02-638069-7,2006,3,,
+book_0223,Seamless high-level challenge,Carrie Foster,Fantasy,6,7,888,233,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-649-92354-0,2017,5,,
+book_0224,Percy Jackson 2,Rodman Philbrick,Romance,6,8,851,381,A heartwarming story about first love and the complexities of relationships.,978-0-7758-7850-9,2020,3,,
+book_0225,Diary of a Wimpy Kid 2,Scott O'Dell,Romance,7,8,1051,194,A heartwarming story about first love and the complexities of relationships.,978-0-86610-093-9,2017,1,Dog Man,12.0
+book_0226,Sharable coherent secured line,Rodman Philbrick,Science Fiction,6,7,624,177,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-447-04460-7,2000,2,,
+book_0227,Where the Red Fern Grows 4,Lisa Wright MD,Fantasy,6,8,730,103,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-11-818528-8,2017,5,,
+book_0228,Persistent homogeneous functionalities,Lori Gray,Realistic Fiction,6,7,871,108,A relatable story about growing up and facing real-world challenges.,978-1-198-49975-3,2016,4,,
+book_0229,Upgradable tertiary pricing structure,Lisa Tucker,Adventure,6,7,654,198,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-0-585-74765-1,2019,5,,
+book_0230,The Maze Runner 4,Emma Bates,Non-fiction,6,8,740,215,An engaging story for middle grade readers.,978-0-445-57502-8,2009,1,The Maze Runner,5.0
+book_0231,The Maze Runner 4,Andre Calderon,Fantasy,7,8,816,104,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-1-379-56198-9,2022,2,,
+book_0232,User-friendly client-server emulation,Johnny Cummings,Memoir,6,8,989,370,An engaging story for middle grade readers.,978-1-202-99586-8,2001,2,Wings of Fire,11.0
+book_0233,Holes 3,Howard Gilmore,Horror,6,8,838,116,An engaging story for middle grade readers.,978-0-7410-1970-7,2005,3,Magic Tree House,10.0
+book_0234,Decentralized local moratorium,Wilson Rawls,Adventure,6,7,803,390,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-116-51008-9,2012,5,The Hunger Games,10.0
+book_0235,Pre-emptive even-keeled intranet,Roy Campbell,Science Fiction,7,8,871,356,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-65381-477-0,2023,3,,
+book_0236,Where the Red Fern Grows 5,Jeff Kinney,Fantasy,6,7,774,239,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-663-99411-3,2014,4,Wings of Fire,4.0
+book_0237,The Maze Runner 1,Peter Beasley,Realistic Fiction,6,8,795,226,A relatable story about growing up and facing real-world challenges.,978-0-8044-3398-3,2022,1,Captain Underpants,7.0
+book_0238,Realigned client-server architecture,Lois Lowry,Science Fiction,7,8,878,102,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-665-66627-8,2009,4,Diary of a Wimpy Kid,7.0
+book_0239,Bridge to Terabithia 4,Scott O'Dell,Humor,6,8,752,308,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-1-07-566628-5,2003,1,,
+book_0240,Diverse zero-defect architecture,John Green,Dystopian,7,8,966,143,A thought-provoking story about survival in a society where freedom is under threat.,978-1-905484-59-1,2023,5,Captain Underpants,2.0
+book_0241,The Maze Runner 2,J.K. Rowling,Realistic Fiction,6,7,892,352,A relatable story about growing up and facing real-world challenges.,978-1-04-083154-0,2004,1,,
+book_0242,Multi-lateral tangible hardware,Rodman Philbrick,Non-fiction,6,8,947,353,An engaging story for middle grade readers.,978-0-374-75153-1,2019,5,Divergent,7.0
+book_0243,Persistent zero tolerance productivity,Veronica Roth,Poetry,6,8,703,268,An engaging story for middle grade readers.,978-0-14-625528-1,2014,3,Harry Potter,3.0
+book_0244,Where the Red Fern Grows 2,Katherine Paterson,Dystopian,7,8,869,263,A thought-provoking story about survival in a society where freedom is under threat.,978-0-7435-9063-1,2009,4,,
+book_0245,The Maze Runner 3,Wilson Rawls,Adventure,6,7,766,379,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-236-73735-9,2005,5,,
+book_0246,Harry Potter 1,Christine Mitchell,Poetry,7,8,907,309,An engaging story for middle grade readers.,978-1-963352-26-9,2021,4,Magic Tree House,8.0
+book_0247,Exclusive attitude-oriented standardization,Joy Mitchell,Science Fiction,6,8,778,329,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-4617-1725-6,2019,4,Divergent,4.0
+book_0248,Extended encompassing frame,Julie Mason,Dystopian,7,8,1059,378,A thought-provoking story about survival in a society where freedom is under threat.,978-0-486-53580-7,2001,3,,
+book_0249,Freak the Mighty 3,R.J. Palacio,Horror,7,8,843,304,An engaging story for middle grade readers.,978-1-146-20565-8,2010,4,,
+book_0250,Streamlined leadingedge migration,Dakota Frederick,Non-fiction,6,7,861,394,An engaging story for middle grade readers.,978-1-108-32312-3,2007,4,Harry Potter,5.0
+book_0251,The Lightning Thief 4,John Green,Memoir,6,8,956,143,An engaging story for middle grade readers.,978-0-9696767-8-2,2003,2,,
+book_0252,Extended tangible groupware,Jeffrey Bailey,Historical Fiction,6,8,933,343,A compelling tale set against the backdrop of important historical events.,978-1-83871-507-6,2003,4,,
+book_0253,Wonder 1,Jeff Kinney,Biography,6,8,863,155,The inspiring true story of someone who made a difference in the world.,978-1-299-05146-1,2021,2,,
+book_0254,Number the Stars 2,John Green,Romance,7,8,924,218,A heartwarming story about first love and the complexities of relationships.,978-0-690-21353-9,2012,2,,
+book_0255,Adaptive radical info-mediaries,Lori Greene,Romance,6,8,714,319,A heartwarming story about first love and the complexities of relationships.,978-0-85112-624-1,2012,1,Goosebumps,7.0
+book_0256,Re-contextualized bandwidth-monitored workforce,Jacob Eaton,Science Fiction,6,7,742,395,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-01-921673-9,2003,5,,
+book_0257,Esperanza Rising 5,Cynthia Schultz,Historical Fiction,6,8,758,298,A compelling tale set against the backdrop of important historical events.,978-1-80130-269-2,2019,4,The Maze Runner,4.0
+book_0258,Compatible client-server challenge,Stephen Garcia,Graphic Novel,6,8,880,252,An engaging story for middle grade readers.,978-0-89113-519-7,2019,5,,
+book_0259,Bridge to Terabithia 3,Heather Dawson,Humor,6,7,722,298,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-1-68719-558-6,2013,5,Diary of a Wimpy Kid,6.0
+book_0260,Bridge to Terabithia 5,J.K. Rowling,Mystery,6,7,849,195,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-1-333-37976-6,2010,4,Wings of Fire,7.0
+book_0261,The Outsiders 4,Preston Edwards,Humor,6,8,704,353,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-1-4095-4183-7,2013,4,,
+book_0262,Island of the Blue Dolphins 1,Michael Sanchez,Adventure,6,8,950,249,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-62461-584-9,2001,3,,
+book_0263,Ergonomic needs-based software,Allison Barnett,Humor,6,8,989,361,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-1-341-02029-2,2003,5,Divergent,3.0
+book_0264,Optimized system-worthy extranet,Pam Muñoz Ryan,Humor,6,8,977,211,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-479-50445-2,2013,1,Hilo,9.0
+book_0265,Wonder 4,Louis Sachar,Romance,7,8,926,160,A heartwarming story about first love and the complexities of relationships.,978-0-288-82410-9,2007,2,,
+book_0266,Profound web-enabled hardware,Dominique Newman,Dystopian,7,8,979,184,A thought-provoking story about survival in a society where freedom is under threat.,978-1-63285-692-0,2019,2,,
+book_0267,Number the Stars 3,Elizabeth Cox,Mystery,6,7,630,265,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-1-5474-6780-8,2022,3,,
+book_0268,Divergent 1,Jeremy Joseph,Graphic Novel,7,8,848,164,An engaging story for middle grade readers.,978-0-580-38774-6,2022,2,Divergent,9.0
+book_0269,Island of the Blue Dolphins 3,James Gonzales,Dystopian,6,7,801,331,A thought-provoking story about survival in a society where freedom is under threat.,978-0-7299-8827-8,2002,1,Magic Tree House,6.0
+book_0270,Diary of a Wimpy Kid 4,Stephanie Meyer,Historical Fiction,7,8,942,397,A compelling tale set against the backdrop of important historical events.,978-1-994853-87-2,2000,1,,
+book_0271,Organized national portal,Logan Snyder Jr.,Dystopian,6,8,883,211,A thought-provoking story about survival in a society where freedom is under threat.,978-1-993730-08-2,2013,2,,
+book_0272,Island of the Blue Dolphins 2,Christopher Jones,Romance,6,8,845,275,A heartwarming story about first love and the complexities of relationships.,978-1-66076-242-2,2021,1,,
+book_0273,Visionary eco-centric portal,Pam Muñoz Ryan,Fantasy,6,7,663,319,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-903547-92-5,2006,2,Goosebumps,8.0
+book_0274,Devolved motivating protocol,Dawn Wallace,Science Fiction,6,8,781,284,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-10-605966-9,2008,1,,
+book_0275,Harry Potter 2,Louis Sachar,Non-fiction,7,8,884,148,An engaging story for middle grade readers.,978-1-266-03775-7,2000,2,,
+book_0276,The Fault in Our Stars 1,Jeff Kinney,Graphic Novel,6,7,715,161,An engaging story for middle grade readers.,978-0-7135-3684-3,2013,2,,
+book_0277,The Giver 1,J.K. Rowling,Mystery,6,7,796,295,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-1-79366-807-3,2004,2,,
+book_0278,The Outsiders 2,Samantha Skinner,Horror,7,8,884,326,An engaging story for middle grade readers.,978-0-558-23132-3,2006,1,The Baby-Sitters Club,1.0
+book_0279,The Maze Runner 3,Misty Martinez,Historical Fiction,6,7,663,171,A compelling tale set against the backdrop of important historical events.,978-1-203-02765-0,2007,3,,
+book_0280,Where the Red Fern Grows 3,Lori Hernandez,Non-fiction,6,7,883,113,An engaging story for middle grade readers.,978-1-144-10370-3,2021,3,,
+book_0281,Wonder 2,Lois Lowry,Adventure,6,7,800,355,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-4245-6805-5,2020,5,The Baby-Sitters Club,9.0
+book_0282,Island of the Blue Dolphins 4,Katherine Paterson,Poetry,6,8,767,341,An engaging story for middle grade readers.,978-0-631-00448-6,2002,1,Percy Jackson,6.0
+book_0283,Wonder 4,Brian Smith,Biography,6,7,734,356,The inspiring true story of someone who made a difference in the world.,978-0-7597-8733-9,2013,4,,
+book_0284,Hatchet 3,Louis Sachar,Humor,6,7,874,204,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-355-11790-5,2004,5,,
+book_0285,Divergent 2,Louis Sachar,Memoir,7,8,833,322,An engaging story for middle grade readers.,978-1-363-01535-1,2003,4,,
+book_0286,Bridge to Terabithia 1,Gary Paulsen,Non-fiction,6,7,758,105,An engaging story for middle grade readers.,978-0-566-63187-0,2005,4,,
+book_0287,Upgradable transitional process improvement,Jake Norris,Mystery,7,8,1064,290,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-1-251-31140-4,2004,3,,
+book_0288,Divergent 3,Joanna Hartman,Realistic Fiction,6,7,615,395,A relatable story about growing up and facing real-world challenges.,978-0-13-173885-0,2020,1,,
+book_0289,Island of the Blue Dolphins 2,Suzanne Collins,Poetry,7,8,984,152,An engaging story for middle grade readers.,978-1-5164-3876-1,2018,1,,
+book_0290,Esperanza Rising 3,Gary Paulsen,Mystery,6,7,606,118,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-1-878919-06-9,2017,4,Captain Underpants,1.0
+book_0291,Holes 5,Lois Lowry,Biography,7,8,963,126,The inspiring true story of someone who made a difference in the world.,978-1-4734-8403-0,2005,2,The Hunger Games,7.0
+book_0292,The Fault in Our Stars 3,Mackenzie Johnson,Realistic Fiction,6,7,805,267,A relatable story about growing up and facing real-world challenges.,978-1-06-133574-4,2002,5,,
+book_0293,Harry Potter 5,James Dashner,Horror,6,8,802,352,An engaging story for middle grade readers.,978-0-230-92852-7,2006,5,,
+book_0294,Divergent 1,James Dashner,Biography,6,7,677,104,The inspiring true story of someone who made a difference in the world.,978-0-686-88883-3,2010,1,,
+book_0295,Walk Two Moons 2,R.J. Palacio,Mystery,6,8,857,243,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-1-959309-28-4,2002,1,,
+book_0296,Inverse 6thgeneration moderator,Louis Sachar,Horror,7,8,1011,148,An engaging story for middle grade readers.,978-1-9822-9833-3,2016,2,,
+book_0297,Wonder 4,Monica Foster,Mystery,6,8,738,221,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-08-504931-6,2009,3,,
+book_0298,The Hunger Games 2,S.E. Hinton,Mystery,6,8,867,399,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-1-5190-5389-3,2003,2,,
+book_0299,Diary of a Wimpy Kid 2,Pam Muñoz Ryan,Realistic Fiction,6,8,908,161,A relatable story about growing up and facing real-world challenges.,978-1-195-51921-8,2002,2,Dog Man,8.0
+book_0300,Percy Jackson 2,Rodman Philbrick,Historical Fiction,6,8,720,302,A compelling tale set against the backdrop of important historical events.,978-0-519-81135-9,2016,1,,
+book_0301,The Maze Runner 4,Heather Stewart,Humor,6,8,789,227,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-687-57670-8,2003,4,,
+book_0302,Freak the Mighty 2,Veronica Roth,Historical Fiction,6,7,606,143,A compelling tale set against the backdrop of important historical events.,978-1-5075-9756-9,2018,5,Hilo,3.0
+book_0303,Cross-platform maximized frame,Gary Paulsen,Science Fiction,6,7,701,269,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-669-57486-9,2003,1,Harry Potter,1.0
+book_0304,Organized heuristic contingency,Veronica Roth,Romance,6,7,686,115,A heartwarming story about first love and the complexities of relationships.,978-1-216-68506-9,2012,4,,
+book_0305,Hatchet 1,Scott Johnson,Horror,6,8,843,225,An engaging story for middle grade readers.,978-1-04-735904-7,2020,3,The Hunger Games,3.0
+book_0306,The Hunger Games 4,S.E. Hinton,Biography,7,8,1045,369,The inspiring true story of someone who made a difference in the world.,978-1-371-57068-2,2007,5,,
+book_0307,Esperanza Rising 3,Mr. Steven Velez,Humor,6,8,883,264,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-320-42230-0,2012,3,,
+book_0308,Upgradable systemic capability,Edward Jensen,Fantasy,6,7,615,341,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-495-72749-1,2016,3,The Maze Runner,10.0
+book_0309,Freak the Mighty 3,Timothy Young,Poetry,6,7,681,128,An engaging story for middle grade readers.,978-0-04-818191-6,2007,5,,
+book_0310,Ameliorated heuristic superstructure,Adam Morris,Mystery,6,8,881,190,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-1-311-07965-7,2007,5,,
+book_0311,Robust coherent collaboration,James Dashner,Horror,7,8,983,388,An engaging story for middle grade readers.,978-1-937369-21-7,2004,5,,
+book_0312,Esperanza Rising 1,Rodman Philbrick,Horror,6,8,977,212,An engaging story for middle grade readers.,978-1-4147-2038-8,2000,5,,
+book_0313,Customizable mobile concept,Katherine Paterson,Memoir,6,8,803,265,An engaging story for middle grade readers.,978-1-966540-12-0,2001,1,,
+book_0314,Balanced transitional middleware,Monica Cox DDS,Historical Fiction,6,7,869,302,A compelling tale set against the backdrop of important historical events.,978-0-7196-9923-8,2018,1,Magic Tree House,3.0
+book_0315,Multi-lateral stable utilization,David Johnson Jr.,Dystopian,6,8,769,349,A thought-provoking story about survival in a society where freedom is under threat.,978-0-11-783259-6,2020,3,,
+book_0316,Island of the Blue Dolphins 2,J.K. Rowling,Mystery,7,8,982,190,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-671-44785-4,2023,1,Captain Underpants,12.0
+book_0317,Centralized uniform definition,Lisa Burke,Horror,7,8,1000,116,An engaging story for middle grade readers.,978-1-156-78728-1,2005,5,,
+book_0318,The Giver 4,Louis Sachar,Adventure,7,8,913,277,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-0-7595-4642-4,2010,2,,
+book_0319,The Hunger Games 2,Louis Sachar,Historical Fiction,6,7,771,231,A compelling tale set against the backdrop of important historical events.,978-0-8297-5875-7,2003,1,,
+book_0320,Re-engineered client-server groupware,Veronica Roth,Historical Fiction,6,8,785,379,A compelling tale set against the backdrop of important historical events.,978-0-291-06002-0,2012,1,Dog Man,12.0
+book_0321,Holes 1,Jeff Kinney,Realistic Fiction,7,8,915,153,A relatable story about growing up and facing real-world challenges.,978-1-56804-005-9,2002,3,,
+book_0322,Holes 3,Michelle Daniels,Horror,7,8,838,347,An engaging story for middle grade readers.,978-0-631-50052-0,2022,1,Wings of Fire,3.0
+book_0323,Divergent 2,Jeff Kinney,Adventure,7,8,884,197,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-56547-892-3,2013,5,,
+book_0324,Harry Potter 3,R.J. Palacio,Dystopian,7,8,1076,392,A thought-provoking story about survival in a society where freedom is under threat.,978-0-07-992654-8,2017,4,,
+book_0325,Where the Red Fern Grows 4,Rick Riordan,Adventure,6,8,744,187,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-83843-924-8,2020,3,The Maze Runner,1.0
+book_0326,The Maze Runner 4,Suzanne Collins,Science Fiction,6,8,759,378,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-9762-1159-1,2012,2,,
+book_0327,Wonder 3,Suzanne Collins,Adventure,6,8,889,237,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-0-675-34641-2,2018,1,,
+book_0328,Number the Stars 4,Ernest Davies,Horror,6,7,643,216,An engaging story for middle grade readers.,978-1-67587-185-0,2017,1,Magic Tree House,11.0
+book_0329,Upgradable dynamic orchestration,Juan Patel,Memoir,7,8,1014,343,An engaging story for middle grade readers.,978-0-389-05755-0,2018,2,,
+book_0330,Fundamental system-worthy implementation,Erin Russell,Humor,6,7,802,392,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-361-89485-2,2016,5,,
+book_0331,The Fault in Our Stars 2,Daniel Wilson,Mystery,7,8,875,208,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-313-04739-8,2006,2,,
+book_0332,Re-engineered incremental artificial intelligence,Connie Gordon,Graphic Novel,6,8,803,232,An engaging story for middle grade readers.,978-1-214-07062-1,2010,1,Harry Potter,11.0
+book_0333,Visionary real-time capacity,Noah Nunez,Memoir,7,8,966,106,An engaging story for middle grade readers.,978-0-354-23137-4,2022,5,Captain Underpants,7.0
+book_0334,Hatchet 5,Amy Arellano,Poetry,6,8,757,151,An engaging story for middle grade readers.,978-1-57152-579-6,2003,5,,
+book_0335,Cross-platform system-worthy benchmark,Tim Wise,Realistic Fiction,6,8,974,296,A relatable story about growing up and facing real-world challenges.,978-1-363-50683-5,2020,4,,
+book_0336,The Maze Runner 2,Theresa Mcbride,Biography,6,8,719,305,The inspiring true story of someone who made a difference in the world.,978-0-14-428989-9,2001,4,,
+book_0337,Esperanza Rising 3,Ryan Whitaker,Fantasy,6,8,821,272,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-03-320840-6,2009,3,,
+book_0338,Quality-focused real-time knowledge user,J.K. Rowling,Non-fiction,7,8,850,326,An engaging story for middle grade readers.,978-0-18-963969-7,2010,3,Dog Man,12.0
+book_0339,The Outsiders 4,Peter Thompson,Poetry,7,8,845,364,An engaging story for middle grade readers.,978-1-878400-44-4,2011,1,,
+book_0340,Walk Two Moons 4,Lois Lowry,Memoir,6,7,633,391,An engaging story for middle grade readers.,978-1-336-65686-4,2000,2,,
+book_0341,Diary of a Wimpy Kid 2,Pam Muñoz Ryan,Humor,6,7,616,303,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-1-86076-391-5,2020,1,The Hunger Games,1.0
+book_0342,The Fault in Our Stars 2,Sean Gomez,Romance,6,7,790,400,A heartwarming story about first love and the complexities of relationships.,978-0-342-94576-4,2017,3,,
+book_0343,The Maze Runner 1,Wilson Rawls,Poetry,6,8,746,209,An engaging story for middle grade readers.,978-1-960010-14-8,2007,2,,
+book_0344,The Lightning Thief 4,Valerie Cameron,Biography,6,8,909,188,The inspiring true story of someone who made a difference in the world.,978-0-380-81450-3,2019,1,,
+book_0345,The Maze Runner 3,S.E. Hinton,Romance,7,8,940,254,A heartwarming story about first love and the complexities of relationships.,978-0-334-61241-4,2021,5,The Baby-Sitters Club,5.0
+book_0346,Walk Two Moons 3,Brian Williams,Horror,6,8,999,244,An engaging story for middle grade readers.,978-0-9768489-6-7,2009,1,,
+book_0347,The Hunger Games 3,Andrew Roberts,Memoir,6,8,841,252,An engaging story for middle grade readers.,978-0-89605-480-6,2006,2,,
+book_0348,Streamlined stable paradigm,Angel Avila,Horror,6,7,629,306,An engaging story for middle grade readers.,978-0-07-976645-8,2021,3,,
+book_0349,Harry Potter 3,Monica Leon,Dystopian,7,8,813,298,A thought-provoking story about survival in a society where freedom is under threat.,978-0-342-42489-4,2023,1,,
+book_0350,Freak the Mighty 5,Andrew Dickson,Romance,7,8,897,283,A heartwarming story about first love and the complexities of relationships.,978-1-5156-3622-9,2016,3,,
+book_0351,The Giver 4,Suzanne Collins,Non-fiction,7,8,1085,386,An engaging story for middle grade readers.,978-0-08-840101-2,2005,3,,
+book_0352,Harry Potter 4,Vanessa Castaneda,Historical Fiction,6,7,781,290,A compelling tale set against the backdrop of important historical events.,978-1-397-87680-5,2008,5,,
+book_0353,Where the Red Fern Grows 1,S.E. Hinton,Humor,6,7,898,161,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-18-728868-2,2021,4,Harry Potter,8.0
+book_0354,Grass-roots fresh-thinking system engine,S.E. Hinton,Historical Fiction,6,8,727,309,A compelling tale set against the backdrop of important historical events.,978-1-222-48074-0,2018,4,,
+book_0355,Bridge to Terabithia 3,Matthew Wilson,Fantasy,6,7,849,331,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-1-379-77822-6,2008,2,Magic Tree House,3.0
+book_0356,Open-source explicit benchmark,Louis Sachar,Mystery,6,7,895,322,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-230-26173-0,2020,4,,
+book_0357,Number the Stars 2,Regina Jackson,Fantasy,6,8,896,264,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-08-948032-0,2016,2,,
+book_0358,Diary of a Wimpy Kid 3,Veronica Roth,Humor,7,8,927,256,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-9697743-4-1,2005,1,Percy Jackson,11.0
+book_0359,Walk Two Moons 5,Joshua Salas,Dystopian,6,8,848,168,A thought-provoking story about survival in a society where freedom is under threat.,978-1-318-78900-9,2010,4,,
+book_0360,Switchable radical emulation,Kimberly Price,Dystopian,6,7,684,109,A thought-provoking story about survival in a society where freedom is under threat.,978-0-583-99326-5,2007,2,,
+book_0361,Inverse modular throughput,Julie Potter,Mystery,6,7,708,163,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-7217-1843-9,2011,1,,
+book_0362,Reverse-engineered coherent extranet,James Hebert,Horror,7,8,930,124,An engaging story for middle grade readers.,978-0-7452-1354-5,2021,1,,
+book_0363,Divergent 4,Scott O'Dell,Realistic Fiction,6,7,624,342,A relatable story about growing up and facing real-world challenges.,978-0-7169-3572-8,2022,2,,
+book_0364,The Giver 5,Gary Paulsen,Dystopian,6,7,754,153,A thought-provoking story about survival in a society where freedom is under threat.,978-0-7219-2793-0,2016,5,Goosebumps,11.0
+book_0365,The Hunger Games 5,Shelley Davis,Historical Fiction,6,8,801,309,A compelling tale set against the backdrop of important historical events.,978-1-75293-510-9,2009,2,Harry Potter,2.0
+book_0366,The Lightning Thief 1,Raymond Meyer,Memoir,7,8,1046,156,An engaging story for middle grade readers.,978-0-85630-992-2,2018,4,Dog Man,4.0
+book_0367,Integrated bottom-line process improvement,Jennifer Hogan,Romance,6,7,651,251,A heartwarming story about first love and the complexities of relationships.,978-1-323-28546-6,2008,4,Harry Potter,9.0
+book_0368,Total didactic matrices,Lois Lowry,Science Fiction,6,8,884,123,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-5425-6521-9,2000,2,Diary of a Wimpy Kid,1.0
+book_0369,The Fault in Our Stars 5,Louis Sachar,Historical Fiction,6,7,768,275,A compelling tale set against the backdrop of important historical events.,978-0-327-17557-5,2005,1,,
+book_0370,Adaptive disintermediate archive,Chelsea Garcia,Romance,6,8,839,315,A heartwarming story about first love and the complexities of relationships.,978-1-77443-309-6,2020,2,,
+book_0371,Island of the Blue Dolphins 4,Randy Dudley,Biography,6,7,681,324,The inspiring true story of someone who made a difference in the world.,978-1-4101-6800-9,2005,5,Magic Tree House,12.0
+book_0372,Extended needs-based hub,John Compton,Non-fiction,6,8,714,166,An engaging story for middle grade readers.,978-0-631-93946-7,2015,4,,
+book_0373,Percy Jackson 1,Billy Kirby,Biography,6,7,632,368,The inspiring true story of someone who made a difference in the world.,978-0-621-47594-4,2023,5,Wings of Fire,8.0
+book_0374,Where the Red Fern Grows 1,Rodman Philbrick,Romance,6,7,773,277,A heartwarming story about first love and the complexities of relationships.,978-1-70090-508-6,2021,4,,
+book_0375,Bridge to Terabithia 5,Scott Moore,Graphic Novel,6,7,605,353,An engaging story for middle grade readers.,978-1-57812-076-5,2005,1,Captain Underpants,10.0
+book_0376,The Hunger Games 1,Martha Perkins,Humor,6,8,823,293,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-427-51807-4,2012,2,,
+book_0377,Configurable human-resource approach,Lois Lowry,Romance,6,8,745,109,A heartwarming story about first love and the complexities of relationships.,978-0-694-50460-2,2003,4,Dog Man,10.0
+book_0378,Holes 5,Kelly Mcconnell,Biography,7,8,1081,255,The inspiring true story of someone who made a difference in the world.,978-1-205-27013-9,2016,5,,
+book_0379,Managed static project,Brad Shea,Graphic Novel,6,8,886,332,An engaging story for middle grade readers.,978-1-5385-5086-1,2010,5,Goosebumps,8.0
+book_0380,Managed zero administration artificial intelligence,Pam Muñoz Ryan,Science Fiction,7,8,1042,149,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-354-95629-1,2021,2,,
+book_0381,The Giver 1,Melissa Pugh,Romance,6,8,980,171,A heartwarming story about first love and the complexities of relationships.,978-1-5190-6395-3,2022,4,The Maze Runner,11.0
+book_0382,Operative bifurcated capacity,Pam Muñoz Ryan,Graphic Novel,6,7,661,197,An engaging story for middle grade readers.,978-1-60356-836-4,2022,3,The Baby-Sitters Club,4.0
+book_0383,Universal optimizing algorithm,Wilson Rawls,Humor,7,8,863,168,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-259-72234-2,2015,1,Wings of Fire,1.0
+book_0384,Persistent national complexity,Timothy Hernandez,Romance,6,7,883,360,A heartwarming story about first love and the complexities of relationships.,978-1-192-18993-3,2005,5,,
+book_0385,The Maze Runner 4,Cody Garcia,Memoir,6,8,864,227,An engaging story for middle grade readers.,978-0-04-649662-3,2008,4,Diary of a Wimpy Kid,2.0
+book_0386,Future-proofed human-resource emulation,Lois Lowry,Realistic Fiction,6,8,931,380,A relatable story about growing up and facing real-world challenges.,978-0-369-98848-5,2010,5,,
+book_0387,Harry Potter 3,Rachel Chandler,Mystery,6,7,707,191,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-908221-10-3,2016,5,,
+book_0388,Ameliorated asynchronous customer loyalty,Melissa Chavez,Horror,6,8,759,392,An engaging story for middle grade readers.,978-1-163-41864-2,2021,4,,
+book_0389,Extended 4thgeneration structure,Rick Riordan,Humor,7,8,946,154,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-7574-3907-0,2000,4,,
+book_0390,Down-sized web-enabled archive,J.K. Rowling,Biography,6,7,736,228,The inspiring true story of someone who made a difference in the world.,978-1-4721-9191-5,2004,1,Goosebumps,1.0
+book_0391,Inverse 4thgeneration interface,Pam Muñoz Ryan,Science Fiction,6,8,804,387,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-266-84700-7,2007,5,,
+book_0392,Wonder 4,Jeff Kinney,Humor,7,8,947,127,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-1-64167-411-9,2000,3,,
+book_0393,Down-sized neutral complexity,Jill Green,Horror,6,7,788,200,An engaging story for middle grade readers.,978-1-63613-241-9,2023,2,Hilo,8.0
+book_0394,Re-contextualized content-based strategy,Daniel Scott,Science Fiction,6,7,695,293,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-5381-7908-6,2001,4,Diary of a Wimpy Kid,11.0
+book_0395,Open-architected asynchronous groupware,Pam Muñoz Ryan,Non-fiction,6,7,899,179,An engaging story for middle grade readers.,978-1-119-35493-2,2001,2,Divergent,3.0
+book_0396,De-engineered uniform forecast,John Rodriguez,Graphic Novel,7,8,826,254,An engaging story for middle grade readers.,978-1-68546-397-7,2015,5,,
+book_0397,Bridge to Terabithia 5,Lois Lowry,Mystery,6,7,762,312,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-575-65571-3,2017,5,,
+book_0398,Persistent radical secured line,Lisa Miller,Historical Fiction,6,8,813,284,A compelling tale set against the backdrop of important historical events.,978-0-227-10124-7,2009,2,,
+book_0399,Number the Stars 1,James Dashner,Romance,7,8,1071,223,A heartwarming story about first love and the complexities of relationships.,978-0-400-62912-4,2020,5,,
+book_0400,Percy Jackson 4,David Bryan,Science Fiction,6,7,620,297,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-7012-2442-4,2008,5,,
+book_0401,Re-engineered even-keeled matrix,Lois Lowry,Romance,6,7,864,349,A heartwarming story about first love and the complexities of relationships.,978-1-993966-08-5,2001,3,,
+book_0402,The Giver 2,Dawn Leon,Poetry,6,7,764,375,An engaging story for middle grade readers.,978-1-338-44250-2,2017,1,,
+book_0403,Public-key tertiary monitoring,Lois Lowry,Adventure,6,7,709,375,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-0-8041-0106-6,2022,4,,
+book_0404,Percy Jackson 1,R.J. Palacio,Mystery,6,7,678,228,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-559-27639-2,2017,1,,
+book_0405,The Fault in Our Stars 4,Rick Riordan,Dystopian,6,7,732,160,A thought-provoking story about survival in a society where freedom is under threat.,978-1-69317-710-1,2017,1,,
+book_0406,Centralized disintermediate Graphical User Interface,Jennifer Hansen,Non-fiction,7,8,832,137,An engaging story for middle grade readers.,978-1-58207-406-1,2011,5,,
+book_0407,The Fault in Our Stars 4,Rick Riordan,Romance,6,8,744,180,A heartwarming story about first love and the complexities of relationships.,978-1-232-27974-7,2017,2,Hilo,11.0
+book_0408,Diary of a Wimpy Kid 1,Deborah Powell,Humor,6,8,773,172,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-1-4364-6916-6,2003,1,Wings of Fire,9.0
+book_0409,Enhanced optimizing functionalities,James Dashner,Adventure,7,8,1080,311,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-1-398-97703-7,2020,5,The Baby-Sitters Club,7.0
+book_0410,Bridge to Terabithia 5,Tyler Reynolds,Graphic Novel,7,8,929,381,An engaging story for middle grade readers.,978-0-08-274681-2,2014,5,Diary of a Wimpy Kid,4.0
+book_0411,Island of the Blue Dolphins 4,Joshua Walker,Historical Fiction,6,8,750,165,A compelling tale set against the backdrop of important historical events.,978-1-58560-215-5,2021,2,Goosebumps,2.0
+book_0412,Percy Jackson 5,Joseph Durham,Non-fiction,6,7,762,399,An engaging story for middle grade readers.,978-0-647-44767-3,2004,5,The Baby-Sitters Club,2.0
+book_0413,Percy Jackson 2,Gary Solomon,Non-fiction,6,8,919,323,An engaging story for middle grade readers.,978-0-86806-245-7,2008,3,,
+book_0414,Harry Potter 4,Jennifer Hester,Mystery,6,8,936,141,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-15-503072-5,2008,2,Magic Tree House,6.0
+book_0415,Total bi-directional Graphic Interface,Victoria Parsons,Non-fiction,6,7,734,138,An engaging story for middle grade readers.,978-1-254-79749-6,2000,5,,
+book_0416,Island of the Blue Dolphins 2,Darrell Gardner,Humor,7,8,1096,233,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-1-4505-2666-1,2017,5,,
+book_0417,Island of the Blue Dolphins 3,Lois Lowry,Humor,6,7,787,146,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-00-641063-8,2012,3,,
+book_0418,Focused upward-trending methodology,Adrian Barker,Horror,7,8,922,184,An engaging story for middle grade readers.,978-1-332-49559-7,2016,2,,
+book_0419,Mandatory 24/7 frame,Brian Roach,Mystery,6,7,889,347,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-589-45735-8,2011,1,,
+book_0420,Wonder 2,Jared Lewis,Poetry,6,7,735,284,An engaging story for middle grade readers.,978-1-4316-5099-6,2012,4,Dog Man,4.0
+book_0421,Innovative discrete intranet,Lois Lowry,Biography,6,7,620,240,The inspiring true story of someone who made a difference in the world.,978-1-221-81139-2,2023,3,,
+book_0422,The Maze Runner 3,Kyle Ray,Memoir,7,8,889,139,An engaging story for middle grade readers.,978-1-85370-217-4,2016,3,,
+book_0423,Diary of a Wimpy Kid 4,Shane Perez,Memoir,6,7,864,103,An engaging story for middle grade readers.,978-1-935735-50-2,2016,2,,
+book_0424,The Hunger Games 2,Katherine Paterson,Historical Fiction,6,7,639,160,A compelling tale set against the backdrop of important historical events.,978-1-04-614729-4,2021,2,,
+book_0425,Esperanza Rising 4,Katherine Paterson,Biography,6,8,758,310,The inspiring true story of someone who made a difference in the world.,978-1-4450-2996-2,2000,2,,
+book_0426,Wonder 5,Katherine Paterson,Realistic Fiction,6,7,668,192,A relatable story about growing up and facing real-world challenges.,978-1-4074-0914-6,2016,4,The Baby-Sitters Club,10.0
+book_0427,Multi-lateral homogeneous Local Area Network,Kelly Snow,Graphic Novel,7,8,809,245,An engaging story for middle grade readers.,978-0-09-979896-5,2002,2,,
+book_0428,Divergent 5,Wilson Rawls,Graphic Novel,6,8,946,193,An engaging story for middle grade readers.,978-0-423-82244-1,2019,5,,
+book_0429,Holes 2,Gary Paulsen,Science Fiction,6,8,932,108,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-551-84364-6,2006,5,Magic Tree House,11.0
+book_0430,Intuitive modular algorithm,Cathy Hamilton DVM,Mystery,7,8,1014,343,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-206-23128-6,2019,5,,
+book_0431,Hatchet 5,Thomas Ramirez,Fantasy,7,8,860,320,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-1-77255-234-8,2016,4,Hilo,9.0
+book_0432,Esperanza Rising 4,Wilson Rawls,Science Fiction,6,7,871,317,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-5226-3969-5,2004,3,,
+book_0433,Number the Stars 4,Rick Riordan,Non-fiction,6,7,642,103,An engaging story for middle grade readers.,978-0-04-494010-4,2018,5,,
+book_0434,Percy Jackson 4,Gary Paulsen,Dystopian,7,8,905,399,A thought-provoking story about survival in a society where freedom is under threat.,978-1-5282-1123-9,2008,3,Percy Jackson,7.0
+book_0435,The Hunger Games 4,Christopher Roberts,Dystopian,6,8,989,382,A thought-provoking story about survival in a society where freedom is under threat.,978-1-08-527397-8,2017,4,,
+book_0436,Operative bifurcated open system,Omar Campbell,Poetry,6,8,829,303,An engaging story for middle grade readers.,978-1-04-652684-6,2023,2,Captain Underpants,9.0
+book_0437,Reactive radical portal,Katherine Paterson,Science Fiction,7,8,860,209,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-76330-537-3,2016,4,,
+book_0438,The Lightning Thief 1,Kristen Howard DVM,Romance,7,8,826,322,A heartwarming story about first love and the complexities of relationships.,978-0-19-762841-6,2002,1,,
+book_0439,Vision-oriented heuristic solution,Jeffrey Wells,Dystopian,7,8,819,366,A thought-provoking story about survival in a society where freedom is under threat.,978-1-63036-048-1,2009,5,The Maze Runner,2.0
+book_0440,The Outsiders 5,R.J. Palacio,Poetry,7,8,1053,361,An engaging story for middle grade readers.,978-1-282-67080-8,2016,2,Hilo,3.0
+book_0441,The Lightning Thief 2,Suzanne Collins,Poetry,7,8,818,304,An engaging story for middle grade readers.,978-0-264-35718-8,2011,4,,
+book_0442,Holes 1,Brian Gibson,Non-fiction,6,7,865,386,An engaging story for middle grade readers.,978-0-15-744251-9,2018,3,,
+book_0443,The Outsiders 4,Ashley Stanley,Horror,6,8,815,102,An engaging story for middle grade readers.,978-1-75001-074-7,2008,2,,
+book_0444,Harry Potter 3,Judith Blevins,Poetry,6,7,886,362,An engaging story for middle grade readers.,978-0-579-97113-0,2008,5,,
+book_0445,The Maze Runner 5,Rodman Philbrick,Poetry,7,8,928,273,An engaging story for middle grade readers.,978-0-465-05523-4,2014,4,,
+book_0446,Holes 4,Scott Adams,Adventure,6,7,846,217,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-0-561-01028-1,2010,4,,
+book_0447,The Hunger Games 2,Veronica Roth,Biography,7,8,1074,275,The inspiring true story of someone who made a difference in the world.,978-1-62365-903-5,2002,5,,
+book_0448,Island of the Blue Dolphins 3,S.E. Hinton,Romance,6,8,860,202,A heartwarming story about first love and the complexities of relationships.,978-1-9805-1701-6,2007,2,,
+book_0449,Freak the Mighty 5,Lois Lowry,Science Fiction,6,7,717,140,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-231-40867-4,2021,4,,
+book_0450,Networked regional moratorium,Jeff Kinney,Romance,7,8,821,394,A heartwarming story about first love and the complexities of relationships.,978-1-00-651031-1,2008,4,,
+book_0451,Island of the Blue Dolphins 2,John Green,Romance,6,8,903,376,A heartwarming story about first love and the complexities of relationships.,978-0-694-19701-9,2001,5,Hilo,9.0
+book_0452,The Giver 5,Rick Riordan,Fantasy,7,8,889,207,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-1-71304-530-4,2012,5,,
+book_0453,Freak the Mighty 3,Jeff Kinney,Historical Fiction,6,8,795,194,A compelling tale set against the backdrop of important historical events.,978-0-397-70259-6,2015,4,The Maze Runner,10.0
+book_0454,Bridge to Terabithia 5,Wilson Rawls,Biography,6,8,905,217,The inspiring true story of someone who made a difference in the world.,978-0-566-20409-8,2003,3,Magic Tree House,6.0
+book_0455,Organic multi-tasking monitoring,Gary Paulsen,Romance,7,8,1021,104,A heartwarming story about first love and the complexities of relationships.,978-0-13-254290-6,2005,4,,
+book_0456,Percy Jackson 4,Scott O'Dell,Graphic Novel,7,8,1064,390,An engaging story for middle grade readers.,978-1-75340-439-0,2001,4,,
+book_0457,The Giver 4,Ryan Smith,Realistic Fiction,6,7,730,284,A relatable story about growing up and facing real-world challenges.,978-0-14-518546-6,2011,5,Diary of a Wimpy Kid,1.0
+book_0458,The Giver 3,Sarah Rivers,Horror,6,8,876,201,An engaging story for middle grade readers.,978-0-7025-8333-9,2018,5,,
+book_0459,Enhanced reciprocal time-frame,Jeff Kinney,Biography,7,8,889,361,The inspiring true story of someone who made a difference in the world.,978-1-64884-991-6,2015,4,,
+book_0460,Hatchet 2,Michelle Moreno,Memoir,6,8,846,272,An engaging story for middle grade readers.,978-0-00-941833-4,2013,5,,
+book_0461,Freak the Mighty 3,J.K. Rowling,Non-fiction,6,7,640,236,An engaging story for middle grade readers.,978-0-7762-5263-6,2019,4,,
+book_0462,The Fault in Our Stars 4,Rick Riordan,Mystery,7,8,1100,220,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-1-56181-478-7,2021,3,Dog Man,6.0
+book_0463,The Maze Runner 1,Sharon Creech,Humor,7,8,840,127,A laugh-out-loud funny story that will keep readers entertained from start to finish.,978-0-17-393818-8,2000,4,,
+book_0464,Hatchet 1,Steven Johnson,Memoir,6,7,653,299,An engaging story for middle grade readers.,978-0-04-357855-1,2009,2,,
+book_0465,Bridge to Terabithia 1,James Dashner,Graphic Novel,7,8,864,266,An engaging story for middle grade readers.,978-0-480-24232-9,2015,4,Divergent,8.0
+book_0466,Hatchet 5,Pam Muñoz Ryan,Biography,7,8,939,388,The inspiring true story of someone who made a difference in the world.,978-1-82651-593-0,2013,5,,
+book_0467,Self-enabling encompassing benchmark,Rodman Philbrick,Poetry,7,8,958,145,An engaging story for middle grade readers.,978-0-89359-847-1,2014,3,,
+book_0468,The Lightning Thief 5,Kirsten Perez,Graphic Novel,6,8,779,169,An engaging story for middle grade readers.,978-0-584-13216-8,2011,3,,
+book_0469,Stand-alone 24hour application,Rick Riordan,Poetry,6,7,851,320,An engaging story for middle grade readers.,978-1-4698-3880-9,2009,5,,
+book_0470,Number the Stars 4,Katherine Paterson,Non-fiction,6,8,796,299,An engaging story for middle grade readers.,978-1-81688-548-7,2012,2,Percy Jackson,9.0
+book_0471,Customer-focused static alliance,Ryan Johnson,Poetry,6,7,864,239,An engaging story for middle grade readers.,978-1-4443-4864-4,2009,5,Wings of Fire,11.0
+book_0472,Seamless multi-state forecast,J.K. Rowling,Science Fiction,6,8,796,333,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-9573975-9-0,2019,4,,
+book_0473,Wonder 5,Lois Lowry,Realistic Fiction,6,7,764,237,A relatable story about growing up and facing real-world challenges.,978-1-65168-228-9,2004,4,The Baby-Sitters Club,8.0
+book_0474,Esperanza Rising 2,J.K. Rowling,Poetry,6,7,646,355,An engaging story for middle grade readers.,978-0-556-99800-6,2011,4,,
+book_0475,Hatchet 1,Veronica Roth,Science Fiction,6,7,769,378,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-584-69384-3,2015,2,,
+book_0476,Progressive foreground infrastructure,Jeremy Cooke,Dystopian,6,7,662,326,A thought-provoking story about survival in a society where freedom is under threat.,978-0-605-68940-4,2007,1,Divergent,7.0
+book_0477,Harry Potter 3,R.J. Palacio,Non-fiction,7,8,906,381,An engaging story for middle grade readers.,978-0-11-254943-7,2016,1,Magic Tree House,2.0
+book_0478,Adaptive discrete throughput,Susan Fritz,Adventure,6,7,784,157,"An action-packed journey filled with danger, excitement, and unexpected discoveries.",978-0-585-99069-9,2007,4,Goosebumps,5.0
+book_0479,The Maze Runner 2,R.J. Palacio,Horror,6,7,741,343,An engaging story for middle grade readers.,978-1-04-117455-4,2022,5,,
+book_0480,Where the Red Fern Grows 3,Amber Garcia,Poetry,6,7,680,130,An engaging story for middle grade readers.,978-0-902471-91-7,2001,3,Hilo,2.0
+book_0481,Synergistic optimal open architecture,Rodman Philbrick,Historical Fiction,7,8,1074,385,A compelling tale set against the backdrop of important historical events.,978-1-9823-1407-1,2020,3,,
+book_0482,The Maze Runner 3,Jesus Ryan,Realistic Fiction,6,8,798,120,A relatable story about growing up and facing real-world challenges.,978-1-203-61499-7,2015,4,,
+book_0483,Bridge to Terabithia 5,Pam Muñoz Ryan,Realistic Fiction,7,8,1050,383,A relatable story about growing up and facing real-world challenges.,978-0-01-065266-6,2005,1,,
+book_0484,Reverse-engineered multi-tasking process improvement,Javier Alvarado,Romance,6,8,851,100,A heartwarming story about first love and the complexities of relationships.,978-0-431-02871-2,2020,5,,
+book_0485,Diary of a Wimpy Kid 5,Louis Sachar,Biography,6,7,609,375,The inspiring true story of someone who made a difference in the world.,978-0-550-65932-3,2012,2,,
+book_0486,Harry Potter 3,Jeff Kinney,Science Fiction,6,8,982,149,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-1-66573-158-4,2016,1,,
+book_0487,The Outsiders 1,Veronica Roth,Biography,6,7,703,350,The inspiring true story of someone who made a difference in the world.,978-0-19-661885-2,2016,5,Diary of a Wimpy Kid,3.0
+book_0488,Where the Red Fern Grows 1,S.E. Hinton,Biography,6,8,725,351,The inspiring true story of someone who made a difference in the world.,978-0-03-991055-6,2002,4,,
+book_0489,Divergent 3,Nicole Sanchez,Fantasy,6,7,784,236,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-8154-5047-4,2016,1,,
+book_0490,Universal non-volatile paradigm,Catherine Mathis,Science Fiction,6,8,739,151,Set in a futuristic world where technology and humanity collide in unexpected ways.,978-0-06-912610-1,2023,2,,
+book_0491,Freak the Mighty 5,Joseph Anderson,Mystery,6,7,698,385,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-0-671-84732-6,2023,5,,
+book_0492,The Fault in Our Stars 4,Mr. Robert Smith,Mystery,6,7,895,192,A thrilling puzzle that challenges readers to solve the case alongside the protagonist.,978-1-81495-768-1,2017,4,,
+book_0493,Where the Red Fern Grows 4,Michelle Morgan,Memoir,7,8,880,261,An engaging story for middle grade readers.,978-1-7334716-4-0,2017,3,,
+book_0494,Multi-tiered 3rdgeneration software,Rodman Philbrick,Horror,6,8,920,379,An engaging story for middle grade readers.,978-1-946538-08-6,2006,4,,
+book_0495,The Fault in Our Stars 4,Matthew Schmidt,Fantasy,7,8,930,117,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-1-4923-7407-7,2009,5,,
+book_0496,Front-line cohesive database,Jeff Kinney,Fantasy,6,7,753,241,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-1-305-75431-7,2017,5,Diary of a Wimpy Kid,5.0
+book_0497,The Fault in Our Stars 3,Suzanne Collins,Historical Fiction,7,8,879,398,A compelling tale set against the backdrop of important historical events.,978-1-78394-571-9,2007,2,,
+book_0498,The Outsiders 1,Julia Fox,Poetry,7,8,1004,347,An engaging story for middle grade readers.,978-1-03-978883-1,2005,4,Divergent,2.0
+book_0499,Implemented explicit concept,J.K. Rowling,Fantasy,7,8,1095,395,A magical adventure where young heroes discover hidden powers and face ancient evils.,978-0-282-09322-8,2012,1,,
+book_0500,Horizontal methodical software,Lois Lowry,Graphic Novel,6,8,878,216,An engaging story for middle grade readers.,978-0-618-17770-7,2023,5,,
