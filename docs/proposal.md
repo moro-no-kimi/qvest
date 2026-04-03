@@ -53,6 +53,39 @@ Secondary success metrics:
 - Recommendation click-through or save rate in the student experience
 - Time saved for librarians when creating personalized reading suggestions
 
+## Pilot Non-Goals
+
+The following are explicitly out of scope for the initial pilot:
+
+- Replacing Destiny Library Manager or changing how books are cataloged
+- Real-time recommendations; all recommendations run in nightly batch
+- Recommendations for elementary or high school students
+- Parent-facing views or parental controls
+- Integration with student information systems beyond what Destiny already exposes
+- AI-generated reading assessments or Lexile-based proficiency tracking
+
+These are deferred to keep the pilot small enough to measure and deliver within one semester.
+
+## Evaluation Methodology
+
+The primary metric is books checked out per student per week, measured against a pre-pilot baseline.
+
+Evaluation structure:
+
+- Baseline window: the same semester one year prior, at the same pilot schools
+- Treatment window: the pilot semester
+- Comparison group: non-pilot middle schools with similar prior checkout rates, tracked in parallel
+- Minimum detectable effect: a 10 percent lift in checkout rate, sustained over at least 6 weeks
+
+Threats to validity and controls:
+
+- Seasonality: compare against the same calendar window in the prior year
+- Librarian effort confound: track AI-driven recommendation volume separately from direct librarian suggestions
+- Selection bias: choose pilot schools based on typical checkout rates, not top performers
+- Early dropout: measure recommendation-to-checkout conversion, not just recommendation generation volume
+
+Midpoint evaluation at week 6. If checkout lift is below 5 percent and librarian approval rate is below 50 percent, pause and re-examine recommendation quality before the semester ends.
+
 ## Core User Experience
 
 The demo should start with the student experience because that is the emotional hook. It should then move into librarian oversight and district measurement because that is what makes the system approvable.
@@ -165,6 +198,35 @@ Surfaces:
 - Librarian recommendation review interface
 - District metrics dashboard
 
+#### 6. Recommendation Lifecycle
+
+Recommendations run in nightly batch. This keeps inference costs predictable, avoids real-time latency requirements, and gives librarians time to review before students see anything.
+
+```
+Nightly Destiny Export
+        │
+        ▼
+  Ingestion & Normalization
+        │
+        ▼
+  Feature Preparation (incremental update)
+        │
+        ▼
+  Hybrid Ranker  ──── produces candidate set per student
+        │
+        ▼
+  LLM Explanation Generator  ──── batch, top 10 candidates per student
+        │
+        ▼
+  Librarian Review Queue  ──── optional hold before student visibility
+        │
+        ├── Approved    ──→ Student Display
+        ├── Overridden  ──→ Replacement surfaced, original logged
+        └── Pinned      ──→ Promoted to top of student list
+```
+
+Librarian overrides are stored and surfaced in the district dashboard as a signal of recommendation quality over time.
+
 ## Why a Hybrid Approach
 
 Collaborative filtering was the right first instinct. It should remain the primary behavioral signal. But by itself, it is not enough.
@@ -182,6 +244,34 @@ The hybrid design fixes that:
 - Content similarity covers cold start and discovery.
 - Guardrails handle policy and suitability.
 - LLM explanations increase transparency and usability.
+
+## Alternatives Considered
+
+Three approaches were evaluated before settling on the hybrid design.
+
+### Option A: Pure LLM Recommendations
+
+Ask the LLM to recommend books directly given a student's borrowing history.
+
+Rejected for three reasons:
+
+First, context window limits make this unworkable at district scale. Fulton County has 19 middle schools, a catalog of thousands of titles, and borrowing histories spanning years. Fitting even a fraction of the catalog and a student's full history into a prompt is not feasible. You would have to aggressively truncate both, which defeats the purpose. LLMs are not designed to rank over large, bounded inventories.
+
+Second, collaborative filtering is the proven approach for exactly this problem. Decades of production recommendation systems at Amazon, Netflix, Spotify, and library software vendors are built on user-item interaction matrices, not language model prompts. When the task is "given what this person consumed, predict what they will consume next from a fixed catalog," collaborative filtering scales to millions of users and millions of items with well-understood performance characteristics. An LLM prompt does not.
+
+Third, LLMs have no knowledge of the district catalog. They will recommend titles Destiny does not hold, titles outside the grade band, and titles skewed by training data toward popular or widely-reviewed books rather than what the district actually has on shelves. The LLM is excellent at explanation. Ranking is not its job here.
+
+### Option B: Pure Collaborative Filtering
+
+Rank recommendations using only co-borrow patterns, no content signals.
+
+Rejected because: this approach collapses for new students with fewer than three to five checkouts and for newly acquired titles with no borrowing history. A meaningful share of students at any given time will have too little history to generate quality collaborative recommendations. This is not a tail case; it is a structural property of middle-school library usage.
+
+### Option C: Librarian Rule Engine
+
+Allow librarians to configure rules: if a student checks out genre X, recommend series Y.
+
+Rejected as the primary signal because: rules do not scale across 19 middle schools and tens of thousands of students. The value of this system is surfacing patterns a librarian could not discover manually. A rule engine recreates the anecdotal recommendation problem we are trying to solve. Rules remain valuable as guardrails layered on top of ranked results.
 
 ## Recommended Tech Stack
 
@@ -217,6 +307,44 @@ Likely production upgrades:
 - School-level and district-level analytics with role-based access
 
 This framing matters because it shows the solution is credible at pilot scale and extensible at enterprise scale.
+
+## District Authentication Integration
+
+This system is not a third-party application. It is internal IP delivered inside the district's infrastructure. Authentication must be treated as a first-class production concern, not an afterthought.
+
+The proof of concept is intentionally unauthenticated. It runs locally against synthetic data and does not expose a network-accessible service. Auth is out of scope for the POC.
+
+For the pilot and beyond, authentication must integrate with what the district already operates:
+
+- Fulton County Schools runs Microsoft 365 district-wide under an enterprise agreement. The pilot application should use OAuth 2.0 / OIDC with Microsoft Entra ID (formerly Azure AD) as the identity provider, restricting login to `@fcstu.org` accounts.
+- Students access district applications via ClassLink at `launchpad.classlink.com/fcs`. The pilot should integrate with ClassLink SSO where possible so it appears as a native district application rather than a separate login destination.
+- Role assignment (student, librarian, district admin) should derive from Entra ID groups or directory attributes, not from a separate user management system maintained by the pilot.
+- Session tokens should be short-lived. There is no reason for a librarian session to persist more than a single workday.
+- The district dashboard is a higher-sensitivity surface than the student recommendation page. It should require explicit admin role assignment, not just a valid district account.
+
+Single sign-on alignment is also a strategic requirement. Dr. Phillips has a documented track record of reducing application sprawl: from roughly 7,850 systems to fewer than 500 at a prior district. A system that introduces its own identity silo will trigger immediate skepticism. Fitting into existing SSO is a prerequisite for adoption, not a bonus.
+
+For production hardening, the specific integration points are:
+
+- OAuth 2.0 / OIDC against the district Microsoft Entra ID tenant, scoped to `@fcstu.org`
+- Role-to-group mapping via Entra ID security groups
+- ClassLink SSO integration so the application surfaces natively in the student and staff launchpad
+- No local password storage; all credential management stays with the identity provider
+- API endpoints protected by JWT with district-issued claims
+
+## Data Governance and Privacy Posture
+
+Student privacy is the highest-stakes constraint on this system. Five controls manage it:
+
+1. **De-identified student identifiers.** The recommendation pipeline never operates on student names, email addresses, or externally assigned IDs. A randomized surrogate key maps to Destiny records internally. The display layer resolves names only at rendering time, scoped to the requesting librarian's school.
+
+2. **LLM prompt boundary.** LLM calls receive only book metadata: title, author, genre, catalog description, and series. No student identifiers, individual borrowing history, or demographic data are included in prompts. The model explains why a book fits a pattern, not why a specific student was selected.
+
+3. **Data locality.** During the proof of concept, all computation runs locally against synthetic data. During the pilot, exports stay within district-controlled infrastructure. Requests to external LLM API endpoints contain no student data.
+
+4. **Role-scoped access.** Librarians see recommendations for students enrolled at their school only. District dashboard users see aggregate metrics with no student-level drill-down. Overrides and approvals are logged with librarian identity and timestamp for audit purposes.
+
+5. **Minimal retention.** Raw export files are processed and deleted after normalization. The recommendation store retains ranked candidates and explanations but not the source interaction events used to derive them.
 
 ## Operating Model
 
