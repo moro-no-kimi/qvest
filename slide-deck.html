@@ -144,13 +144,38 @@
     gap: 32px;
   }
 
+  /* ── FCS logo ───────────────────────────────────────────────── */
+  .fcs-logo-title {
+    position: absolute;
+    top: 36px;
+    right: 48px;
+    height: 80px;
+    filter: brightness(0) invert(1);
+    opacity: .9;
+  }
+  .fcs-logo-header {
+    position: absolute;
+    right: 56px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 30px;
+    opacity: .35;
+  }
+
   /* ── Standard two-region layout ────────────────────────────── */
   .body-slide {
     padding: 0;
   }
   .slide-header {
-    padding: 22px 56px 18px;
+    padding: 20px 56px 16px;
+    padding-right: 260px;
+    min-height: 120px;
     border-bottom: 1px solid var(--rule);
+    position: relative;
+    background-image: url('https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1707770123/fultonschoolsorg/d5mkr7fkdyxp24nfaht4/FCSLogo-01.png');
+    background-repeat: no-repeat;
+    background-size: auto 88px;
+    background-position: right 40px center;
   }
   .slide-header .eyebrow {
     font-family: var(--font-ui);
@@ -410,6 +435,7 @@
 
   <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 01 TITLE -->
   <section class="slide title-slide active" data-n="1">
+    <img class="fcs-logo-title" src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1707770123/fultonschoolsorg/d5mkr7fkdyxp24nfaht4/FCSLogo-01.png" alt="Fulton County School System" />
     <div class="eyebrow">Pro-Bono Proposal · Fulton County Schools</div>
     <h1>Reading Lift</h1>
     <p class="subtitle">A personalized book-recommendation pilot for middle school librarians, students, and district leaders — built on data Fulton already has.</p>
@@ -426,7 +452,7 @@
     <div class="stripe"></div>
     <div class="slide-header">
       <div class="eyebrow">Problem Statement</div>
-      <h2>Students read books when librarians recommend them.<br>Today that knowledge doesn't scale.</h2>
+      <h2>Students read books when librarians and peers recommend them.<br>Today that knowledge doesn't scale.</h2>
     </div>
     <div class="slide-body">
       <div class="col">
@@ -437,9 +463,9 @@
           <li>Highly effective one-on-one advice doesn't reach the full student body</li>
         </ul>
         <hr class="rule" />
-        <h3>What the district can provide</h3>
+        <h3>What the Destiny Library Manager already provides</h3>
         <ul class="bullets">
-          <li>Checkout history from Destiny Library Manager</li>
+          <li>Physical media checkout history</li>
           <li>Full electronic catalog data</li>
         </ul>
         <hr class="rule" />
@@ -516,27 +542,34 @@
       <div class="eyebrow">System Architecture</div>
       <h2>Nightly batch — no real-time inference required</h2>
     </div>
-    <div class="slide-body" style="flex-direction:column; gap:20px;">
-      <div class="arch-flow">
-        <div class="arch-box">Destiny<br>Catalog Export</div>
+    <div class="slide-body" style="flex-direction:column; gap:16px;">
+      <!-- Flow diagram: two inputs merge into pipeline -->
+      <div style="display:flex; align-items:center; gap:0;">
+        <!-- Left: stacked inputs -->
+        <div style="display:flex; flex-direction:column; gap:8px; flex-shrink:0;">
+          <div class="arch-box">Destiny<br>Catalog Export</div>
+          <div class="arch-box">Destiny<br>Checkout History</div>
+        </div>
+        <!-- Merge arrows via SVG -->
+        <svg width="48" height="76" viewBox="0 0 48 76" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+          <polyline points="0,19 24,19 24,38" stroke="#c5d8ce" stroke-width="1.5" fill="none"/>
+          <polyline points="0,57 24,57 24,38" stroke="#c5d8ce" stroke-width="1.5" fill="none"/>
+          <line x1="24" y1="38" x2="46" y2="38" stroke="#c5d8ce" stroke-width="1.5"/>
+          <polygon points="42,34 48,38 42,42" fill="#c5d8ce"/>
+        </svg>
+        <div class="arch-box highlight" style="flex-shrink:0;">Ingestion &amp;<br>Normalization</div>
         <div class="arch-arrow">→</div>
-        <div class="arch-box highlight">Ingestion &amp;<br>Normalization</div>
+        <div class="arch-box" style="flex-shrink:0;">Feature<br>Preparation</div>
         <div class="arch-arrow">→</div>
-        <div class="arch-box">Feature<br>Preparation</div>
+        <div class="arch-box highlight" style="flex-shrink:0;">Hybrid<br>Ranker</div>
         <div class="arch-arrow">→</div>
-        <div class="arch-box highlight">Hybrid<br>Ranker</div>
+        <div class="arch-box" style="flex-shrink:0;">LLM<br>Explanation</div>
         <div class="arch-arrow">→</div>
-        <div class="arch-box">LLM<br>Explanation</div>
+        <div class="arch-box highlight" style="flex-shrink:0;">Librarian<br>Review Queue</div>
         <div class="arch-arrow">→</div>
-        <div class="arch-box highlight">Librarian<br>Review Queue</div>
-        <div class="arch-arrow">→</div>
-        <div class="arch-box">Student<br>Display</div>
+        <div class="arch-box" style="flex-shrink:0;">Student<br>Display</div>
       </div>
-      <div class="arch-flow" style="margin-left:220px;">
-        <div class="arch-box">Destiny<br>Checkout History</div>
-        <div class="arch-arrow" style="transform:rotate(-45deg) translateY(-14px);">↗</div>
-      </div>
-      <div style="display:flex; gap:16px; margin-top:4px;">
+      <div style="display:flex; gap:16px;">
         <div class="lifecycle" style="flex:1;">
           <div class="lc-row auto"><div class="lc-dot"></div><strong style="color:var(--green)">Auto-published</strong> — high-confidence, policy-clear items reach students nightly</div>
           <div class="lc-row review"><div class="lc-dot"></div><strong style="color:#c07a00">Librarian review</strong> — low-confidence or first-time recommendations held for human check</div>
@@ -566,26 +599,30 @@
       <div class="col col-2">
         <table>
           <thead>
-            <tr><th>Option</th><th>What it is</th><th>Why rejected</th></tr>
+            <tr><th>Status</th><th>Option</th><th>What it is</th><th>Why rejected</th></tr>
           </thead>
           <tbody>
             <tr>
-              <td><span class="pill pill-red">Rejected</span><br><strong>Pure LLM</strong></td>
+              <td><span class="pill pill-red">Rejected</span></td>
+              <td><strong>Pure LLM</strong></td>
               <td>Ask the LLM to rank books from a student's history</td>
               <td>Context window can't hold the district catalog. LLM recommends titles Destiny doesn't hold. No knowledge of local inventory.</td>
             </tr>
             <tr>
-              <td><span class="pill pill-amber">Rejected</span><br><strong>Pure Collab Filtering</strong></td>
+              <td><span class="pill pill-amber">Rejected</span></td>
+              <td><strong>Pure Collab Filtering</strong></td>
               <td>Rank by co-borrow patterns only</td>
               <td>Fails for new students (&lt;5 checkouts) and new acquisitions with no history. A structural gap, not a tail case.</td>
             </tr>
             <tr>
-              <td><span class="pill pill-amber">Rejected as primary</span><br><strong>Librarian Rule Engine</strong></td>
+              <td><span class="pill pill-amber">Rejected as primary</span></td>
+              <td><strong>Librarian Rule Engine</strong></td>
               <td>Staff configure genre → series rules</td>
-              <td>Doesn't scale to 19 schools. Recreates the anecdotal problem we're solving. Rules are still used as guardrails on top of ranked results.</td>
+              <td>Doesn't scale to 19 schools. Recreates the anecdotal problem we're solving. Rules still used as guardrails on top of ranked results.</td>
             </tr>
             <tr>
-              <td><span class="pill pill-green">Selected</span><br><strong>Hybrid + LLM Explanations</strong></td>
+              <td><span class="pill pill-green">Selected</span></td>
+              <td><strong>Hybrid + LLM Explanations</strong></td>
               <td>CF + content sim + guardrails + LLM rationale</td>
               <td>Behavioral relevance, cold-start coverage, policy compliance, and human-readable explanations in one design.</td>
             </tr>
@@ -607,9 +644,8 @@
         <h3>LLM scope</h3>
         <ul class="bullets">
           <li>Receives only book metadata — title, author, genre, catalog description</li>
-          <li>No student identifiers, no borrowing history in the prompt</li>
+          <li>No PII, student identifiers, or borrowing history in the prompt</li>
           <li>Produces a one-sentence plain-English recommendation reason</li>
-          <li>Fully local fallback when no API key is set</li>
         </ul>
         <hr class="rule" />
         <div class="callout">
@@ -1019,6 +1055,7 @@
 
   <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16 Q&A -->
   <section class="slide title-slide" data-n="16" style="background:var(--crimson); justify-content:center; align-items:flex-start;">
+    <img class="fcs-logo-title" src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1707770123/fultonschoolsorg/d5mkr7fkdyxp24nfaht4/FCSLogo-01.png" alt="Fulton County School System" />
     <div class="eyebrow" style="color:rgba(255,255,255,.55);">Fulton County Schools · Reading Lift Pilot</div>
     <h1 style="font-size:72px; margin-top:16px; color:#fff;">Q&amp;A</h1>
     <p class="subtitle" style="margin-top:20px; font-size:20px; color:rgba(255,255,255,.75);">Questions, challenges, and discussion welcome.</p>
