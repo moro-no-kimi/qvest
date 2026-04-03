@@ -1,1 +1,5 @@
 ./gstack
+.venv/
+__pycache__/
+.pytest_cache/
+.streamlit/
